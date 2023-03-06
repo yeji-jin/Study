@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI WORK</title>
+    <link rel="stylesheet" href="../common/css/reset.css">
+    <link rel="stylesheet" href="../common/css/work.css">
+    <link rel="stylesheet" href="../common/css/common.css">
+</head>
+<body>
+    <div id="app" class="wrapper">
+        <ul class="work-list">
+            <li class="list">
+                <!-- HOME NAV -->
+                <div class="home-nav bg1">
+                    <home-nav></home-nav>
+                </div>
+            </li>
+            <li class="list">
+                <!-- CART LIST -->
+                <div class="cart-list bg1">
+                    <cart-list></cart-list>
+                </div>
+            </li>
+            <li>
+                <!-- 카테고리 -->
+                <div class="cart-list bg1">
+                    
+                </div>
+            </li>
+            <li>
+                <!-- 캘린더 -->
+            </li>
+            <li>
+                <!-- 회원등급 -->
+            </li>
+            <li>
+                <!--액션팝업-->
+            </li>
+            <!-- 캘린더 / 글라이드픽 / 카테고리 -->
+        </ul>
+    </div>
+
+    <!-- <script src="https://unpkg.com/vue"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <script src="https://unpkg.com/http-vue-loader"></script>
+    <script type="text/javascript" src="../common/libs/httpVueLoader.js"></script>
+    <script>
+        var app = new Vue({
+          el: '#app',
+          components : {
+            'home-nav': httpVueLoader('./Component/HomeNav.vue'),
+            'cart-list': httpVueLoader('./Component/CartList.vue'),
+          },
+        })
+      </script>
+</body>
+</html>

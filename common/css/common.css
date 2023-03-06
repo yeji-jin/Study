@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+/*말줄임*/
+.ellipsis{ display: block; width:100%; white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.ellipsis2{overflow: hidden;text-overflow: ellipsis; display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;}
+.space-0{letter-spacing: 0;}
+
+.txt-sty1 { font-family: 'NotoSerif', serif; font-weight: 300; font-size: 22px; letter-spacing: -0.3px; line-height: 1.45; color: #000; }
+.txt-sty2 { font-size: 14px; letter-spacing: -0.8px; line-height: 1.57; color: #666; }
+.txt-sty3 { font-size: 12px; letter-spacing: -0.8px; line-height: 18px; color: #888; }
+.txt-sty4 { font-size: 16px; letter-spacing: -0.8px; line-height: 1.63; color: #666; }
+.txt-sty5 { font-size: 14px; letter-spacing: -0.8px; line-height: 1.57; color: #000; }
+.txt-sty5-g { font-family: 'NotoSans', sans-serif; font-size: 14px; letter-spacing: -0.8px; line-height: 1.57; color: #000; }
+.txt-sty6 { font-size: 16px; letter-spacing: -0.8px; line-height: 1.63; color: #000; }
+.txt-sty7 { font-size: 12px; letter-spacing: -0.8px; line-height: 18px; color: #666; }
+.txt-sty8 { font-size: 18px; letter-spacing: -0.8px; line-height: 28px; font-weight: 400; color: #000; }
+.txt-sty9 { font-size: 14px; letter-spacing: -0.8px; line-height: 20px;  color: #333; }
+.txt-tit-black { font-weight: 700; font-size: 14px; line-height: 1.5; color: #000; }
+.txt-tit-black2 { font-weight: 700; font-size: 16px; line-height: 1.5; color: #000; }
+.txt-tit-black3 { font-weight: 900; font-size: 16px; line-height: 1.5; color: #000; }
+.txt-desc-gray { font-weight: 700; font-size: 14px; line-height: 1.57; color: #666; }
+.txt-date { font-weight: 700; font-size: 15px; line-height: 22px; letter-spacing: 0; color: #000; }
+.txt-date span { font-weight: 400; font-size: 14px; line-height: 22px; letter-spacing: -0.8px; color: #000; }
+
+
+.label{ display: inline-block; position: absolute; top:6px; left:6px; padding:0 4px; height:18px; font-size: 8px; line-height: 18px; border-radius: 2px; color:#fff; box-shadow: 0 0 1px 0px rgb(0 0 0 / 50%);}
+.label.soldout{background: #000;}
+.label.new{background: red;}
+.label.best{background: skyblue;}
