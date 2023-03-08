@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+	<title>Intro</title>
+    <link rel="stylesheet" href="../common/css/reset.css">
+    <link rel="stylesheet" href="../common/css/common.css">
+    <link rel="stylesheet" href="../common/css/intro.css">
+</head>
+<body>
+
+<!-- wrapper -->
+<div id="app" class="wrapper intro"> 
+
+    <!-- header -->
+    <div class="header-wrap">
+
+		<!-- 헤더공통 -->
+		<!-- <header-common 
+			:sub-title="''" 
+			:is-main-icon="false" 
+			:is-back-btn="true" 
+			:is-share-btn="false" 
+			:is-alarm-btn="false"
+            :is-search-btn="false" 
+			:is-cart-btn="false"
+			:is-cs-btn="false"
+			:is-close-btn="false"> 
+		</header-common> -->
+
+	</div>
+
+    <!-- container -->
+    <section class="container">
+		<!-- contents -->
+		<article class="contents">
+			<div class="glyde-pick-wrap">
+
+                <!--  area1 -->
+				<div class="pick-sec area1">
+					<div class="txt-box">
+                        <img src="../common/images/tmp-1.jpg" alt="" class="sub">
+						<div class="tit">
+                            <p class="intro ani1">함께 성장하는</p>
+                            <p class="tit2 intro ani2">글라이드의 바른 선택</span>
+                        </div>
+						<img src="../common/images/tmp-1.jpg" alt="" class="logo_pick intro ani3">
+					</div>
+					<button class="icon-down-32">아래계속</button>
+				</div>
+	
+				<!-- area2 -->
+				<div class="pick-sec area2">
+					<div class="txt-box">
+						<p class="tit">
+							글라이드는 언제나<br>
+							최고의 맛을!
+						</p>
+						<p class="sub">
+                            신선한 자연 식재료로 만든<br>
+                            최고의 맛을 선보입니다
+						</p>
+					</div>
+                    <div class="ani-wrap">
+                        <div class="ani-img">
+                            <img src="../common/images/tmp-1.jpeg" alt="" class="thumb-type1">
+                        </div>
+                    </div>
+				</div>
+
+                <!-- area3 -->
+				<div class="pick-sec area3">
+					<div class="txt-box">
+						<p class="tit">
+							더 많은<br>
+							파트너와 함께
+						</p>
+						<p class="sub">
+							글라이드만의 가치를<br>
+							더 많은 고객에게 전하기 위해<br>
+							다양한 파트너와 함께하려 합니다.
+						</p>
+					</div>
+                    <div class="ani-wrap">
+                        <div class="ani-img">
+                            <img src="../common/images/tmp-1.jpeg" alt="" class="thumb-type1">
+                        </div>
+                    </div>
+				</div>
+                
+                <!-- area4 -->
+				<div class="pick-sec area4">
+					<div class="txt-box">
+						<p class="tit">
+							이런 파트너와<br>
+							함께 합니다
+						</p>
+						<p class="sub">
+                            고집스러운 글라이드의 철학을<br>
+                            공감하고 응원하는 파트너와<br>
+                            함께 합니다.
+						</p>
+					</div>
+                    <div class="ani-wrap">
+                        <div class="ani-img">
+                            <ul class="brand-list">
+                                <li>
+                                    <img src="../common/images/tmp.png" alt="" class="thumb-type1">
+                                </li>
+                                <li>
+                                    <img src="../common/images/tmp.png" alt="" class="thumb-type1">
+                                </li>
+                                <li>
+                                    <img src="../common/images/tmp.png" alt="" class="thumb-type1">
+                                </li>
+                            </ul>
+                            <ul class="brand-list ltr">
+                                <li>
+                                    <img src="../common/images/tmp.png" alt="" class="thumb-type1">
+                                </li>
+                                <li>
+                                    <img src="../common/images/tmp.png" alt="" class="thumb-type1">
+                                </li>
+                                <li>
+                                    <img src="../common/images/tmp.png" alt="" class="thumb-type1">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+				</div>
+
+	            <!-- area5 -->
+				<div class="pick-sec area5">
+					<div class="txt-box">
+						<p class="tit">
+							어떤 기준으로<br>
+                            <!-- <span class="roboto">PICK</span> -->
+                            <img src="../common/images/pick/img-gld-pik-text-pick.webp" alt="PICK" class="txt-img" >
+							하나요?
+						</p>
+                        <p class="sub">
+                            깐깐한 기준으로<br>
+                            꼼꼼하게 엄선한 상품들만 Pick!<br>
+                            글라이드의 엄격한 품질 관리 기준을<br>
+                            통과한 최고의 맛만 엄선합니다.
+						</p>
+					</div>
+                    <div class="ani-wrap">
+                        <div class="ani-img">
+                            <img src="../common/images/tmp-1.jpeg" alt="" class="thumb-type1">
+                        </div>
+                    </div>
+				</div>
+			</div>
+            <!-- //glyde-pick-wrap-->
+		</article>
+	</section>
+</div>
+
+<script>
+    window.onload = function() {
+        const pickParallax = [
+            {//area1
+                scrollHeight : document.querySelector('.area1').offsetHeight,
+            },
+            {//area2
+                scrollHeight : document.querySelector('.area2').offsetHeight,
+                objs:{
+                    txtTit : document.querySelector('.area2 .txt-box .tit'),
+                    txtSub : document.querySelector('.area2 .txt-box .sub'),
+                    aniImg : document.querySelector('.area2 .ani-img')
+                },
+                aniValues: {
+                    aniTxtTit_opacity_in:[0,1,{start: 0.4, end:0.5}], 
+                    aniTxtTit_transform_in:[50,0,{start: 0.4, end:0.5}], 
+                    aniTxtSub_opacity_in:[0,1,{start: 0.45, end:0.55}],
+                    aniTxtSub_transform_in:[50,0,{start: 0.45, end:0.55}],
+                    aniImg_opacity_in:[0,1,{start: 0.65, end:0.85}], 
+                    aniImg_transform_in:[100,0,{start: 0.65, end:0.85}] 
+                }
+            },
+            {//area3
+                scrollHeight : document.querySelector('.area3').offsetHeight,
+                objs:{
+                    txtTit : document.querySelector('.area3 .txt-box .tit'),
+                    txtSub : document.querySelector('.area3 .txt-box .sub'),
+                    aniImg : document.querySelector('.area3 .ani-img')
+                },
+                aniValues: {
+                    aniTxtTit_opacity_in:[0,1,{start: 0.4, end:0.5}], 
+                    aniTxtTit_transform_in:[50,0,{start: 0.4, end:0.5}], 
+                    aniTxtSub_opacity_in:[0,1,{start: 0.45, end:0.55}],
+                    aniTxtSub_transform_in:[50,0,{start: 0.45, end:0.55}],
+                    aniImg_opacity_in:[0,1,{start: 0.5, end:0.7}], 
+                    aniImg_scale_in:[1.2,1,{start: 0.5, end:0.7}]
+                }
+            },
+            {//area4
+                scrollHeight : document.querySelector('.area4').offsetHeight,
+                objs:{
+                    txtTit : document.querySelector('.area4 .txt-box .tit'),
+                    txtSub : document.querySelector('.area4 .txt-box .sub'),
+                    aniImgLeft : document.querySelector('.area4 .brand-list:first-child'),
+                    aniImgRight : document.querySelector('.area4 .brand-list.ltr')
+                },
+                aniValues: {
+                    aniTxtTit_opacity_in:[0,1,{start: 0.4, end:0.5}], 
+                    aniTxtTit_transform_in:[50,0,{start: 0.4, end:0.5}], 
+                    aniTxtSub_opacity_in:[0,1,{start: 0.45, end:0.55}],
+                    aniTxtSub_transform_in:[50,0,{start: 0.45, end:0.55}],
+                    aniImgLeft_transform_in:[-300,0,{start: 0.65, end:0.85}], 
+                    aniImgRight_transform_in:[300,0,{start: 0.65, end:0.85}]
+                }
+            },
+            {//area5
+                scrollHeight : document.querySelector('.area5').offsetHeight,
+                objs:{
+                    txtTit : document.querySelector('.area5 .txt-box .tit'),
+                    txtSub : document.querySelector('.area5 .txt-box .sub'),
+                    aniImg : document.querySelector('.area5 .ani-img')
+                },
+                aniValues: {
+                    aniTxtTit_opacity_in:[0,1,{start: 0.4, end:0.5}], 
+                    aniTxtTit_transform_in:[50,0,{start: 0.4, end:0.5}], 
+                    aniTxtSub_opacity_in:[0,1,{start: 0.45, end:0.55}],
+                    aniTxtSub_transform_in:[50,0,{start: 0.45, end:0.55}],
+                    aniImg_opacity_in:[0,1,{start: 0.65, end:0.85}], 
+                    aniImg_transform_in:[100,0,{start: 0.65, end:0.85}]
+                }
+            }
+        ];
+        let currentY = 0; 
+        let prevScrollHeight = 0; 
+        let currentScene = 0; 
+        let enterNewScene = false;
+        
+        function scrollLoop(){
+            prevScrollHeight = 0;
+            enterNewScene = false;
+            for(let i=0; i<currentScene; i++){ //전체높이
+                prevScrollHeight += pickParallax[i].scrollHeight;
+            }
+            if(currentY > prevScrollHeight + pickParallax[currentScene].scrollHeight){ 
+                enterNewScene = true;
+                currentScene++;
+            }
+            if(currentY < prevScrollHeight){
+                if(currentScene === 0) return; 
+                enterNewScene = true;
+                currentScene--;
+            }
+            if(enterNewScene) return; 
+            playParallax();
+        }
+
+        function calcValues(values,currentYOffset){
+            let rv;
+            let sec_scrollHeight = pickParallax[currentScene].scrollHeight;
+            let partScrollStart = values[2].start * sec_scrollHeight;
+            let partScrollEnd = values[2].end * sec_scrollHeight;
+            let partScrollHeight = partScrollEnd - partScrollStart; 
+
+            if(currentYOffset >= partScrollStart && currentYOffset <= partScrollEnd){ 
+                rv = (currentYOffset - partScrollStart) / partScrollHeight * (values[1] - values[0]) + values[0]; //부분 범위의 비율
+            }else if(currentYOffset < partScrollStart){
+                rv = values[0]; 
+            }else if(currentYOffset > partScrollStart){
+                rv = values[1]; 
+            }
+            return rv;
+        }
+        
+        function playParallax() {
+            let currentAniScene = currentScene + 1;
+            let currentObj = pickParallax[currentAniScene].objs;
+            const currentYOffset = currentY - prevScrollHeight;
+            const scrollHeight = pickParallax[currentScene].scrollHeight; 
+            const scrollRatio = currentYOffset / scrollHeight;
+            
+            switch(currentScene){
+                case 0:
+                    //tit
+                    currentObj.txtTit.style.opacity = `${calcValues(pickParallax[currentAniScene].aniValues.aniTxtTit_opacity_in,currentYOffset)}`;
+                    currentObj.txtTit.style.transform = `translateY(${calcValues(pickParallax[currentAniScene].aniValues.aniTxtTit_transform_in,currentYOffset)}px)`;
+                    //sub
+                    currentObj.txtSub.style.opacity = `${calcValues(pickParallax[currentAniScene].aniValues.aniTxtSub_opacity_in,currentYOffset)}`;
+                    currentObj.txtSub.style.transform = `translateY(${calcValues(pickParallax[currentAniScene].aniValues.aniTxtSub_transform_in,currentYOffset)}px)`;
+                    //img
+                    currentObj.aniImg.style.opacity = `${calcValues(pickParallax[currentAniScene].aniValues.aniImg_opacity_in,currentYOffset)}`;
+                    currentObj.aniImg.style.transform = `translateY(${calcValues(pickParallax[currentAniScene].aniValues.aniImg_transform_in,currentYOffset)}px)`;  
+                    break;
+                case 1:
+                    //tit
+                    currentObj.txtTit.style.opacity = `${calcValues(pickParallax[currentAniScene].aniValues.aniTxtTit_opacity_in,currentYOffset)}`;
+                    currentObj.txtTit.style.transform = `translateY(${calcValues(pickParallax[currentAniScene].aniValues.aniTxtTit_transform_in,currentYOffset)}px)`;
+                    //sub
+                    currentObj.txtSub.style.opacity = `${calcValues(pickParallax[currentAniScene].aniValues.aniTxtSub_opacity_in,currentYOffset)}`;
+                    currentObj.txtSub.style.transform = `translateY(${calcValues(pickParallax[currentAniScene].aniValues.aniTxtSub_transform_in,currentYOffset)}px)`;
+                    //img
+                    currentObj.aniImg.style.opacity = `${calcValues(pickParallax[currentAniScene].aniValues.aniImg_opacity_in,currentYOffset)}`;
+                    currentObj.aniImg.style.transform = `scale(${calcValues(pickParallax[currentAniScene].aniValues.aniImg_scale_in,currentYOffset)})`;
+                    break;
+                case 2 :
+                    //tit
+                    currentObj.txtTit.style.opacity = `${calcValues(pickParallax[currentAniScene].aniValues.aniTxtTit_opacity_in,currentYOffset)}`;
+                    currentObj.txtTit.style.transform = `translateY(${calcValues(pickParallax[currentAniScene].aniValues.aniTxtTit_transform_in,currentYOffset)}px)`;
+                    //sub
+                    currentObj.txtSub.style.opacity = `${calcValues(pickParallax[currentAniScene].aniValues.aniTxtSub_opacity_in,currentYOffset)}`;
+                    currentObj.txtSub.style.transform = `translateY(${calcValues(pickParallax[currentAniScene].aniValues.aniTxtSub_transform_in,currentYOffset)}px)`;
+                    //img
+                    currentObj.aniImgLeft.style.transform = `translateX(${calcValues(pickParallax[currentAniScene].aniValues.aniImgLeft_transform_in,currentYOffset)}px)`;
+                    currentObj.aniImgRight.style.transform = `translateX(${calcValues(pickParallax[currentAniScene].aniValues.aniImgRight_transform_in,currentYOffset)}px)`;                 
+                    break;
+                case 3 :
+                    //tit
+                    currentObj.txtTit.style.opacity = `${calcValues(pickParallax[currentAniScene].aniValues.aniTxtTit_opacity_in,currentYOffset)}`;
+                    currentObj.txtTit.style.transform = `translateY(${calcValues(pickParallax[currentAniScene].aniValues.aniTxtTit_transform_in,currentYOffset)}px)`;
+                    //sub
+                    currentObj.txtSub.style.opacity = `${calcValues(pickParallax[currentAniScene].aniValues.aniTxtSub_opacity_in,currentYOffset)}`;
+                    currentObj.txtSub.style.transform = `translateY(${calcValues(pickParallax[currentAniScene].aniValues.aniTxtSub_transform_in,currentYOffset)}px)`;
+                    //img
+                    currentObj.aniImg.style.opacity = `${calcValues(pickParallax[currentAniScene].aniValues.aniImg_opacity_in,currentYOffset)}`;
+                    currentObj.aniImg.style.transform = `translateY(${calcValues(pickParallax[currentAniScene].aniValues.aniImg_transform_in,currentYOffset)}px)`;  
+                    break;
+            }
+        }
+
+        window.addEventListener('scroll',function(){
+            currentY = window.pageYOffset;
+            scrollLoop();
+        });
+    }
+</script>
+</body>
+</html>

@@ -56,14 +56,14 @@
                     
                 },
                 {
-                    title:'일반배송',
+                    title:'새벽배송',
                     desc:'새벽 7시까지 배송됩니다',
                     info:'내일(화) 새벽도착 예정',
                     deliveryFree:true
                     
                 },
                 {
-                    title:'일반배송',
+                    title:'초고속배송',
                     desc:'새벽 7시까지 배송됩니다',
                     info:'내일(화) 새벽도착 예정',
                     deliveryFree:false,
@@ -80,9 +80,9 @@
             this.cartItemList = [
                 { //detault 
                         disabled:false,
-                        detailPage:'https://www.naver.com',
+                        detailPage:'#',
                         label:'new',
-                        thumb:'../common/images/tmp.png',
+                        thumb:'../common/images/tmp/tmp-food_2.jpg',
                         name:'상품명최대길이상품명최대길이상품명최대길이상품명최대길이상품명최대길이상품명최대길이상품명최대길이',
                         status:'ice',
                         price:'4,500',
@@ -91,9 +91,9 @@
                 { //disabled case
                         disabled:true,
                         label:'soldout',
-                        detailPage:'https://www.naver.com',
+                        detailPage:'#',
                         label:'soldout',
-                        thumb:'../common/images/tmp.png',
+                        thumb:'../common/images/tmp/tmp-food_2.jpg',
                         name:'상품명최대길이상품명최대길이상품명최대길이상품명최대길이상품명최대길이상품명최대길이',
                         status:'frozen',
                         price:'4,500'
@@ -102,7 +102,7 @@
                         disabled:false,
                         detailPage:'',
                         label:'best',
-                        thumb:'../common/images/tmp.png',
+                        thumb:'../common/images/tmp/tmp-food_2.jpg',
                         name:'상품명최대길이상품명최대길이상품명최대길이상품명최대길이상품명최대길이상품명최대길이',
                         status:'ice',
                         price:'4,500'
@@ -110,7 +110,7 @@
                 { //discount case
                         disabled:false,
                         detailPage:'',
-                        thumb:'../common/images/tmp.png',
+                        thumb:'../common/images/tmp/tmp-food_2.jpg',
                         name:'상품명최대길이상품명최대길이상품명최대길이상품명최대길이상품명최대길이상품명최대길이',
                         status:'ice',
                         price:'4,500'
@@ -118,7 +118,7 @@
                 { //freeGift case
                         disabled:false,
                         detailPage:'',
-                        thumb:'../common/images/tmp.png',
+                        thumb:'../common/images/tmp/tmp-food_2.jpg',
                         name:'상품명최대길이상품명최대길이상품명최대길이상품명최대길이상품명최대길이상품명최대길이',
                         status:'ice',
                         price:'4,500'

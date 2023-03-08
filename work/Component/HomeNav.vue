@@ -29,48 +29,48 @@
         created(){
             this.menuList = [
                 {
-                    name:'추천 상품',
-                    iconSrc:'../common/images/icon-home-recommend.svg',
+                    name:'카테고리1',
+                    iconSrc:'../common/images/icon/ico-food-1.png',
                     href:'',
                 },
                 {
-                    name:'기획전',
-                    iconSrc:'../common/images/icon-home-featured.svg',
+                    name:'카테고리2',
+                    iconSrc:'../common/images/icon/ico-food-2.png',
                     href:'',
                 },
                 {
-                    name:'새벽배송',
-                    iconSrc:'../common/images/icon-home-dawn.svg',
+                    name:'카테고리3',
+                    iconSrc:'../common/images/icon/ico-food-3.png',
                     href:'',
                 },
                 {
-                    name:'건강식품',
-                    iconSrc:'../common/images/icon-home-health.webp',
+                    name:'카테고리4',
+                    iconSrc:'../common/images/icon/ico-food-4.png',
                     href:'',
                 },
                 {
-                    name:'국&middot탕&middot찌개',
-                    iconSrc:'../common/images/icon-home-stew.webp',
+                    name:'카테고리5',
+                    iconSrc:'../common/images/icon/ico-food-5.png',
                     href:'',
                 },
                 {
-                    name:'냉동간편식',
-                    iconSrc:'../common/images/icon-home-frozen.webp',
+                    name:'카테고리6',
+                    iconSrc:'../common/images/icon/ico-food-6.png',
                     href:'',
                 },
                 {
-                    name:'베이커리', 
-                    iconSrc:'../common/images/icon-home-bakery.webp',
+                    name:'카테고리7', 
+                    iconSrc:'../common/images/icon/ico-food-7.png',
                     href:'',
                 },
                 {
-                    name:'정육&middot수산', 
-                    iconSrc:'../common/images/icon-home-meat.webp',
+                    name:'카테고리8', 
+                    iconSrc:'../common/images/icon/ico-food-8.png',
                     href:'',
                 },
                 {
-                    name:'밥',
-                    iconSrc:'../common/images/icon-home-rice.webp',
+                    name:'카테고리9',
+                    iconSrc:'../common/images/icon/ico-food-9.png',
                     href:'',
                 },
                 {
@@ -79,33 +79,33 @@
                     href:'',
                 },
                 {
-                    name:'김치/반찬',
-                    iconSrc:'../common/images/icon-home-sidedish.webp',
+                    name:'카테고리1',
+                    iconSrc:'../common/images/icon/ico-food-1.png',
                     href:'',
                 },
                 {
-                    name:'간식&middot음료', 
-                    iconSrc:'../common/images/icon-home-juice.webp',
+                    name:'카테고리2', 
+                    iconSrc:'../common/images/icon/ico-food-2.png',
                     href:'',
                 },
                 {
-                    name:'면&middot분식',
-                    iconSrc:'../common/images/icon-home-snack.webp',
+                    name:'카테고리3',
+                    iconSrc:'../common/images/icon/ico-food-3.png',
                     href:'',
                 },
                 {
-                    name:'죽&middot덮밥소스',
-                    iconSrc:'../common/images/icon-home-soup.webp',
+                    name:'카테고리4',
+                    iconSrc:'../common/images/icon/ico-food-4.png',
                     href:'',
                 },
                 {
-                    name:'밀키트',
-                    iconSrc:'../common/images/icon-home-mealkit.webp',
+                    name:'카테고리5',
+                    iconSrc:'../common/images/icon/ico-food-5.png',
                     href:'',
                 },
                 {
-                    name:'과일&middot채소',
-                    iconSrc:'../common/images/icon-home-green.webp',
+                    name:'카테고리6',
+                    iconSrc:'../common/images/icon/ico-food-6.png',
                     href:'',
                 },
             ]
@@ -122,13 +122,14 @@
 </script>
 <style scoped>
 /*main-menu-list*/
-.main-menu-lst {display: flex; flex-wrap: wrap; min-width: 360px; height:186px; overflow: hidden; transition: height .25s ease-in; }
-.main-menu-lst.on { height: 282px;}
+.main-menu-lst {display: flex; flex-wrap: wrap; padding: 30px 12px;  min-width: 360px; height:230px; overflow: hidden; transition: height .25s ease-in; }
+.main-menu-lst.on { height: 400px;}
 .main-menu-lst li { width: 20%; padding-bottom:14px; text-align: center; }
 .main-menu-lst li a {display: block; color: #000; font-size: 13px; }
 .main-menu-lst li img {width: 60px; height: 60px; }
-.main-menu-lst .menu-ico.plus { margin:10px auto; width: 40px; height: 40px; border:1px solid #eee; border-radius: 50%;}
-.main-menu-lst .plus img { margin: 8px auto; width: 24px; height: 24px;}
+.main-menu-lst .menu-ico.plus { margin:0 auto; width: 60px; height: 60px; border:1px solid #ccc; border-radius: 50%;}
+.main-menu-lst .plus img { margin: 10px auto; width: 40px; height: 40px;}
+.main-menu-lst .menu-tit { display: block; padding-top: 8px; }
 </style>
 
 

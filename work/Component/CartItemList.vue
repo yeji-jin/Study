@@ -19,10 +19,13 @@
                     </div>   
                 </div>
             </a>
+            <!-- btn-count-->
+            <btn-count
+                :disabled="label == 'soldout'">
+            </btn-count>
         </div> 
         <!-- item delivery msg -->
         <div v-if="label == 'soldout'" class="item-desc">더 좋은 상품으로 찾아뵙겠습니다.</div>
-        <div v-if="label == 'soldout2'" class="item-desc">냉동∙냉장 상품은 도서산간 배송이 안되는 상품입니다</div>
         <!-- promotion item-->
         <promotion-free-item
             v-if="promotion"
@@ -35,7 +38,8 @@
 <script>
     module.exports = {
         components:{
-            'promotion-free-item': httpVueLoader('./promotionItem.vue'),
+            'btn-count': httpVueLoader('./BtnCount.vue'),
+            'promotion-free-item': httpVueLoader('./PromotionItem.vue'),
         },
         props:[
             'disabled',
@@ -61,9 +65,10 @@
     }
 </script>
 
-<style>
+<style scoped>
 .cart-item-list + .cart-item-list{ margin-top:34px;}
 .prdt-item{ position: relative; display: flex;}
+.cart-item{ position: relative; }
 .cart-item.disabled .prdt-item::before{ content: ""; position: absolute; left:0; top:0; width:100%; height: 100%; background: rgba(255,255,255,0.7); }
 .prdt-item .prdt-info{ margin: 4px 0 0 12px; width:calc(100% - 72px);}
 .prdt-item .prdt-info span{display: block;}

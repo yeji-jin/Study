@@ -14,22 +14,42 @@
         <ul class="work-list">
             <li class="list">
                 <!-- HOME NAV -->
-                <div class="home-nav bg1">
-                    <home-nav></home-nav>
+                <div class="shape-wrapper">
+                    <div class="home-nav bg1">
+                        <home-nav></home-nav>
+                    </div>
+                </div>
+                <div class="list-desc">
+                    <h4>홈 네비바 UI구현</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure doloribus sint expedita illum eaque odit ducimus harum temporibus id eveniet minus at nam, optio quae accusamus laborum, consectetur ut ipsa?</p>
                 </div>
             </li>
             <li class="list">
                 <!-- CART LIST -->
-                <div class="cart-list bg1">
-                    <cart-list></cart-list>
+                <div class="shape-wrapper">
+                    <div class="cart-list bg1">
+                        <cart-list></cart-list>
+                    </div>
+                </div>
+                <div class="list-desc">
+                    <h4>홈 네비바 UI구현</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure doloribus sint expedita illum eaque odit ducimus harum temporibus id eveniet minus at nam, optio quae accusamus laborum, consectetur ut ipsa?</p>
                 </div>
             </li>
             <li>
                 <!-- 카테고리 -->
-                <div class="cart-list bg1">
-                    
+                <div class="shape-wrapper">
+                    <div class="cart-list bg1">
+                        <category></category>
+                    </div>
+                </div>
+                <div class="list-desc">
+                    <h4>카테고리 UI구현</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure doloribus sint expedita illum eaque odit ducimus harum temporibus id eveniet minus at nam, optio quae accusamus laborum, consectetur ut ipsa?</p>
                 </div>
             </li>
+
+
             <li>
                 <!-- 캘린더 -->
             </li>
@@ -46,13 +66,16 @@
     <!-- <script src="https://unpkg.com/vue"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
     <script src="https://unpkg.com/http-vue-loader"></script>
-    <script type="text/javascript" src="../common/libs/httpVueLoader.js"></script>
+    <script src="../common/libs/httpVueLoader.js"></script>
+    <script src="../common/libs/swiper.js"></script>
+    
     <script>
         var app = new Vue({
           el: '#app',
           components : {
             'home-nav': httpVueLoader('./Component/HomeNav.vue'),
             'cart-list': httpVueLoader('./Component/CartList.vue'),
+            'category' : httpVueLoader('./Component/Category.vue')
           },
         })
       </script>

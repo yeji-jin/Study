@@ -1,6 +1,9 @@
-.wrapper{min-height:100%; background: #fff1e5; }
+body{background: #fff1e5;}
+.wrapper{min-height:100%; }
 .bg1{background: #fff;}
 .work-list{display: flex; flex-direction: column;}
-.list{ position: relative;  margin:5% auto; padding:60px 20px 40px; min-width: 360px; max-width: 486px; background: #000; border-radius: 28px; }
-.list + .list{ margin-top:10%; }
-.list::before{ content: ""; position: absolute; top:30px; left:50%; transform: translateX(-50%); width:70px; height: 4px; border-radius: 2px; background: #ccc; }
+.work-list .list{display: flex; align-items: center;}
+.work-list .list:nth-child(2n){flex-direction: row-reverse;}
+.shape-wrapper{ position: relative; margin:5% 3%; padding:60px 20px 40px; min-width: 400px; max-width: 55%; background: #000; border-radius: 28px; }
+.shape-wrapper + .shape-wrapper{ margin-top:10%; }
+.shape-wrapper::before{ content: ""; position: absolute; top:30px; left:50%; transform: translateX(-50%); width:70px; height: 4px; border-radius: 2px; background: #ccc; }
