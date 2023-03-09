@@ -1,5 +1,5 @@
 <template>
-       <button type="button" class="btn-cart">
+       <button type="button" class="btn-cart" @click="showItemModal">
             <span class="skip">장바구니 담기</span>
        </button>
 </template>
@@ -11,7 +11,8 @@
         ],
         data() {
             return {
-                count:0
+                count:0,
+                modalFlag:false,
             }
         },
         methods: {
@@ -23,7 +24,11 @@
                          this.count--;
                     }
                 }
-            }
+            },
+            showItemModal(){
+                this.modalFlag = !this.modalFlag;
+                this.$emit('cart', this.modalFlag);
+            },
         }
     }
 </script>

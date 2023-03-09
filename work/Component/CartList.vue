@@ -31,6 +31,11 @@
                 <div class="delivery-fee-info" v-else>무료배송</div>
             </li>
         </ul>
+
+        <div class="pop">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam tempora quaerat perspiciatis, expedita inventore incidunt odit consectetur corporis rerum, ea accusamus ipsum sed provident ipsam doloremque quo, iure dolores nisi!
+        </div>
+
     </div>
 </template>
 

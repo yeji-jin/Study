@@ -62,6 +62,7 @@
                 subList:['서브','서브','서브','서브','서브','서브','서브','서브'],
                 currentIdx:0,
                 itemList:[],
+                cartModal:false,
             }
         },
         created(){
@@ -182,7 +183,7 @@
             },
             changeSubCat(index){
                this.currentIdx = index;
-            }
+            },
         }
     };
 </script>

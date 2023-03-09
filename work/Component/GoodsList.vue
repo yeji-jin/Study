@@ -35,8 +35,9 @@
                             <div class="prdt-name ellipsis2">{{ name }}</div>
 							<div class="prdt-evalution" :class="{'off': !reviewNum}"> <!-- 리뷰없을시 off :class -->
 								<div class="evaluation-table">
-									<img src="../common/images/icon/ico-star.jpg" alt="" class="img-star" v-if="score"> 
-									<strong class="score space-0" v-if="score">{{score}} &middot;</strong> 
+									<!-- <img src="../common/images/icon/ico-star.jpg" alt="" class="img-star" >  -->
+                                    <em class="star" v-if="score">★</em> 
+									<strong class="score space-0" v-if="score">{{score}}</strong> 
 									<span class="review-info">리뷰 <em class="num">{{reviewNum}}</em></span> 
 								</div>
 							</div>
@@ -49,8 +50,11 @@
                     </div>
                 </div>
             </a>
-            <btn-cart></btn-cart> 
+            <btn-cart @cart="onReceive"></btn-cart> 
             <!-- <btn-add-cart :cartmain="false" :cart-disable="disabled" :class="{ 'discount' : cost }"></btn-add-cart>  -->
+        <div v-if="cartModal" @test="onReceive">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, repellat cumque, provident incidunt laudantium facilis quas quae ex quia, sed perspiciatis repellendus reiciendis dignissimos illum ab labore explicabo laboriosam quidem.
+        </div>
         </div>
     </li>
 </template>
@@ -72,7 +76,7 @@
         ], 
          data:function(){
             return{
-               
+            cartModal:false
             }
         },
         components: {
@@ -85,6 +89,10 @@
             // showToastMsg:function(){ //20220818 추가
             //     this.$emit('toast');
             // }
+            onReceive(){
+                this.cartModal = true
+                this.$emit('test', this.cartModal)
+            }
         }
     }
 </script>
@@ -95,10 +103,11 @@
 .category-list .thumb{ width: 100%;}
 .category-list .prdt-info{ padding-top:10px;}
 .info-label{ padding:2px 4px; margin-right: 2px; font-size: 10px; background: #a09d9d; color:#fff; border-radius: 2px;}
-.img-star{width:24px;}
+.star{font-size: 16px; margin-right: 2px;  color:orange;}
+.score::after{content: ""; display: inline-block; margin:3px 4px; width:2px; height: 2px; background: #999 ; }
 .prdt-head-copy{font-size: 13px;}
 .prdt-name{ margin:4px 0 8px; font-size: 14px; color:#000;}
-.evaluation-table{ min-height:24px; font-size: 12px; color:#333; }
+.evaluation-table{ display: flex; align-items: center; min-height:24px; font-size: 12px; color:#333; }
 .prdt-price{font-size:14px; color:#000; font-weight: 700; vertical-align: bottom; }
 .prdt-price .space-0{ margin-right: 2px; font-size:16px; }
 .prdt-discount{ padding-right: 2px; font-size: 14px; font-weight: 700; letter-spacing: 0; color:red; }
