@@ -44,14 +44,17 @@
                 <!--  area1 -->
 				<div class="pick-sec area1">
 					<div class="txt-box">
-                        <img src="../common/images/tmp-1.jpg" alt="" class="sub">
+                        Iam Yeji
+                        <!-- <img src="../common/images/tmp-1.jpg" alt="" class="sub"> -->
 						<div class="tit">
-                            <p class="intro ani1">함께 성장하는</p>
-                            <p class="tit2 intro ani2">글라이드의 바른 선택</span>
+                            <p class="intro ani1">tmp</p>
+                            <p class="tit2 intro ani2">tmp</span>
                         </div>
-						<img src="../common/images/tmp-1.jpg" alt="" class="logo_pick intro ani3">
+						<!-- <img src="../common/images/tmp-1.jpg" alt="" class="logo_pick intro ani3"> -->
+                        <span class="intro ani3">tmp</span>
 					</div>
-					<button class="icon-down-32">아래계속</button>
+					<button type="button" class="icon-down-32">아래계속</button>
+                    <!--https://gurtn.tistory.com/129-->
 				</div>
 	
 				<!-- area2 -->
@@ -334,7 +337,17 @@
             currentY = window.pageYOffset;
             scrollLoop();
         });
+        
     }
+
+    const BtnDown = document.querySelector('.icon-down-32');
+    BtnDown.addEventListener('click',()=>{
+        window.scrollTo({
+                top:window.innerHeight,
+                left:0,
+                behavior:'smooth'
+        })
+    })
 </script>
 </body>
 </html>

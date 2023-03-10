@@ -1,5 +1,5 @@
 <template>
-    <div class="category-wrap">
+    <div class="category-wrap" :class="{'hold' : dd}">
         <!-- 카테고리 header -->
         <div class="category-header">
             <button class="category-nav" type="button" role="button" @click="catClikc" :class="{'on' : catActive }">{{selectedNav}}</button>
@@ -41,9 +41,12 @@
                     :score="item.score"
                     :discount="item.discount"
                     :cost="item.cost"
+                    @test="fndd"
                 >   
                 </goods-list>
             </ul>
+            <!-- action-popup -->
+            <action-popup v-if="dd" @remove-dim="dd = !dd"></action-popup>
         </div>
     </div>
 </template>
@@ -52,6 +55,7 @@
     module.exports = {
         components: {
             'goods-list': httpVueLoader('./GoodsList.vue'), 
+            'action-popup' :  httpVueLoader('./ActionPop.vue'), 
         },
         props:[],
         data() {
@@ -63,6 +67,7 @@
                 currentIdx:0,
                 itemList:[],
                 cartModal:false,
+                dd:false
             }
         },
         created(){
@@ -184,12 +189,16 @@
             changeSubCat(index){
                this.currentIdx = index;
             },
+            fndd(){
+                this.dd = true;
+            }
         }
     };
 </script>
 
 <style scoped>
 .category-wrap{position: relative; height:500px; overflow: auto;}
+.category-wrap.hold{ overflow: hidden; }
 .category-header{ position: sticky; top:0; z-index: 15; background: #fff;}
 .category-header.fixed { box-shadow: -5px -11px 20px 4px #595959;}
 .category-wrapper{display: flex; flex-wrap: wrap; padding:24px 16px; }

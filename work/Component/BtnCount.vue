@@ -1,6 +1,6 @@
 <template>
     <div class="btn-count">
-        <button type="button" class="btn-minus" aria-label="수량내리기" :disabled="count == 0 || disabled" @click="countChange('minus')">
+        <button type="button" class="btn-minus" aria-label="수량내리기" :disabled="count == 1 || disabled" @click="countChange('minus')">
             <span class="skip">감소</span>
         </button>
         <span class="count" :class="{'disabled' : disabled}">{{count}}</span>
@@ -17,7 +17,7 @@
         ],
         data() {
             return {
-                count:0
+                count:1
             }
         },
         methods: {

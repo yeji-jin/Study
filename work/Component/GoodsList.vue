@@ -52,9 +52,9 @@
             </a>
             <btn-cart @cart="onReceive"></btn-cart> 
             <!-- <btn-add-cart :cartmain="false" :cart-disable="disabled" :class="{ 'discount' : cost }"></btn-add-cart>  -->
-        <div v-if="cartModal" @test="onReceive">
+        <!-- <div v-if="cartModal">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, repellat cumque, provident incidunt laudantium facilis quas quae ex quia, sed perspiciatis repellendus reiciendis dignissimos illum ab labore explicabo laboriosam quidem.
-        </div>
+        </div> -->
         </div>
     </li>
 </template>
