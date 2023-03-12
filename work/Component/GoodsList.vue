@@ -8,10 +8,10 @@
                     <span v-if="label == 'best'" class="label best">베스트</span>
                     <span v-if="label == 'new'" class="label new">신규상품</span>
                 </div>
-
+                <!-- thumb -->
                 <div class="prdt-item">
                     <div class="prdt-thumb">
-                    <img class="thumb" :src="thumb"/>
+                        <img class="thumb" :src="thumb"/>
                         <!-- 일시품절 메세지영역 -->
                         <!-- <div class="soldout-box" v-if="this.disabled">
                             <div class="soldout-msg">
@@ -27,34 +27,30 @@
                             <span class="ico-arrow-right16-white">대체상품</span>
                         </button> -->
                     </div>
+                    <!-- info -->
                     <div class="prdt-info">
-                            <div class="prdt-head-copy ellipsis">
-                                <strong class="info-label" v-if="info">{{info}}</strong>
-                                {{ headCopy }}
-                            </div>
-                            <div class="prdt-name ellipsis2">{{ name }}</div>
-							<div class="prdt-evalution" :class="{'off': !reviewNum}"> <!-- 리뷰없을시 off :class -->
-								<div class="evaluation-table">
-									<!-- <img src="../common/images/icon/ico-star.jpg" alt="" class="img-star" >  -->
-                                    <em class="star" v-if="score">★</em> 
-									<strong class="score space-0" v-if="score">{{score}}</strong> 
-									<span class="review-info">리뷰 <em class="num">{{reviewNum}}</em></span> 
-								</div>
-							</div>
-                            <!-- 할인 -->
-                            <dd class="prdt-price-serving" :class="{ 'discount' : cost }"> 
-                                <span v-if="discount" class="prdt-discount">{{discount}}%</span>
-                                <span class="prdt-price"><em class="space-0">{{ price }}</em>원</span>
-                                <del class="prdt-cost" v-if="cost"><em class="num-type5">{{cost}}</em>원</del> 
-                            </dd>
+                        <div class="prdt-head-copy ellipsis">
+                            <strong class="info-label" v-if="info">{{info}}</strong>
+                            {{ headCopy }}
+                        </div>
+                        <div class="prdt-name ellipsis2">{{ name }}</div>
+					    <div class="prdt-evalution" :class="{'off': !reviewNum}"> <!-- 리뷰없을시 off :class -->
+					    	<div class="evaluation-table">
+                                <em class="star" v-if="score">★</em> 
+					    		<strong class="score space-0" v-if="score">{{score}}</strong> 
+					    		<span class="review-info">리뷰 <em class="num">{{reviewNum}}</em></span> 
+					    	</div>
+					    </div>
+                        <!-- 할인 -->
+                        <div class="prdt-price-serving" :class="{ 'discount' : cost }"> 
+                            <span v-if="discount" class="prdt-discount">{{discount}}%</span>
+                            <span class="prdt-price"><em class="space-0">{{ price }}</em>원</span>
+                            <del class="prdt-cost" v-if="cost"><em class="num-type5">{{cost}}</em>원</del> 
+                        </div>
                     </div>
                 </div>
             </a>
-            <btn-cart @cart="onReceive"></btn-cart> 
-            <!-- <btn-add-cart :cartmain="false" :cart-disable="disabled" :class="{ 'discount' : cost }"></btn-add-cart>  -->
-        <!-- <div v-if="cartModal">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, repellat cumque, provident incidunt laudantium facilis quas quae ex quia, sed perspiciatis repellendus reiciendis dignissimos illum ab labore explicabo laboriosam quidem.
-        </div> -->
+            <btn-cart @cart="transActionSheet"></btn-cart> 
         </div>
     </li>
 </template>
@@ -76,22 +72,16 @@
         ], 
          data:function(){
             return{
-            cartModal:false
+                cartModal:false
             }
         },
         components: {
             'btn-cart': httpVueLoader('./BtnCart.vue'),
         },
         methods:{
-            // showRecommendSheet:function(ActionSheetclass){ //20220818 추가
-            //     new ActionSheet('.' + ActionSheetclass).show();
-			// },
-            // showToastMsg:function(){ //20220818 추가
-            //     this.$emit('toast');
-            // }
-            onReceive(){
+            transActionSheet(){
                 this.cartModal = true
-                this.$emit('test', this.cartModal)
+                this.$emit('action-sheet', this.cartModal)
             }
         }
     }

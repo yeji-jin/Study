@@ -3,37 +3,41 @@
                 <div class="grade-info">
                     <div class="grade-txt">
                         <p class="txt-sty1">
-                            <span>김민지</span>님의 이번 달 등급은<br>퓨어블루입니다
+                            <span>홍길동</span>님의 이번 달 레벨은<br>Level 1입니다
                         </p>
-                        <span class="txt-sty2">다음달 예상 등급은 퓨어블루입니다.</span>
+                        <span class="txt-sty2">다음달 예상 레벨은 Level 2입니다.</span>
                     </div>
                     <div class="grade-bg" :style="{'background-color' : gradeBg[gradeIndex]}">
                         <img :src="glydeGrade[gradeIndex].gradeImg" alt="" class="grade-img">
                     </div>
                 </div>
                 <div class="grade-benefit">
-                    <strong class="benefit-tit">글라이드 등급별 혜택</strong>
+                    <strong class="benefit-tit">레벨별 혜택</strong>
                     <ul class="grade-list">
-                        <button type="button" @click="showBenefit(0)">
-                            <img src="../common/images/mypage/icon-grade-tab-01.webp" alt="" class="grade-icon" v-show="gradeIndex == 0">
-                            <img src="../common/images/mypage/icon-grade-tab-01-off.webp" alt="" class="grade-icon" v-show="gradeIndex !== 0">
-                            <span class="grade-name" :class="{'on' : gradeIndex == 0}">웰컴블루</span>
-                        </button>
-                        <button type="button" @click="showBenefit(1)">
-                            <img src="../common/images/mypage/icon-grade-tab-02.webp" alt="" class="grade-icon" v-show="gradeIndex == 1">
-                            <img src="../common/images/mypage/icon-grade-tab-02-off.webp" alt="" class="grade-icon" v-show="gradeIndex !== 1">
-                            <span class="grade-name" :class="{'on' : gradeIndex == 1}">퓨어블루</span>
-                        </button>
-                        <button type="button" @click="showBenefit(2)">
-                            <img src="../common/images/mypage/icon-grade-tab-03.webp" alt="" class="grade-icon" v-show="gradeIndex == 2">
-                            <img src="../common/images/mypage/icon-grade-tab-03-off.webp" alt="" class="grade-icon" v-show="gradeIndex !== 2">
-                            <span class="grade-name" :class="{'on' : gradeIndex == 2}">해피블루</span>
-                        </button>
-                        <button type="button" @click="showBenefit(3)">
-                            <img src="../common/images/mypage/icon-grade-tab-04.webp" alt="" class="grade-icon" v-show="gradeIndex == 3">
-                            <img src="../common/images/mypage/icon-grade-tab-04-off.webp" alt="" class="grade-icon" v-show="gradeIndex !== 3">
-                            <span class="grade-name" :class="{'on' : gradeIndex == 3}">로얄블루</span>
-                        </button>
+                        <li>
+                            <button type="button" @click="showBenefit(0)">
+                                <img src="../common/images/icon/ico-membership-level-1.png" alt="" class="grade-icon">
+                                <span class="grade-name" :class="{'on' : gradeIndex == 0}">Level 1</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" @click="showBenefit(1)">
+                                <img src="../common/images/icon/ico-membership-level-2.png" alt="" class="grade-icon">
+                                <span class="grade-name" :class="{'on' : gradeIndex == 1}">Level 2</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" @click="showBenefit(2)">
+                                <img src="../common/images/icon/ico-membership-level-3.png" alt="" class="grade-icon">
+                                <span class="grade-name" :class="{'on' : gradeIndex == 2}">Level 3</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" @click="showBenefit(3)">
+                                <img src="../common/images/icon/ico-membership-level-4.png" alt="" class="grade-icon">
+                                <span class="grade-name" :class="{'on' : gradeIndex == 3}">Level 4</span>
+                            </button>
+                        </li>
                     </ul>
 
                     <!--유저등급 혜택-->
@@ -58,16 +62,10 @@
                             </li>
                         </ul> 
                     </div>
-
-                    <!-- 20230221 : 로얄블루 혜택 버튼 추가 -->
-                    <a href="#" v-if="gradeIndex == 3" class="btn-promotion txt-sty5 flx-prnt">
-                        <img src="../common/images/mypage/icon-info-loyal-grade-promotion-gift.svg" alt="">
-                        <span class="space-0">2</span>월 체험상품 선택하기
-                    </a>
                     
-                    <!--모든 회원혜택-->
+                    <!--모든 레벨혜택-->
                     <div class="common-benefit-wrap">
-                        <span class="sub-tit2">모든 회원 혜택</span>
+                        <span class="sub-tit2">모든 레벨 혜택</span>
                         <ul class="benefit-list">
                             <li class="benefit txt-sty2 birthday">
                                 생일 당일 선물
@@ -82,7 +80,6 @@
 
                      <!--등급기준-->
                      <div class="grade-standard">
-                        <!-- 20221215 : refs 삭제 / class바인딩 추가 -->
                         <span class="sub-tit user" :class="{'pure' : gradeIndex == 1 , 'happy' : gradeIndex == 2, 'loyal' : gradeIndex == 3}">등급 기준(최근 3개월)</span> 
                         <div class="standard-list">
                             <div class="list">
@@ -144,18 +141,15 @@
                     buy: '1',
                     review: '0',
                 },
-                freeProductTxt:'신메뉴 체험' //해피블루case
+                freeProductTxt:'신메뉴 체험' 
 
 			}
 		},
         created(){
          this.glydeGrade = [
             {
-                gradeName:'웰컴블루',
-                gradeImg:'../common/images/mypage/img-grade-welcome.webp',
-                buttonOnImg:'../common/images/mypage/icon-grade-tab-01.webp',
-                buttonOffImg:'../common/images/mypage/icon-grade-tab-01-off.webp',
-                gradeIcon: '../common/images/mypage/icon-info-grade-welcome.webp',
+                gradeName:'Level 1',
+                gradeImg:'../common/images/icon/ico-membership-level-1.png',
                 detail:{
                     pay: '<em class="space-0">5</em>만원 미만',
                     buy: '<em class="space-0">1</em>회 미만',
@@ -167,11 +161,8 @@
                 }
             },
             {
-                gradeName:'퓨어블루',
-                gradeImg:'../common/images/mypage/img-grade-pure.webp',
-                buttonOnImg:'../common/images/mypage/icon-grade-tab-02.webp',
-                buttonOffImg:'../common/images/mypage/icon-grade-tab-02-off.webp',
-                gradeIcon: '../common/images/mypage/icon-info-grade-pure.webp',
+                gradeName:'Level 2',
+                gradeImg:'../common/images/icon/ico-membership-level-2.png',
                 detail:{
                     pay: '<em class="space-0">5</em>만원 이상',
                     buy: '<em class="space-0">1</em>회이상',
@@ -183,11 +174,8 @@
                 }
             },
             {
-                gradeName:'해피블루',
-                gradeImg:'../common/images/mypage/img-grade-happy.webp',
-                buttonOnImg:'../common/images/mypage/icon-grade-tab-03.webp',
-                buttonOffImg:'../common/images/mypage/icon-grade-tab-03-off.webp',
-                gradeIcon: '../common/images/mypage/icon-info-grade-happy.webp',
+                gradeName:'Level 3',
+                gradeImg:'../common/images/icon/ico-membership-level-3.png',
                 detail:{
                     pay: '<em class="space-0">10</em>만원 이상',
                     buy: '<em class="space-0">3</em>회이상',
@@ -201,11 +189,8 @@
                 }
             },
             {
-                gradeName:'로얄블루',
-                gradeImg:'../common/images/mypage/img-grade-royal.webp',
-                buttonOnImg:'../common/images/mypage/icon-grade-tab-04.webp',
-                buttonOffImg:'../common/images/mypage/icon-grade-tab-04-off.webp',
-                gradeIcon: '../common/images/mypage/icon-info-grade-loyal.webp',
+                gradeName:'Level 4',
+                gradeImg:'../common/images/icon/ico-membership-level-4.png',
                 detail:{
                     pay: '<em class="space-0">15</em>만원 이상',
                     buy: '<em class="space-0">5</em>회이상',
@@ -224,7 +209,7 @@
             showBenefit(gradeIndex){
                 this.gradeIndex = gradeIndex;
                 if(gradeIndex == 3){
-                    this.freeProductTxt = '베스트메뉴 체험'; //로얄블루case
+                    this.freeProductTxt = '베스트메뉴 체험';
                 }else{
                     this.freeProductTxt = '신메뉴 체험';
                 }
@@ -234,38 +219,34 @@
 </script>
 
 <style scpoed>
-/* 마이페이지 - 등급혜택 */
 .membership-wrap .grade-bg{ background: #e9edf7; }
 .membership-wrap .sub-tit{ font-size: 16px; color:#000; }
 .membership-wrap .sub-tit2{ font-size: 12px; color:#aaa; }
 .membership-wrap .space-0{ font-size: 15px;}
 .membership-wrap .grade-info .txt-sty1{ margin-bottom: 14px; }
-.membership-wrap .grade-info .grade-txt{ padding:20px 16px; }
-.membership-wrap .grade-info .grade-img{ display: block; margin:0 auto; width: 100%; }
+.membership-wrap .grade-info .grade-txt{ padding: 40px 16px 20px; }
+.membership-wrap .grade-info .grade-img{ display: block; margin:0 auto; padding:20px 0; max-width: 200px; }
 .membership-wrap .user-benefit{ padding-bottom:16px; }
 .membership-wrap .grade-benefit{ padding:24px 16px 32px; }
 .membership-wrap .grade-benefit .benefit-tit{ font-size: 16px; color:#000;}
 .membership-wrap .grade-list{ display:flex; padding: 20px 0 30px; text-align: center; }
-.membership-wrap .grade-list button{ flex:1; }
+.membership-wrap .grade-list li{ flex:1; }
+.membership-wrap .grade-list button{ width: 100%; }
 .membership-wrap .grade-list .grade-icon{ width:48px; height: 48px;}
-.membership-wrap .grade-list .grade-name{ display: block; margin-top: 3px; font-size: 14px; color:#aaa; }
-.membership-wrap .grade-list .grade-name.on{ font-weight: 700; color:#9fa5b4; }
-.membership-wrap .grade-list button:nth-child(2) .grade-name.on{ color:#66ccff; }
-.membership-wrap .grade-list button:nth-child(3) .grade-name.on{ color:#67ace6; }
-.membership-wrap .grade-list button:nth-child(4) .grade-name.on{ color:#2375d8; }
+.membership-wrap .grade-list .grade-name{ display: block; margin-top: 8px; font-size: 14px; letter-spacing: 0; color:#aaa; }
+.membership-wrap .grade-list .grade-name.on{ font-weight: 700; color:#3E54AC; }
+.membership-wrap .grade-list li:nth-child(2) .grade-name.on{ color:#655DBB; }
+.membership-wrap .grade-list li:nth-child(3) .grade-name.on{ color:#67ace6; }
+.membership-wrap .grade-list li:nth-child(4) .grade-name.on{ color:#2375d8; }
 .membership-wrap .benefit-list{ display: flex; flex-wrap: wrap;}
-.membership-wrap .benefit-list li{ margin-top: 8px; padding: 14px 16px; width: calc(50% - 4px); background: url(../images/mypage/icon-info-grade-save.svg) no-repeat right 8px bottom 10px #f9f9f9; border-radius: 4px;}
-.membership-wrap .benefit-list li.birthday{ background-image: url(../images/mypage/icon-info-grade-hbd-gift.svg);} 
-.membership-wrap .benefit-list li.new{ background-image: url(../images/mypage/icon-info-grade-promotion-gift.svg);} 
-.membership-wrap .benefit-list li.delivery{ background-image: url(../images/mypage/icon-info-grade-ticket.svg);} 
-.membership-wrap .benefit-list li.cash{ background-image: url(../images/mypage/icon-info-grade-cash-line.svg);} 
+.membership-wrap .benefit-list li{ margin-top: 8px; padding: 14px 16px; width: calc(50% - 4px); background: #f9f9f9; border-radius: 4px;}
 .membership-wrap .benefit-list li:nth-child(odd){ margin-right: 8px;}
 .membership-wrap .benefit-list li strong{ display: block; margin-top: 3px; font-weight: 500; color:#000;}
 .membership-wrap .grade-standard{ padding-top: 40px; }
-.membership-wrap .grade-standard .sub-tit.user{ display: block; padding-left: 28px; line-height: 24px; background: url(../images/mypage/icon-info-grade-welcome.webp) no-repeat left center / 24px; }
-.membership-wrap .grade-standard .sub-tit.user.pure{ background-image: url(../images/mypage/icon-info-grade-pure.webp); }
-.membership-wrap .grade-standard .sub-tit.user.happy{ background-image: url(../images/mypage/icon-info-grade-happy.webp); }
-.membership-wrap .grade-standard .sub-tit.user.loyal{ background-image: url(../images/mypage/icon-info-grade-loyal.webp); }
+.membership-wrap .grade-standard .sub-tit.user{ display: block; padding-left: 28px; line-height: 24px; background: url(../../common/images/icon/ico-membership-level-1.png) no-repeat left center / 24px; }
+.membership-wrap .grade-standard .sub-tit.user.pure{ background-image: url(../../common/images/icon/ico-membership-level-2.png); }
+.membership-wrap .grade-standard .sub-tit.user.happy{ background-image: url(../../common/images/icon/ico-membership-level-3.png); }
+.membership-wrap .grade-standard .sub-tit.user.loyal{ background-image: url(../../common/images/icon/ico-membership-level-4.png); }
 .membership-wrap .standard-list{ margin-top:14px; padding: 16px 22px 16px 17px; border:1px solid #eee; border-radius: 4px; }
 .membership-wrap .list{ display: flex; justify-content: space-between; align-items: center; font-size: 14px; color:#888; }
 .membership-wrap .list + .list{ margin-top: 10px; }

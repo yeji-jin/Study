@@ -9,18 +9,17 @@
             </p>
             <div class="line-bg rotate">
                 <button class="random-button" type="button" @click="showGiftPop">
-                    <img src="https://img.glyde.co.kr/event/event79/illu-box-click2.webp" alt="" class="px-24">
+                    <img src="../common/images/icon/ico-randombox.png" alt="">
                 </button>
             </div>
             <p class="txt-4">
-                선 넘은 간편식을 클릭하면<br>
+                박스를 클릭하면<br>
                 하루 한번 누구나 100% 당첨!<br>
                 배송비 무료 티켓부터 3만 캐시까지~!
-                <span class="fc_red" style="display: block; padding-top: 10px; font-size: 14px;">* 혜택 사용기한 : 발급 당일까지</span>
+                <span class="fc_red" style="display: block; padding-top: 10px; font-size: 14px;">* 혜택 사용기한 : <span class="space-0">2099.12.31</span>까지</span>
             </p>
             <div class="line-bg rotate2" style="height: 97px;"></div>
         </div>
-
         <!-- 팝업 -->
         <div class="modal-wrap random-item" v-show="giftModal">
             <div class="modal-layer">
@@ -61,38 +60,36 @@
         },
         methods: {
 			showGiftPop(){
-                const randomBtn = document.querySelector('.random-button');
-                const randomPopup = document.querySelector('.modal-wrap.random-item');
                 const randomItem = document.querySelector('.event-item img');
                 const itemName = document.querySelector('.item-name');
                 const randomItemBox = [
                     {
-                    imgSrc:'https://img.glyde.co.kr/event/event79/popup-img-500-cash.webp',
-                    itemName:'500캐시',
+                        imgSrc:'https://img.glyde.co.kr/event/event79/popup-img-500-cash.webp',
+                        itemName:'500캐시',
                     },
                     {
-                    imgSrc:'https://img.glyde.co.kr/event/event79/popup-img-1000-cash.webp',
-                    itemName:'1,000캐시',
+                        imgSrc:'https://img.glyde.co.kr/event/event79/popup-img-1000-cash.webp',
+                        itemName:'1,000캐시',
                     },
                     {
-                    imgSrc:'https://img.glyde.co.kr/event/event79/popup-img-2000-cash.webp',
-                    itemName:'2,000캐시',
+                        imgSrc:'https://img.glyde.co.kr/event/event79/popup-img-2000-cash.webp',
+                        itemName:'2,000캐시',
                     },
                     {
-                    imgSrc:'https://img.glyde.co.kr/event/event79/popup-img-5000-cash.webp',
-                    itemName:'5,000캐시',
+                        imgSrc:'https://img.glyde.co.kr/event/event79/popup-img-5000-cash.webp',
+                        itemName:'5,000캐시',
                     },
                     {
-                    imgSrc:'https://img.glyde.co.kr/event/event79/popup-img-10000-cash.webp',
-                    itemName:'10,000캐시',
+                        imgSrc:'https://img.glyde.co.kr/event/event79/popup-img-10000-cash.webp',
+                        itemName:'10,000캐시',
                     },
                     {
-                    imgSrc:'https://img.glyde.co.kr/event/event79/popup-img-30000-cash.webp',
-                    itemName:'30,000캐시',
+                        imgSrc:'https://img.glyde.co.kr/event/event79/popup-img-30000-cash.webp',
+                        itemName:'30,000캐시',
                     },
                     {
-                    imgSrc:'https://img.glyde.co.kr/event/event79/popup-img-freeticket.webp',
-                    itemName:'배송비 무료 티켓',
+                        imgSrc:'https://img.glyde.co.kr/event/event79/popup-img-freeticket.webp',
+                        itemName:'배송비 무료 티켓',
                     }
                 ];
                 this.giftModal = !this.giftModal; 
@@ -119,10 +116,6 @@
 .line-bg.rotate{ padding-top: 50px;}
 .line-bg.rotate::before{ top: 50%; transform: rotate(196deg);}
 .line-bg.rotate2::before{ top: 65%; transform: rotate(348deg);}
-.limit-label{ position: absolute; top: 15px; right: 40px; width: 62px; height: 62px; background: #fff; border-radius: 50%; font-size: 13px; color: #000; line-height: 64px;}
-.limit-label span{ font-size: 17px; letter-spacing: -1px; vertical-align: -1px;}
-.kit-info{position: absolute; left:0; width: 100%; bottom: 6%; }
-.kit-name{ font-size: 14px; }
-.kit-item{ font-size: 14px; line-height: 22px; color:#f5f5f5;}
+.random-button{margin:24px 34px; border-radius: 50%; background: #fff; }
 img{width: 100%;}
 </style>

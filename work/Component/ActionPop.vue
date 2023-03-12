@@ -35,9 +35,13 @@
 </script>
 
 <style scpoed>
-.action-pop{ position: sticky; top:0; left:0; bottom: 0; width:100%; height:100%; display: flex; flex-direction: column-reverse; z-index: 100;}
+.action-pop{ position: sticky; bottom: 0; width:100%; height:100%;margin-top: -100px;  display: flex; flex-direction: column-reverse; z-index: 100;}
 .action-pop .dim{ position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,.5); z-index: -1;}
-.action-pop .pop-inner{ padding:30px 24px; min-height: 200px; border-top-left-radius: 20px; border-top-right-radius: 20px; background: #fff;}
+.action-pop .pop-inner{ padding:30px 24px; min-height: 200px; animation: startActionSheet .3s cubic-bezier(0.4, 0, 0.2, 1); border-top-left-radius: 20px; border-top-right-radius: 20px; background: #fff;}
 .action-pop .btn-count{ right:24px; bottom: 30px; border-color:#999; }
 .action-pop .pop-thums{ width:50px; }
+@keyframes startActionSheet {
+    0%{transform: translateY(100%);}
+    100%{transform: translateY(0);}
+}
 </style>

@@ -2,13 +2,13 @@ body{background: #fff1e5;}
 .wrapper{min-height:100%; }
 .bg1{background: #fff;}
 .work-list{display: flex; flex-direction: column;}
-.work-list .list{display: flex; align-items: center;}
-.work-list .list:nth-child(2n){flex-direction: row-reverse;}
-.shape-wrapper{ position: relative; flex:2; margin:5% 3%; padding:60px 20px 40px; min-width: 400px; max-width: 55%; background: #000; border-radius: 28px; }
+.work-list > .list{display: flex; align-items: center; margin:5% 3%;}
+.work-list > .list:nth-child(2n){flex-direction: row-reverse;}
+.shape-wrapper{ position: relative; flex:2; margin:2%; padding:60px 20px 40px; min-width: 400px; max-width: 55%; background: #000; border-radius: 28px; }
 .shape-wrapper + .shape-wrapper{ margin-top:10%; }
 .shape-wrapper::before{ content: ""; position: absolute; top:30px; left:50%; transform: translateX(-50%); width:70px; height: 4px; border-radius: 2px; background: #ccc; }
 .list-desc{flex:1;}
-.modal-wrap{position: absolute; left: 0; top:0; width:100%; height:100%; background: rgba(0,0,0,.5);}
+.modal-wrap{position: absolute; left: 0; top:0; width:100%; height:100%; background: rgba(0,0,0,.5); z-index: 999;}
 .modal-wrap .modal-layer { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 300px; padding-top: 26px; background: #fff; border-radius: 10px; z-index: 1002; }
 .modal-wrap .modal_btn { width: 100%; height: 50px; font-size: 16px; line-height: 50px; border-radius: 0 0 10px 10px; background: #0D4C92; color:#fff; }
 .modal-wrap .prize { padding:20px 24px; font-size: 14px; color:#000; }

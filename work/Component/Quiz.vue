@@ -90,17 +90,18 @@
                 <div class="modal_cont">
                     <div class="alrt_txt scr_txt">
                         <div class="event-item">
-                            <img src="https://img.glyde.co.kr/event/event79/popup-img-500-cash.webp" alt="" class="item-img">
+                            <img src="{{itemImg}}" alt="" class="item-img">
                         </div>
-                        <div class="prize">
+                        <div class="prize" v-if="answer">
                             {{modalMsg}}<br>
-                            <strong class="item-name">" 500캐시 혜택 "</strong>이 지급되었습니다
+                            <strong class="item-name">" {{itemName}} "</strong>이 지급되었습니다
                             <br><br>
                             <strong>유효기간</strong>&nbsp;&nbsp;<span class="space-0">2099.12.31</span> 까지
                         </div>
+                        <div class="prize" v-else>{{modalMsg}}</div>
                     </div>
                 </div>
-                <button type="button" class="modal_btn" @click="showGiftPop">
+                <button type="button" class="modal_btn" @click="fnCheckQuiz">
                     <span>확인</span>
                 </button>
             </div>
@@ -114,90 +115,66 @@
         data() {
             return {
                giftModal:false,
-               modalMsg:''
+               modalMsg:'',
+               answer:false,
+               itemImg:'../common/images/icon/ico-randombox.png',
+               itemName : '5000캐시 혜택'
             }
         },
         methods: {
             showGiftPop() {
-                const randomPopup = document.querySelector('.modal-wrap');
                 const randomItem = document.querySelector('.item-img');
-                // const itemName = randomPopup.querySelector('.prize.type1 .item-name');
-                // const itemName2 = randomPopup.querySelector('.prize.type2 .item-name');
-                // const itemTxt = randomPopup.querySelector('.prize.type1');
-                // const itemTxt2 = randomPopup.querySelector('.prize.type2');
-                // const itemDay = randomPopup.querySelector('.item-day');
                 const randomItemBox = [
-                    //즉시지급 아이템(캐시/배송비쿠폰)
                     {   
-                    type:'type1',
-                    imgSrc:'https://img.glyde.co.kr/event/event82/popup-img-30000-cash.webp',
-                    itemName:'글라이드 캐시 30,000원',
-                    day:7
+                        imgSrc:'../common/images/icon/ico-randombox.png',
+                        itemName:'당첨상품-1',
                     },
                     {  
-                    type:'type1',
-                    imgSrc:'https://img.glyde.co.kr/event/event82/popup-img-freeticket.webp',
-                    itemName:'배송비 무료 티켓',
-                    day:3
-                    },
-                    //기타출고 아이템(상품)
-                    {  
-                    type:'type2',
-                    imgSrc:'https://img.glyde.co.kr/event/event82/img-beefribsoup.webp',
-                    itemName:'통갈비 그대로 왕갈비탕 1000g',
+                        imgSrc:'../common/images/icon/ico-randombox.png',
+                        itemName:'당첨상품-2',
                     },
                     {  
-                    type:'type2',
-                    imgSrc:'https://img.glyde.co.kr/event/event82/img-pizza.webp',
-                    itemName:'4가지 자연치즈 콰트로 치즈 피자',
+                        imgSrc:'../common/images/icon/ico-randombox.png',
+                        itemName:'당첨상품-3',
                     },
                     {  
-                    type:'type2',
-                    imgSrc:'https://img.glyde.co.kr/event/event82/img-porkstew.webp',
-                    itemName:'통뼈그대로 우거지 감자탕 1000g',
+                        imgSrc:'../common/images/icon/ico-randombox.png',
+                        itemName:'당첨상품-4',
                     },
                     {  
-                    type:'type2',
-                    imgSrc:'https://img.glyde.co.kr/event/event82/img-beefribsoup-4-kg.webp',
-                    itemName:'통갈비 그대로 왕갈비탕 선물세트 4kg',
-                    },
-                    {  
-                    type:'type2',
-                    imgSrc:'https://img.glyde.co.kr/event/event82/img-brownrice.webp',
-                    itemName:'쌀과 물로만 지은 현미집밥 210g x 20개입',
-                    },
-                    {  
-                    type:'type2',
-                    imgSrc:'https://img.glyde.co.kr/event/event82/img-ramen.webp',
-                    itemName:'칼칼라면 용기 Non Fried 105g x 24개입',
-                    },
-                    {  
-                    type:'type2',
-                    imgSrc:'https://img.glyde.co.kr/event/event82/img-whiterice.webp',
-                    itemName:'쌀과 물로만 지은 집밥 210g x 24개입',
+                        imgSrc:'../common/images/icon/ico-randombox.png',
+                        itemName:'당첨상품-5',
                     },
                 ];
                 
                 //랜덤아이템
                 let randomNum = Math.floor(Math.random() * randomItemBox.length);
                 randomItem.setAttribute('src', randomItemBox[randomNum].imgSrc);
-                console.log(randomItem)
-                this.giftModal = !this.giftModal;
+                this.itemName = randomItemBox[randomNum].itemName;
                 this.modalMsg = '당첨을 축하드립니다!';
             },
-            showFailMsg(){//퀴즈 오답
-                this.modalMsg = '오답이 있어요!';
+            showFailMsg(status){//퀴즈 오답
+                const randomItem = document.querySelector('.item-img');
+                randomItem.setAttribute('src', '../common/images/icon/icon-amazed.png');
+                status == 'no-chk' ? this.modalMsg = '문제를 체크해주세요!' : this.modalMsg = '오답이 있어요! 다시 한 번 풀어보세요!'
+                
             },
             fnCheckQuiz(){//퀴즈 체크
+                let isQuizChecked = [];
+                document.querySelectorAll('.quiz-wrap input').forEach(input =>{
+                    if(input.checked) isQuizChecked.push(input.checked);
+                });
                 var quiz1 = document.getElementById('chk1-1').checked;
-                var quiz2 = document.getElementById('chk2-3').checked;
-                var quiz3 = document.getElementById('chk3-2').checked;
-                 this.giftModal = !this.giftModal;
+                var quiz2 = document.getElementById('chk2-2').checked;
+                var quiz3 = document.getElementById('chk3-3').checked;
+                this.giftModal = !this.giftModal;
 
                 if(quiz1 && quiz2 && quiz3){
+                    this.answer = true;
                     this.showGiftPop();
                 }else{
-                    this.showFailMsg();
+                    this.answer = false;
+                    isQuizChecked.length < 3 ? this.showFailMsg('no-chk') : this.showFailMsg();
                 }
             } 
         }
@@ -216,4 +193,5 @@
 .answer-list li + li{ border-top:1px solid #eee;}
 .answer-list label{ display: block; height: 60px; line-height: 60px; font-size: 16px; color:#000;}
 .quiz-btn{ display: block; width: 100%; height: 48px; line-height: 48px; text-align: center; font-size: 16px; font-weight: 700; background: #0D4C92; color: #fff; border-radius: 4px;}
+.event-item{ margin:0 auto; max-width: 200px;}
 </style>

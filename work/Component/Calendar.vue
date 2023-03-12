@@ -1,32 +1,31 @@
 <template>
-      <div class="calendar">
-                        <!--20210917 : 출석체크 case -->
-                <div class="attendance-wrap">
-                    <div class="attendance-header">
-                        <h5 class="tit">{{currentMonth}}월 출석 현황</h5>
-                        <p class="sub">
-                            이 달의 출석 횟수 <strong>{{check}}</strong>일, 지급된 캐시 <strong>3,000</strong>원
-                        </p>
-                    </div>
-                    <table class="attendance-table">
-                        <thead>
-                          <tr>
-                            <th v-for="(weekName, index) in weekNames" v-bind:key="index">
-                              {{weekName}}
-                            </th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr v-for="(row, index) in currentCalendar" :key="index">
-                            <td v-for="(day, index) in row" :key="index">
-                               <span :class="{'none' : day == ''}">{{day}}</span>
-                            </td>
-                          </tr>
-                        </tbody>
-                    </table> 
-					<button class="btn-type3" type="button" @click="fnAttendanceCheck">출석체크하기</button>
-                </div>
-      </div>
+    <div class="calendar">
+        <div class="attendance-wrap">
+            <div class="attendance-header">
+                <h5 class="tit">{{currentMonth}}월 출석 현황</h5>
+                <p class="sub">이 달의 출석 횟수
+					<strong>{{check}}</strong>일, 지급된 캐시 <strong>{{cash}}</strong>원
+				</p>
+            </div>
+            <table class="attendance-table">
+                <thead>
+                  <tr>
+                    <th v-for="(weekName, index) in weekNames" v-bind:key="index">
+                      {{weekName}}
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="(row, index) in currentCalendar" :key="index">
+                    <td v-for="(day, index) in row" :key="index">
+                       <span :class="{'none' : day == ''}">{{day}}</span>
+                    </td>
+                  </tr>
+                </tbody>
+            </table> 
+			<button class="btn-chk" type="button" @click="fnAttendanceCheck">출석체크하기</button>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -42,6 +41,7 @@
 				week:null,
 				check:0,
                 firstDay:0,
+				cash:0,
             }
         },
         mounted:function(){
@@ -87,6 +87,11 @@
 
 				if(that.check >= that.endOfDay){
 					that.check = 0;
+					that.cash = 0;
+					const checkedDay = document.querySelectorAll('td');
+					checkedDay.forEach(chk => {
+						chk.className = '';
+					});
 				}else{
 					that.check++;
 					var today = document.querySelectorAll('.attendance-table tbody span');
@@ -101,15 +106,18 @@
 					today[realIdx].parentElement.classList.add('checked');
 					//누적 7일case
 					if(that.check === 7){
-						today[realIdx].parentElement.className = 'cash-500';
+						today[realIdx].parentElement.className = 'cash';
+						this.cash += 1000;
 					}
 					//누적 15일case
 					if(that.check === 15){
-						today[realIdx].parentElement.className = 'cash-1000';
+						today[realIdx].parentElement.className = 'cash';
+						this.cash += 1000;
 					}
 					//누적 한달case
 					if(that.check === that.endOfDay){
-						today[realLastDay].parentElement.className = 'cash-2000';
+						today[realLastDay].parentElement.className = 'cash';
+						this.cash += 1000;
 					}
 				}
 			}
@@ -119,8 +127,7 @@
 </script>
 
 <style scpoed>
-/*아티클 출석체크*/
-.attendance-wrap{padding:0 16px; border-bottom: 10px solid #f5f5f5;}
+.attendance-wrap{padding:40px 16px; }
 .attendance-wrap .agree-txt{ padding-top:24px; text-align: center;}
 .attendance-wrap .agree-txt .underline{ display: block; padding-top:4px; color: #888;}
 .attendance-wrap .guide-txt-block{ margin-top: 60px; padding-bottom:40px; }
@@ -137,9 +144,7 @@
 .attendance-table tbody td{ text-align: center;}
 .attendance-table tbody td span{ display: block; margin: 6px auto 0; text-align: center; width: 40px; height: 40px; line-height: 40px; border-radius: 50%; font-size: 14px; letter-spacing: 0; background: #f9f9f9; color: #ddd;}
 .attendance-table tbody td span.none{ background: transparent;}
-.attendance-table tbody td.checked span{ background: url(../images/event/calendar-check.svg) no-repeat center / 10px 12px #ffeee0; color: transparent; }
-.attendance-table tbody td.cash-500 span{ background: url(../images/event/calendar-check-500.webp) no-repeat center / 22px 12px #ff7051; color: transparent; }
-.attendance-table tbody td.cash-1000 span{ background: url(../images/event/calendar-check-1000.webp) no-repeat center / 33px 12px #ff7051; color: transparent; }
-.attendance-table tbody td.cash-2000 span{ background: url(../images/event/calendar-check-2000.webp) no-repeat center / 34px 12px #ff7051; color: transparent; }
-
+.attendance-table tbody td.checked span{ background: url(../../common/images/icon/ico-heart.png) no-repeat center / 14px #ffeee0; color: transparent; }
+.attendance-table tbody td.cash span{ background: url(../../common/images/icon/ico-coin.png) no-repeat center / 24px #ff7051; color: transparent; }
+.btn-chk{ width: 100%; height:48px; font-size: 16px; border-radius: 4px; background: #ff943b; color:#fff;}
 </style>
