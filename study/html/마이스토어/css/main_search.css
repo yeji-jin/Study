@@ -1,0 +1,57 @@
+html{font-size: 20px;}
+body{font-size: 1rem;}
+
+.skip{display: block; line-height: 2.5rem; height: 2.5rem; position: absolute; left: 0; right:0; top: -100%; background: #ff3838;
+ text-align: center; transition: all 1s; color:#fff; z-index: 100; outline:#fff;}
+.skip:focus{top: 0;}
+
+/*header*/
+header{height: 3rem; background: #ff3838; box-shadow: 0 2px 5px .5px rgba(0,0,0,.31); position: relative;}
+.header .pre{position: absolute; top: 0; left:.5rem; display:inline-block; width:2rem; height: 3rem; background: url(../img/btn_prev.png) no-repeat .5rem center / .5rem auto;}
+.header input{position: absolute; top: 50%; left:2.5rem; transform: translateY(-50%); width:calc(100% - 6rem); height: 1.66rem; border-radius: .16rem; font-size: .6rem; color:#222222; text-indent: .66rem;}
+.header .delete{width:1rem; height: 1.66rem; background: url(../img/btn_delete.png) no-repeat right center / 1rem auto;
+position: absolute; top:50%; right: 3.83rem; transform: translateY(-50%);}
+.header .box{text-align: center; line-height: 3rem;}
+.header .search{position: absolute; top: 50%; right:.5rem; transform: translateY(-50%); border-radius: .16rem; font-size: .66rem; width: 3rem; height: 1.66rem; background: #494949; color:#fff; text-align: center; letter-spacing: -0.3px;}
+
+/*main*/
+main{padding: 1rem .5rem;}
+h2{font-size: .7rem; color:#666666; padding: 0 0 .5rem 0;}
+
+/*search_list*/
+.search_list{border-top: 1px solid #3f3f3f; border-bottom: 1px solid #3f3f3f;}
+.search_list li a{display:block; padding: .88rem 0 0 0;}
+.search_list li a figure{display: flex; padding: 0 0 .66rem 0; border-bottom: 1px solid #dedede;}
+.search_list li a figure.last{border-bottom:0;}
+
+.search_list li .img_box{width: 3.16rem; height: 3.16rem; position: relative; overflow: hidden; margin: 0 1rem 0 0; border-radius: .75rem;}
+.search_list li .img_box img{width:100%;}
+.search_list .img_box span{position: absolute; left: 0; right: 0; bottom: 0; line-height: .93rem; color:#fff; text-align: center; background: #ff3838; font-size: .41rem; font-weight: bold;}
+.search_list .txt1 li{line-height: 1; padding: 0 0 .3rem 0;}
+.search_list .txt1 li.tit{font-size: .73rem; color:#222222;}
+.search_list .txt1 li.tit::before{content: ""; display: inline-block; margin: 0 0.33rem 0 0 ; width:2.36rem; height: .7rem; background: url(../img/@type_tit.png)no-repeat 0 0 / 100% auto; }
+.search_list .new li.tit::before{width:1.58rem; height: .7rem; background: url(../img/@type_tit2.png)no-repeat 0 0 / 100% auto; }
+.search_list .txt1 li.ad{font-size: .55rem; color:#ff3838;}
+.search_list .txt1 li.type{font-size: .51rem; color:#666666;}
+.search_list .txt1 li.type span::before{content: ""; display: inline-block; height: .3rem; margin: 0 .5rem; border-right: 1px solid #b2b2b2;}
+.search_list .txt1 li.type span::after{content: ""; display: inline-block; width: .55rem; height: .48rem;
+margin: 0 .21rem 0 0 ; vertical-align: middle; background: url(../img/ico_heart.png) no-repeat 0 0 / 100% auto;}
+.search_list .txt1 li.pay{font-size: .51rem; color:#ff8400;}
+.search_list .txt1 li.pay span{margin: 0 .16rem;}
+
+/*footer*/
+.footer ul.info {display: flex; justify-content: center; height: 2rem; padding: 0 .5rem; border-top: 1px solid #dfdfdf; box-sizing: border-box; border-bottom: 1px solid #dfdfdf;}
+.footer ul.info li{position: relative; padding: 0 .5rem; box-sizing: border-box;}
+.footer ul.info li::after{content: ""; display: inline-block; width: .13rem; height: .13rem; background: #666666; border-radius: 100%; position: absolute; top:50%; right: 0;}
+.footer ul.info li:last-child::after{display: none;}
+.footer ul.info li a{line-height: 2rem; font-size: .66rem; font-family: Noto Sans KR Midium; color:#333333; letter-spacing: -1px;}
+.footer ul.info li a.on,
+.footer ul.info li a.on:focus{color:#ff3838;}
+.footer ul.info li a:hover{color:#ff3838;}
+.footer div{padding: .63rem 0 .95rem 0; text-align: center;}
+.footer div ul.info2 {padding: 0 0 .5rem 0; letter-spacing: -0.5px;}
+.footer div ul.info2 li{padding: 0 0 .38rem 0; font-size: .56rem;}
+.footer div ul.info2 li span{display: inline-block; height: .41rem; margin: 0 .36rem; border-right: 1px solid #cccccc;}
+.footer address{text-align: center; font-size: .4rem; color:#333333;}
+/*game_list*/
+.block{padding: 1rem .5rem;}

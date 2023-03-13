@@ -1,0 +1,147 @@
+html{font-size: 20px;}
+body{font-size: 1rem; background: #f9f9f9;}
+
+.skip{display: block; line-height: 2.5rem; height: 2.5rem; position: absolute; left: 0; right:0; top: -100%; background: #ff3838;
+ text-align: center; transition: all 1s; color:#fff; z-index: 100; outline:#fff;}
+.skip:focus{top: 0;}
+
+.header{height: 3rem; background: #ff3838; box-shadow: 0 2px 5px .5px rgba(0,0,0,.31);}
+header h1{display: flex; height: 3rem;}
+header h1 a{display: block; margin:auto; width: 4.68rem; height: 1.9rem; background: url(../img/h1_logo.png) no-repeat center / 100% auto;}
+
+header .btn_menu,
+header .btn_search{position: absolute; top:0; width:3rem; height:3rem;}
+header .btn_menu{left:0; background: url(../img/btn_header_menu.png)no-repeat center /.98rem auto; cursor: pointer;}
+header .btn_search{right:0; background: url(../img/btn_search.png)no-repeat center /.88rem auto; cursor: pointer;}
+
+/*menu*/
+.menu{position:fixed; top:0; left:-100%; width: 100%; height: 100%; background: rgba(0,0,0,.7); z-index: 100; transition: all .5s;}
+.menu.on{left: 0;}
+.menu .menu_cot{width: calc(100% - 3rem); height: 100%; background: #ffffff; position: relative;}
+.menu .btn_close{width:3rem; height: 3rem; position: absolute; top:0; right:0;
+background: url(../img/btn_close.png) #000 no-repeat center/ .73rem auto; cursor: pointer;}
+.menu .menu_cot .bg_menu_top{height: 4.3rem; padding: 1.23rem .86rem 1.3rem 1rem; background: url(../img/bg_menu_top.png) repeat center; box-sizing: border-box;}
+.menu .menu_cot .personal {position: relative; line-height: 1;}
+.menu .menu_cot .personal p{font-size: 1rem; color:#fff; letter-spacing: -0.5px; padding: 0 0 .25rem 0;}
+.menu .menu_cot .personal span{font-size: .6rem; color:rgba(255,255,255,.8); }
+.menu .menu_cot .personal a{display: block; position: absolute; top:.08rem; right:0; width:1.66rem; height: 1.66rem; background: url(../img/ico_setting.png) #fff no-repeat center / .95rem auto; border-radius: 100%; }
+
+/*menu_ico*/
+.menu .menu_cot .content ul li.ic_1 a::before{width: 1.18rem; height:1.1rem; background: url(../img/ico_nav1_on.png) no-repeat left center / 100% auto;}
+.menu .menu_cot .content ul li.ic_2 a::before{width: 1.3rem; height:.83rem; background: url(../img/ico_nav2_on.png) no-repeat left center / 100% auto;}
+.menu .menu_cot .content ul li.ic_3 a::before{width: 1.26rem; height:.91rem; background: url(../img/ico_nav3_on.png) no-repeat left center / 100% auto;}
+.menu .menu_cot .content ul li.ic_4 a::before{width: 1.06rem; height:1.01rem; background: url(../img/ico_nav4_on.png) no-repeat left center / 100% auto;}
+.menu .menu_cot .content ul li.ic_5 a::before{width: 1.03rem; height:1.05rem; background: url(../img/ico_nav5_on.png) no-repeat left center / 100% auto;}
+
+/*menu_content*/
+.menu .menu_cot .content {padding: 0 1rem;}
+.menu .menu_cot .content ul li{line-height: 2.75rem;}
+.menu .menu_cot .content ul li.ic_1{line-height: 3.5rem; border-bottom: 1px solid #e5e5e5;}
+.menu .menu_cot .content ul li a{display:block; font-size: .9rem; color:#222222; letter-spacing: -.5px;}
+.menu .menu_cot .content ul li a::before{content: ""; display: inline-block; margin: 0 .86rem 0 0;}
+
+/*menu_content2*/
+.menu .menu_cot .content2 ul {display: flex; flex-wrap: wrap; border-top:1px solid #e5e5e5; border-bottom:1px solid #e5e5e5;}
+.menu .menu_cot .content2 ul li{width:50%; position: relative; padding: 0 1rem 0 .66rem; line-height: 2.66rem; box-sizing: border-box; border-bottom:1px solid #e5e5e5;}
+.menu .menu_cot .content2 ul li:nth-child(odd){border-right: 1px solid #e5e5e5;}
+.menu .menu_cot .content2 ul li a{position: relative; display: block; font-size: .66rem; letter-spacing: -.5px; color:rgba(34,34,34,.7);}
+.menu .menu_cot .content2 ul li a::before{content: ""; display: inline-block; background: url(../img/ico_sub_menu.png) no-repeat left center / 100% auto; margin: 0 .33rem 0 0;}
+
+.menu .menu_cot .content2 ul li.system_1 a::before{width:.76rem; height: .9rem; background: url(../img/ico_sub_menu.png) no-repeat left center / 100% auto;}
+.menu .menu_cot .content2 ul li.system_2 a::before{width:.85rem; height: .76rem; background: url(../img/ico_sub_menu2.png) no-repeat left center / 100% auto;}
+.menu .menu_cot .content2 ul li.system_3 a::before{width:.88rem; height: .86rem; background: url(../img/ico_sub_menu3.png) no-repeat left center / 100% auto;}
+.menu .menu_cot .content2 ul li.system_4 a::before{width:.88rem; height: .86rem; background: url(../img/ico_sub_menu4.png) no-repeat left center / 100% auto;}
+.menu .menu_cot .content2 ul li.system_1 a span{width:1.5rem; height:.93rem; border-radius: .43rem;}
+.menu .menu_cot .content2 ul li a span{display: block; position: absolute; top:50%; right:0; transform: translateY(-50%); width:.93rem; height:.93rem; font-size: .6rem; text-align: center; line-height: .93rem; color:#fff; background: #ff8500; border-radius: 50%;}
+
+/*bg_menu_bottom*/
+.bg_menu_bottom{height: 100%; background: url(../img/bg_menu_bottom.png) repeat center;}
+.bg_menu_bottom ul {display: flex; padding: 1.9rem 1rem 0;}
+.bg_menu_bottom ul li{width:50%;}
+.bg_menu_bottom ul li a{width:100%; display: block; text-align: center; font-size: .6rem; color:#fff; letter-spacing: -.5px;}
+.bg_menu_bottom ul li:last-child a{font-size: .5rem;}
+/*nav*/
+header nav ul{display: flex;}
+header nav ul li{flex:1;}
+header nav ul li a{display: block; text-align: center; font-size: .7rem; color:#767676; letter-spacing: -0.3px; transition: color .4s;} /*ps에서 -100이면 -1암*/
+header nav ul li a span{display: block; position: relative; width:3rem; margin: 0 auto; line-height: 2.33rem;}
+header nav ul li.on a,
+header nav ul li a:focus,
+header nav ul li a:hover{color:rgba(255,255,255,0);}
+header nav ul li a span::before{content: ""; position: absolute; left: 0; right: 0; top:0; bottom: 0; opacity: 0; transition: opacity .4s;}
+header nav ul li.on a span:before,
+header nav ul li a:focus span:before,
+header nav ul li a:hover span:before{opacity: 1;}
+header nav ul li:nth-child(1) a span::before{ background: url(../img/ico_nav1_on.png) no-repeat center / 1.2rem auto; }
+header nav ul li:nth-child(2) a span::before{ background: url(../img/ico_nav2_on.png) no-repeat center / 1.43rem auto; }
+header nav ul li:nth-child(3) a span::before{ background: url(../img/ico_nav3_on.png) no-repeat center / 1.28rem auto; }
+header nav ul li:nth-child(4) a span::before{ background: url(../img/ico_nav4_on.png) no-repeat center / 1.06rem auto; }
+/*search_box*/
+.search_box{display: none; position: absolute; top: 3rem; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,.7); z-index: 2;}
+.search_box.on{display: block;}
+.search_content{position: relative; top: 10%; margin: 0 auto; width: 80%; padding: 35px 0 0 0; border-bottom: 2px solid #fff;}
+.search_content lable{position: absolute; text-indent: -9999999px; font-size: 0; background: none;}
+.search_content input{width: 100%; height: 3rem; background: none; color:#fff;}
+.search_content input::placeholder{text-indent: 10px; font-size: 20px; color:#fff;}
+.search_content input:focus{outline:none;}
+.search_content button{position: absolute; top: 1.8rem; right: 0; width: 3rem; height: 3rem; background: url(../img/ico_search02.png) no-repeat center / 30px auto; cursor: pointer;}
+.close_search{position: absolute; top: 1rem; right: 1rem; width: 2rem; height: 2rem; color:#000; background: #fff; font-size: 1rem; border-radius: 100%; border:2px solid #fff; cursor: pointer;}
+
+/*visual*/
+.visual img{width:100%;}
+.h2{font-size: .66rem; color:#222; letter-spacing: -0.3px;}
+.block{padding: 1rem .5rem; overflow: hidden;}
+.line{height: .5rem; background: #eaeaea; box-shadow: inset 0 2px 5px rgba(0,0,0,.11);}
+
+/*app_list*/
+.app_list{display: flex;}
+.app_list li{width: 5.56rem;}
+.app_list li ~ li{padding: 0 0 0 .16rem;}
+.app_list a{display: block; padding: 1.5rem 0 0; width: 100%; height: 8.26rem; box-sizing: border-box; letter-spacing: -0.3px;}
+.app_list a figure{position: relative; border-radius: .16rem; border:1px solid #dedede; padding: .5rem; box-sizing: border-box;}
+.app_list .img{overflow: hidden; position: relative; width:4.5rem; height:4.5rem; border-radius: .75rem; margin: -1.5rem auto .35rem;}
+.app_list .img img{width:100%;}
+.app_list .img span{position: absolute; left: 0; right: 0; bottom: 0; line-height: .93rem; color:#fff; text-align: center;
+background: #ff3838; font-size: .41rem; font-weight: bold;}
+.app_list figcaption{font-size: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.app_list figcaption *{line-height: 1;} /*줄간격초기화*/
+.app_list figcaption strong{color:#222; font-size: .8rem;}
+.app_list figcaption span{display: block; padding: .25rem 0 .15rem; color:#666; font-size: .6rem;}
+.app_list figcaption em{color:#ff8400; font-size: .6rem;}
+.app_list a figure::after{content: ""; position: absolute; left:0; right:0; bottom:0; height:.18rem; border-radius: 0 0 .12rem .12rem;}
+/*color*/
+.app_list .color1 figure::after{background: #ff3838;}
+.app_list .color2 figure::after{background: #a4d068;}
+.app_list .color3 figure::after{background: #f8cb57;}
+
+/*line_banner*/
+.line_banner{padding:.53rem 0 0 0;}
+.line_banner a img{width:100%;}
+
+/*today_now*/
+.today_now{padding:.63rem 0 0 0;}
+.today_now a img{width:100%;}
+
+/*my_token*/
+.my_token{padding:.63rem 0 0 0;}
+.my_token a img{width:100%;}
+
+/*ad_banner*/
+.ad_banner a img{width: 100%;}
+.ad_banner a {display: block;}
+.ad_banner a:last-child{padding: .5rem 0 0 0;}
+.last{height: 1.36rem; background: #eaeaea; box-shadow: inset 0 2px 5px rgba(0,0,0,.11);}
+/*footer*/
+.footer ul.info {display: flex; justify-content: center; height: 2rem; margin: 0 .5rem;border-bottom: 1px solid #dfdfdf;}
+.footer ul.info li{position: relative; padding: 0 .5rem; box-sizing: border-box; }
+.footer ul.info li::after{content: ""; display: inline-block; width: .13rem; height: .13rem; background: #666666; border-radius: 100%; position: absolute; top:50%; right: 0;}
+.footer ul.info li:last-child::after{display: none;}
+.footer ul.info li a{line-height: 2rem; font-size: .66rem; font-family: Noto Sans KR Midium; color:#333333; letter-spacing: -1px;}
+.footer ul.info li a.on,
+.footer ul.info li a.on:focus{color:#ff3838;}
+.footer ul.info li a:hover{color:#ff3838;}
+.footer div{padding: .63rem 0 .95rem 0; text-align: center;}
+.footer div ul.info2 {padding: 0 0 .5rem 0; letter-spacing: -0.5px;}
+.footer div ul.info2 li{padding: 0 0 .38rem 0; font-size: .56rem;}
+.footer div ul.info2 li span{display: inline-block; height: .41rem; margin: 0 .36rem; border-right: 1px solid #cccccc;}
+.footer address{text-align: center; font-size: .4rem; color:#333333;}

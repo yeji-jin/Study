@@ -1,0 +1,165 @@
+/*header*/
+header .logo{left: 20%;}
+header .gnb{width: 70%;}
+.header_btn button{width:50px; height: 40px;}
+header .gnb ul{padding: 15% 10%;}
+header .gnb ul li a{font-size: 25px;}
+header .gnb ul li a:hover{transform: scale(1.3); padding: 0 0 0 10%;}
+
+/*home*/
+.home .txt{padding: 0 0 30px 0;}
+.home .txt2{padding: 30px 0 0 0;}
+.home .home_btn {bottom: 20%; left: 10%; right: 10%;}
+.home .home_btn button{padding: 10% 13%; letter-spacing: 0; font-size: 12px;}
+
+/*about*/
+.about .txt_box{text-align: center;}
+.profile{display: block;}
+.profile > div {flex:none; padding: 5%;}
+.profile_img{display: flex; justify-content:space-between;}
+.profile_img .about_info li::before{content: ""; margin: 0;}
+.profile_img .img_box , .about_info{flex:1;}
+.profile_img .about_info{display: block; margin: 5% 0 0 5%;}
+.profile_img .about_info li{width: 100%; color:#fff; line-height: 2.5em; font-size: 14px;}
+.profile_content{text-align: center;}
+.profile_content .content .promise{text-align: left; width: 80%; margin: 0 auto;}
+.profile_content .content p{width: 50%; margin: 20px auto;}
+.profile_content .title h3 {font-size: 20px; letter-spacing: 0;}
+.profile_content .title h3 span{font-size: 35px;}
+.profile_content .content .intro{font-size: 14px;}
+.profile_content .content .promise li{font-size: 14px; color:#000;}
+
+/*skill*/
+.txt_box2{text-align: center;}
+.card_container .card{flex:none; width: 42%; margin: 12% 2%; padding: 3% 2%; height: 130px;}
+
+/*study*/
+.study .txt_box3{text-align: center;}
+.study .tab_cont{padding: 25px; height: 420px;}
+.study .tab_menu > ul li a{font-size: 12px;}
+.study .tab_cont h2{margin: 0 0 25px 0; font-size: 30px; text-align: center;}
+.study .tab_cont .content > li {font-size: 16px; text-align: center;}
+.study .tab_cont .content > li > span{margin: 0 0 25px 0; font-size: 20px;}
+.study .tab_cont .acc_content{left:3%; right: 3%; top: 3%; bottom: 3%;}
+.study .tab_cont .content > li .example{font-size: 13px;}
+.study .tab_cont .content .white_box li div{font-size: 13px; padding: 30px 0;}
+.study .tab_cont .content .more {font-size: 12px;}
+.study .tab_cont .content > li em{font-size: 12px;}
+.study .tab_cont .content > li > span.center{line-height: 30px;}
+.study .tab_cont .content .example_img .hover p{font-size: 18px;}
+.study .tab_cont .acc_wrap{flex-direction: column;}
+.study .tab_cont .acc_content .btn_close{width: 40px; height: 40px; font-weight: 600;}
+.study .tab_cont .acc_content .acc_img{flex:none; height: 40%; margin-bottom: 2%;}
+.study .tab_cont .acc_content .acc_txt{flex:none; height: 55%;}
+.study .tab_cont .acc_content .paging{bottom: 3px;}
+.study .tab_cont .acc_content .paging button{width: 30px; height: 30px; font-weight: 600;}
+.study .tab_cont .acc_content .web_acc table{margin:5px 30px 0 0; font-size: 12px; width: 40%; float: left;}
+.study .acc_content .acc_txt ul{float: left; width: 50%;}
+.study .acc_content .acc_txt ul li{font-size: 16px; font-weight: 600;}
+.study .acc_content .acc_txt ul li ~ li {padding: 0;}
+.study .acc_content .acc_txt ul li p {padding: 0; font-size: 12px; font-weight: normal; line-height: 26px;}
+.study .acc_content .acc_txt h5{font-size: 20px; padding: 0 0 5px 0;}
+.study .acc_content .acc_txt span{font-size: 12px;}
+
+
+/*work*/
+.work .txt_box{text-align: center;}
+.work .work_box{display: block; padding: 15% 0; transition: all .5s; opacity: 0;}
+.work .work_box .work_img{flex:none; margin: 0;}
+.work .work_box:nth-child(2n) .work_img{margin: 0;}
+.work .work_box .work_txt_box{flex:none; text-align: center; padding: 0 0 20% 0;}
+.work .work_box .work_txt_box ul li{padding-left: 0;}
+.work .work_box .work_txt_box ul li::before{display: none;}
+.work .work_box .work_txt{padding-bottom: 70px;}
+.work .work_box .site_txt{font-size: 14px; line-height: 20px;}
+
+/*animation*/
+.animation .txt_box {text-align: center;}
+.anibox .ani_hover{left: 2%; top: 2%; right: 2%; bottom: 2%; border:2px solid #fff;}
+.code_point{letter-spacing: -1px;}
+.code_point > h5{font-size: 15px; padding: 5px 0; font-weight: 700;}
+.code_point p{font-size: 14px;}
+.code_point em{padding: 5px 0; font-size: 14px; font-weight: 700;}
+.packman{animation-delay: 1.5s;}
+.packman::before , .packman::after {content: ""; display: block; position: absolute; margin-top: -15px; width: 0; height: 0; border:15px solid yellow; border-radius: 50%; border-right-color: transparent; border-bottom-color: transparent; animation: packman .7s ease infinite;}
+.packman::after{border-color: yellow; border-right-color: transparent; border-top-color: transparent; animation: packman2 .7s ease infinite;}
+
+/*js_game*/
+.js_game .txt_box {text-align: center;}
+.txt_box .version{font-weight: 500; font-size: 12px;}
+.txt_box .version:before{content: ""; padding: 0;}
+.tit_game{font-size: 25px; letter-spacing: 0;}
+.tit_pending,
+.tit_finish,
+.title_range{font-size: 20px; letter-spacing: 0; font-weight: 600;}
+.card_game{padding: 10%;}
+.card_game .card{height: 110px;}
+
+/*contact*/
+.contact .txt_box p{font-size: 15px;}
+
+/*chat*/
+.chat > ul li div{font-size: 14px;}
+.ico-gift{width: 35px; height: 35px;}
+.card_txt{bottom: 5%; font-size: 20px;}
+/*id-card*/
+.wrap_card{display: none; position: absolute; left: 0; top:0; transform: translate(0); width: 100%; height: 100%;}
+
+@media (max-width:550px){
+  /*study*/
+  .card_container .card{height: 90px;}
+
+  /*animation*/
+  .code_point > h5{font-size: 14px; padding: 5px 0;}
+  .code_point p{font-size: 12px;}
+  .code_point em{padding: 5px 0; font-size: 12px;}
+
+  /*js*/
+  .tit_pending,
+  .tit_finish,
+  .title_range{font-size: 18px; letter-spacing: 0; font-weight: 600;}
+  .pending_list,
+  .finished_list{width: 80%;}
+  .pending_list li span, .finished_list li span{font-size: 14px;}
+
+  /*chat*/
+  .ico-gift{width: 25px; height: 25px;}
+}
+
+@media (max-width:490px) {
+  /*logo*/
+  header .logo > h1{font-size: 25px;}
+  /*about*/
+  .profile_img .about_info li{line-height: 2em; font-size: 14px;}
+  .profile_content .content .promise{width: 85%;}
+  .profile_content .content p{width: 90%;}
+  .card_container .card:hover{height: 300px;}
+  .card_content > h2{font-size: 18px;}
+  .card_content p{font-size: 12px;}
+  /*study*/
+  .study .tab_menu > ul li {height: 60px;}
+  .card_container .card{height: 75px;}
+  /*animation*/
+  .code_point > h5{font-size: 13px; padding: 5px 0;}
+  .code_point p{font-size: 11px;}
+  .code_point em{padding: 5px 0; font-size: 11px;}
+  /*js*/
+  .card_game .card{height: 100px;}
+  /*chat*/
+  .chat > ul li div{font-size: 12px;}
+  .id_card{width:320px; height: 400px;}
+  .front_content .circle{height: 270px;}
+  .front_content h5{margin: 15px 0 45px 0;}
+  .front_content .front_img{margin: 15px auto;}
+}
+
+@media (max-width:400px) {
+  /*home*/
+  .home .home_btn button{letter-spacing: -1; font-size: 10px;}
+
+  /*about*/
+  .profile_img .about_info li{font-size: 12px;}
+
+  /*js*/
+  .card_game .card{height:85px;}
+}

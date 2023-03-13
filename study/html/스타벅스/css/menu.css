@@ -1,0 +1,59 @@
+html{font-size: 20px;}
+body{font-size: 1rem;}
+
+.skip{display: block; line-height: 1.5rem; height: 1.5rem; position: absolute; left: 0; right:0; top: -100%; background: #fff;
+ text-align: center; transition: all 1s; color:#000; z-index: 100; outline:#fff;}
+.skip:focus{top: 0;}
+
+/*header*/
+.header{height: 1.53rem; background: #000;}
+.header h1{display: flex; height: 1.53rem;}
+.header h1 a{display: block; margin:auto; font-size: .33rem; color:#fff; font-weight: bold;}
+.header .btn_arrow_left,
+.header .btn_serarch,
+.header .btn_cart{position: absolute; top:0; width:1.5rem; height:1.53rem; }
+.header .btn_arrow_left{left:.28rem; background: url(../img/btn_arrow_left.png) no-repeat left center / .38rem auto;
+font-size: .33rem; color:#fff; font-weight: bold; line-height: 1.53rem; padding-left: .7rem;}
+.header .btn_serarch{right:1rem; margin-right: .75rem; background: url(../img/ico_search.png) no-repeat center / .5rem auto;}
+.header .btn_cart{right:0rem; background: url(../img/ico_bag.png) no-repeat center / .55rem auto;}
+
+/*header > search_box*/
+.search_box{display: none; position: absolute; top: 0; left: 0; right: 0; z-index: 5; height: 10rem; background: #fff; border-radius: .2rem;}
+.search_box .search{display: flex; height: 2.3rem; padding: .5rem .38rem; background: #f4f4f2; box-sizing: border-box;}
+.search_box .search input{flex:9; border:2px solid #c8c8c8; border-radius: .2rem; box-sizing: border-box;}
+.search_box .search button{flex:1; background: url(../img/ico_search2.png) no-repeat center / .41rem auto;}
+.search_box .search_txt{line-height: 6.7rem; text-align: center; font-size: .45rem; color:#cacacf;}
+.search_box .search_cancel{position: absolute; bottom: 0; left: 0; right: 0; height: 1rem; text-align: right; background: #f4f4f2;}
+.search_box .search_cancel button{width: 10%; height: 100%; font-size: .5rem; color:#000; font-weight: bold; background: none; vertical-align: 7px;}
+
+.dim3{display: none; position: fixed; top: 0; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,.7); z-index: 4;}
+
+/*lnb*/
+.lnb {display:flex; border-top:1px solid #d9d9d9; border-bottom:1px solid #d9d9d9;}
+.lnb li{flex:1; height: 1.83rem; text-align: center;}
+.lnb li.flex2{flex:1.5;}
+.lnb li ~ li{border-left:1px solid #d9d9d9;}
+.lnb li.on{color:#897745; border-bottom:3px solid #897745;}
+.lnb li button{width: 100%; line-height: 1.83rem; text-align: center; font-size: .5rem; color:#4e4e4e; background: none; cursor: pointer;}
+
+/*snb*/
+.list_slide2{border-bottom:1px solid #d9d9d9;}
+.snb{padding: .38rem 0 .38rem .5rem;}
+.snb li{display: inline-block; padding: .2rem .4rem; width: auto; font-size: .45rem;}
+.snb li:last-child{margin-right: .4rem;}
+.snb li.on{background: #625f5c; border-radius: 1.3rem;}
+.snb li button{background: none; cursor: pointer;}
+.snb li.on button{color:#fff;}
+
+/*menu_list*/
+.menu_list .list {padding: 1rem .5rem;}
+.menu_list .list.bg {background: #f4f4f2;}
+.menu_list .list a{display: block;}
+.menu_list .list figure{display: flex;}
+.menu_list .list .i_box{flex:2; margin-right: 1.1rem;}
+.menu_list .list .i_box img{width: 100%;}
+.menu_list .list .i_txt{flex:8; font-size: 0;}
+.menu_list .list .i_txt span{font-size: .65rem; color:#393939;}
+.menu_list .list .i_txt span:after{content: ""; display:inline-block; width:.56rem; height: .56rem; background: url(../img/ico_giftbox.png) no-repeat center / 100% auto; margin-left: .2rem; vertical-align:0;}
+.menu_list .list .i_txt p{padding: .5rem 0; font-size: .4rem; color:#908151;}
+.menu_list .list .i_txt em{font-size: .6rem; font-weight: bold; color:#393939;}

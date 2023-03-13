@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll ratio</title>
+    <link rel="stylesheet" href="../common/css/reset.css">
+    <style>
+
+    </style>
+</head>
+<body>
+  <div class="scroll-info" style="position:fixed; top:20px; left:20px; padding:30px; background: #fff; color:#000;"></div>
+  <div class="section sc1" style="height: 150vh; background: green;">
+    <img src="../common/images/tmp/tmp_food.jpg" alt="" class="parl-img" style="position: fixed; top:50%; left:30%; opacity: 0; transform: translateX(-200px);">
+    <img src="../common/images/tmp/tmp_food.jpg" alt="" class="parl-img_2" style="position: fixed; top:45%; left:25%; opacity: 0; transform: translateX(-200px);">
+    <img src="../common/images/tmp/tmp_food.jpg" alt="" class="parl-img_3" style="position: fixed; top:40%; left:20%; opacity: 0; transform: translateX(-200px);">
+    <img src="../common/images/tmp/tmp_food.jpg" alt="" class="parl-img_4" style="position: fixed; top:35%; left:15%; opacity: 0; transform: translateX(-200px);">
+    <img src="../common/images/tmp/tmp_food.jpg" alt="" class="parl-img_5" style="position: fixed; top:30%; left:10%; opacity: 0; transform: translateX(-200px);">
+  </div>
+  <div class="section sc2" style="height: 120vh; background: turquoise;">
+    <img src="../common/images/tmp/tmp-food_2.jpg" alt="" class="parl-img2" style="position: fixed; top:50%; right:30%; opacity: 0; transform: translateX(200px);"></div>
+  <div class="section sc3" style="height: 130vh; background: rebeccapurple;"></div>
+  <div class="section sc4" style="height: 110vh; background: darkcyan;"></div>
+
+
+  <script>
+
+    let windowY;
+    window.addEventListener('scroll', ()=>{
+      windowY = window.pageYOffset;
+      scrollLoop();
+
+      //sec-1
+      document.querySelector('.parl-img').style.opacity = `${curScrollRatio(curSec)}`
+      document.querySelector('.parl-img').style.transform = `translateX(${ -200 * curScrollRatio(curSec)}px)`
+      document.querySelector('.parl-img_2').style.opacity = `${curScrollRatio(curSec)}`
+      document.querySelector('.parl-img_2').style.transform = `translateX(${ -250 * curScrollRatio(curSec)}px)`
+      document.querySelector('.parl-img_3').style.opacity = `${curScrollRatio(curSec)}`
+      document.querySelector('.parl-img_3').style.transform = `translateX(${ -300 * curScrollRatio(curSec)}px)`
+      document.querySelector('.parl-img_4').style.opacity = `${curScrollRatio(curSec)}`
+      document.querySelector('.parl-img_4').style.transform = `translateX(${ -350 * curScrollRatio(curSec)}px)`
+      document.querySelector('.parl-img_5').style.opacity = `${curScrollRatio(curSec)}`
+      document.querySelector('.parl-img_5').style.transform = `translateX(${ -400 * curScrollRatio(curSec)}px)`
+
+
+
+      //sec-2
+      document.querySelector('.parl-img2').style.opacity = `${curScrollRatio(curSec)}`
+      document.querySelector('.parl-img2').style.transform = `translateX(${ 200 * curScrollRatio(curSec)}px)`
+    })
+
+    let curSec = 0;
+    let prevHeight = 0;
+    let sections = document.querySelectorAll('.section');
+
+      function scrollLoop(){
+        prevHeight = 0;
+        for(let i=0; i<curSec; i++){
+          prevHeight += sections[i].offsetHeight;
+        }
+        if(windowY > prevHeight + sections[curSec].offsetHeight){
+          curSec++;
+        }
+        if(windowY < prevHeight){
+          if(curSec === 0) return;
+          curSec--;
+        }
+
+        curScrollRatio(curSec);
+        // console.log('curSec', curSec ,'//', curScrollRatio(curSec),'%')
+        document.querySelector('.scroll-info').innerHTML = `현재 섹션 : ${curSec}  , 현재 섹션의 비율 ${curSecScrollRatio(curSec)}`;
+        // console.log(windowY,'curSec', curSec, 'prevHeight',prevHeight)
+
+        // calcAnimaion(curSec);
+      }
+
+      function curSecScrollRatio(curSec){
+        let ratio = (windowY - sections[curSec].offsetTop)  / sections[curSec].offsetHeight;
+        return ratio;
+      }
+
+      function curScrollRatio(curSec){
+        // let ratio = (windowY - sections[curSec].offsetTop)  / sections[curSec].offsetHeight;
+        // return ratio;
+        
+        let ratio;
+        let startVal = sections[curSec].offsetHeight * 0.3; //30% 시작
+        let endVal = sections[curSec].offsetHeight * 0.9 // 90% 끝
+        let AniPart = endVal - startVal; // 30 ~ 90 (60%) 
+
+        console.log(windowY , startVal , endVal)
+
+        if(windowY >= startVal && windowY <= endVal){
+          ratio = (windowY - startVal) / AniPart ;
+          // ratio = (windowY - startVal) / AniPart * (startVal - endVal) + startVal;
+        }else if(windowY < startVal){
+          ratio = 0;
+        }else if(windowY > startVal){
+          ratio = 1;
+        }
+
+        return ratio;
+      }
+     
+  </script>
+</body>
+</html>

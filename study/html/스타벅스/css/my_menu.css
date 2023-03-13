@@ -1,0 +1,20 @@
+html{font-size: 20px;}
+body{font-size: 1rem;}
+
+.skip{display: block; line-height: 1.5rem; height: 1.5rem; position: absolute; left: 0; right:0; top: -100%; background: #fff;
+ text-align: center; transition: all 1s; color:#000; z-index: 100; outline:#fff;}
+.skip:focus{top: 0;}
+
+/*header*/
+.header{height: 1.53rem; background: #000;}
+.header h1{display: flex; height: 1.53rem;}
+.header h1 a{display: block; margin:auto; font-size: .33rem; color:#fff; font-weight: bold;}
+.header .btn_arrow_left,
+.header .plus{position: absolute; top:0; width:1.5rem; height:1.53rem; }
+.header .btn_arrow_left{left:.28rem; background: url(../img/btn_arrow_left.png) no-repeat left center / .38rem auto;
+font-size: .33rem; color:#fff; font-weight: bold; line-height: 1.53rem; padding-left: .7rem;}
+.header .plus{right:0rem; background: url(../img/ico_plus2.png) no-repeat center / .55rem auto;}
+
+main .menu_txt{position: absolute; top: 50% ; left: 50%; transform: translate(-50% , -50%); text-align: center; font-size: 0;}
+main .menu_txt span{font-size: .45rem; color:#99958b;}
+main .menu_txt span::before{content: ""; display: inline-block; width: .91rem; height: .91rem; background: url(../img/ico_plus3.png) no-repeat center / 100% auto; margin-right: .3rem; vertical-align:-5px; }

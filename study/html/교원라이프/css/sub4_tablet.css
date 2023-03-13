@@ -1,0 +1,65 @@
+/*헤더상단*/
+header{height: 3rem; border-bottom: 1px solid #d9d9d9;}
+header h1 a{display: none;}
+
+/*오른쪽 메뉴*/
+header .right_menu{top: 0; right: .2rem;}
+header .right_menu .login_box{display: none;}
+header .right_menu .my{width: 2.5rem; height: 3rem; background-size: 1.4rem auto; margin: 0;}
+header .right_menu .menu{width: 3rem; height: 3rem; background-size: 1.5rem auto;}
+
+/*메뉴*/
+header nav{text-align: left;}
+header .nav.on{position: fixed; top: 0; right: -100%; width: calc(100% - 2.25rem); height: 100%; background: #fff; z-index: 30; transition: all .5s;}
+header .nav.on.active{right: 0;}
+header nav .menu_top{display: flex; justify-content: space-between; padding: .85rem .75rem .8rem .75rem; border-bottom: 1px solid #f0f0f0; }
+header nav .menu_top span{margin: 0 .65rem 0 0; font-size: .65rem; color:#000;}
+header nav .menu_top .m_login{display: inline-block; width: 2.8rem; height: 1.2rem; text-align: center; line-height: 1.2rem; font-size: .65rem; color:#7f7f7f; border:1px solid #c5c5c5;}
+header nav .menu_top .m_right{position: relative; display: inline-block; text-align: right;}
+header nav .menu_top .m_right a{position: absolute; top: 50%; right: 1.5rem; transform: translateY(-50%); display: inline-block; width: 1.55rem; height: 1.25rem; background: url(../img/ico_home.png) no-repeat;
+margin: 0 .6rem 0 0;}
+header nav .menu_top .m_right button{position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 1.3rem; height: 1.3rem; background: url(../img/ico_close.png) no-repeat; cursor: pointer;}
+header nav > ul {display:block; height:100%;}
+header nav > ul > li{display:block;}
+header nav > ul > li > a{padding: .9rem 0 .65rem .8rem; font-size: .9rem; position: relative;}
+header nav > ul > li > a::after{content: ""; display:inline-block; width: .55rem; height: .35rem; background: url(../img/m_ico_arrow_down.png) no-repeat; position: absolute; right: .65rem ; top:50%; ; transform: translateY(-50%);}
+header nav > ul > li > a.active::after{transform: rotate(180deg);}
+header nav ul ul{position: static; text-align: left; display: none; border-top:1px solid #ff7200; padding: 0;}
+header nav ul ul li{padding: 0 .75rem; background: #f0f0f0;}
+header nav ul ul > li > a{border-bottom:1px solid #d3d3d3;}
+header nav ul ul > li:last-child a{border-bottom:none;}
+header nav ul ul a{padding: .4rem 0; text-align: left; font-size: .75rem; color:#777;}
+
+/*sub_header*/
+.sub_header{display: block; position: absolute; top: 0; left: 0; width:100%;}
+.sub_header a{display: inline-block; position: absolute; top: .0; left: .75rem; width: 3rem; height: 3rem; background: url(../img/btn_m_back.png) no-repeat left center / .75rem auto;}
+.sub_header h2{position: absolute; top: .8rem; left: 50%; transform: translateX(-50%);display: inline-block; text-align: center; font-size: .95rem; color:#222; letter-spacing: -1.5px;}
+
+/*라이프케어 서비스*/
+.life_care .service_wrap{max-width: 40rem;}
+.life_care .service {padding: 2.5rem .75rem 0;}
+.life_care .service:last-child {padding: 2.5rem .75rem;}
+.life_care .service .service_txt p{font-size: .75rem;}
+.life_care .service ul{margin:1.75rem 0;}
+.life_care .service ul li{display: inline-block; width:calc( 50% - .5rem);}
+.life_care .service ul li ~ li{padding: 0;}
+.life_care .service ul li:nth-child(even){padding: 0 0 0 .5rem;}
+.life_care .service ul li:nth-child(odd){padding: 0 0 .5rem;}
+
+/*FAQ*/
+.life_faq {padding: 2.5rem .75rem ; max-width: 40rem;}
+
+
+/*footer*/
+footer .footer_wrap{max-width: 48rem; margin: 0 auto;}
+footer div.right{float:none;}
+footer div.right select{width: 9.6rem; height: 2.1rem; background: url(../img/select_arrow_up.png) no-repeat right .6rem center;}
+footer .tel_number ul {float:left; padding: 0;}
+footer .tel_number ul li{padding: 0 1.05rem; font-size: .85rem;}
+footer .tel_number ul li strong{font-size: 1.1rem;}
+footer div.right::after{content: ""; display: block; clear: both;}
+footer div.left{float: none; margin: 1.25rem .75rem 0;}
+footer nav {width: 24rem; margin: 0 auto;}
+footer nav ul {text-align: center;}
+footer nav ul li a{font-size: .7rem;}
+footer .address{padding: 1.25rem 0; width: 30rem; margin: 0 auto; text-align: center;}

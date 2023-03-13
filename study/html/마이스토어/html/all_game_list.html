@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>마이스토어 : 게임</title>
+  <link rel="stylesheet" href="../css/default.css">
+  <link rel="stylesheet" href="../css/all_game_list.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" charset="utf-8"></script>
+  <script src="../js/index.js" charset="utf-8"></script>
+</head>
+<body>
+  <a href="#content" class="skip">본문바로가기</a>
+  <header>
+    <div class="header">
+      <h1><a href="../index.html"><span class="hide">마이스토어</span></a></h1>
+      <button class="btn_menu"><span class="hide">전체메뉴</span></button>
+      <button class="btn_search"><span class="hide">검색</span></button>
+    </div>
+    <div class="menu">
+      <div class="menu_cot">
+        <div class="bg_menu_top">
+          <div class="personal">
+            <p>이*정 님, 좋은 하루 되세요.</p>
+            <span>crystal084</span>
+            <a href="#"><span class="hide">환경설정</span></a>
+          </div>
+        </div>
+        <div class="content">
+            <ul>
+              <li class="ic_1">
+                <a href="../index.html">
+                  스토어홈
+                </a>
+              </li>
+              <li class="ic_2">
+                <a href="game_detail.html">
+                  게임
+                </a>
+              </li>
+              <li class="ic_3">
+                <a href="#">
+                  미션
+                </a>
+              </li>
+              <li class="ic_4">
+                <a href="#">
+                  이벤트
+                </a>
+              </li>
+              <li class="ic_5">
+                <a href="#">
+                  마이페이지
+                </a>
+              </li>
+            </ul>
+        </div>
+        <div class="content2">
+          <ul>
+            <li class="system_1">
+              <a href="#">
+                업데이트
+                <span>74</span>
+              </a>
+           </li>
+            <li class="system_2">
+              <a href="#">
+                공지사항
+              <span>2</span>
+              </a>
+           </li>
+            <li class="system_3">
+              <a href="#">
+                고객센터
+                <span>3</span>
+              </a>
+           </li>
+            <li class="system_4">
+              <a href="#">
+                환경설정
+              </a>
+           </li>
+          </ul>
+        </div>
+        <div class="bg_menu_bottom">
+          <ul>
+            <li>
+              <a href="#">
+                my store FAMILY
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                문화상품권 마이스토어앱
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <button class="btn_close"><span class="hide">메뉴닫기</span></button>
+    </div>
+    <h2 class="hide">메뉴</h2>
+    <nav>
+      <ul>
+        <li><a href="../index.html"><span>스토어홈</span></a></li>
+        <li class="on"><a href="html/all_game_list.html"><span>게임</span></a></li>
+        <li><a href="#"><span>미션</span></a></li>
+        <li><a href="#"><span>이벤트</span></a></li>
+      </ul>
+    </nav>
+    <div class="search_box">
+      <div class="search_content">
+        <lable for="search_name"><span class="hide">검색영역</span></lable>
+        <input type="text" id="search_name" placeholder="검색어를 입력해주세요.">
+        <button><span class="검색"></span></button>
+      </div>
+      <button class="close_search">X</button>
+    </div>
+  </header>
+  <main id="content">
+    <div class="line">
+      <ul class="tab_manu">
+        <li class="on"><button>전체</button></li>
+        <li><button>추천</button></li>
+        <li><button>인기</button></li>
+      </ul>
+    </div>
+  <div class="tab_content on">
+    <ul class="search_list">
+      <li>
+        <a href="game_detail.html">
+          <figure>
+            <div class="img_box">
+              <img src="../img/@thumb1.png" alt="">
+              <span>MY STORE</span>
+            </div>
+            <figcaption class="txt1">
+              <ul>
+                <li class="tit">대항해시대 : 진격항해</li>
+                <li class="ad">컬쳐캐쉬 10% 적립</li>
+                <li class="type">RPG<span></span>115</li>
+                <li class="pay">무료<span>&middot;</span>인앱결제</li>
+              </ul>
+            </figcaption>
+          </figure>
+        </a>
+      </li>
+      <li>
+        <a href="game_detail.html">
+          <figure>
+            <div class="img_box">
+              <img src="../img/@thumb2.png" alt="">
+              <span>MY STORE</span>
+            </div>
+            <figcaption class="txt1 new">
+              <ul>
+                <li class="tit">섀도우 파이트</li>
+                <li class="ad">컬쳐캐쉬 10% 적립</li>
+                <li class="type">RPG<span></span>115</li>
+                <li class="pay">2,000원</li>
+              </ul>
+            </figcaption>
+          </figure>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <figure>
+            <div class="img_box">
+              <img src="../img/@thumb7.png" alt="">
+              <span>MY STORE</span>
+            </div>
+            <figcaption class="txt1">
+              <ul>
+                <li class="tit">클럭커 워즈</li>
+                <li class="ad">컬쳐캐쉬 10% 적립</li>
+                <li class="type">RPG<span></span>115</li>
+                <li class="pay">무료<span>&middot;</span>인앱결제</li>
+              </ul>
+            </figcaption>
+          </figure>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <figure class="last">
+            <div class="img_box">
+              <img src="../img/@thumb8.png" alt="">
+              <span>MY STORE</span>
+            </div>
+            <figcaption class="txt1">
+              <ul>
+                <li class="tit">무한의 계단</li>
+                <li class="ad">컬쳐캐쉬 10% 적립</li>
+                <li class="type">아케이드<span></span>115</li>
+                <li class="pay">3,000원</li>
+              </ul>
+            </figcaption>
+          </figure>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <figure>
+            <div class="img_box">
+              <img src="../img/@thumb9.png" alt="">
+              <span>MY STORE</span>
+            </div>
+            <figcaption class="txt1 event">
+              <ul>
+                <li class="tit">CSR 레이싱</li>
+                <li class="ad">컬쳐캐쉬 10% 적립</li>
+                <li class="type">RPG<span></span>115</li>
+                <li class="pay">2,000원</li>
+              </ul>
+            </figcaption>
+          </figure>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <figure>
+            <div class="img_box">
+              <img src="../img/@thumb10.png" alt="">
+              <span>MY STORE</span>
+            </div>
+            <figcaption class="txt1 new">
+              <ul>
+                <li class="tit">앵그리버드2</li>
+                <li class="ad">컬쳐캐쉬 10% 적립</li>
+                <li class="type">RPG<span></span>115</li>
+                <li class="pay">무료<span>&middot;</span>인앱결제</li>
+              </ul>
+            </figcaption>
+          </figure>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <figure>
+            <div class="img_box">
+              <img src="../img/@thumb1.png" alt="">
+              <span>MY STORE</span>
+            </div>
+            <figcaption class="txt1">
+              <ul>
+                <li class="tit">대항해시대 : 진격항해</li>
+                <li class="ad">컬쳐캐쉬 10% 적립</li>
+                <li class="type">RPG<span></span>115</li>
+                <li class="pay">무료<span>&middot;</span>인앱결제</li>
+              </ul>
+            </figcaption>
+          </figure>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <figure class="last">
+            <div class="img_box">
+              <img src="../img/@thumb2.png" alt="">
+              <span>MY STORE</span>
+            </div>
+            <figcaption class="txt1">
+              <ul>
+                <li class="tit">섀도우 파이트</li>
+                <li class="ad">컬쳐캐쉬 10% 적립</li>
+                <li class="type">RPG<span></span>115</li>
+                <li class="pay">2,000원</li>
+              </ul>
+            </figcaption>
+          </figure>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <figure class="last">
+            <div class="img_box">
+              <img src="../img/@thumb7.png" alt="">
+              <span>MY STORE</span>
+            </div>
+            <figcaption class="txt1">
+              <ul>
+                <li class="tit">클럭커 워즈</li>
+                <li class="ad">컬쳐캐쉬 10% 적립</li>
+                <li class="type">RPG<span></span>115</li>
+                <li class="pay">무료<span>&middot;</span>인앱결제</li>
+              </ul>
+            </figcaption>
+          </figure>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <figure class="last">
+            <div class="img_box">
+              <img src="../img/@thumb8.png" alt="">
+              <span>MY STORE</span>
+            </div>
+            <figcaption class="txt1">
+              <ul>
+                <li class="tit">무한의 계단</li>
+                <li class="ad">컬쳐캐쉬 10% 적립</li>
+                <li class="type">아케이드<span></span>115</li>
+                <li class="pay">3,000원</li>
+              </ul>
+            </figcaption>
+          </figure>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="tab_content">
+    <ul class="search_list">
+      <li>
+        <a href="#">
+          <figure>
+            <div class="img_box">
+              <img src="../img/@thumb2.png" alt="">
+              <span>MY STORE</span>
+            </div>
+            <figcaption class="txt1 new">
+              <ul>
+                <li class="tit">섀도우 파이트</li>
+                <li class="ad">컬쳐캐쉬 10% 적립</li>
+                <li class="type">RPG<span></span>115</li>
+                <li class="pay">2,000원</li>
+              </ul>
+            </figcaption>
+          </figure>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <figure>
+            <div class="img_box">
+              <img src="../img/@thumb7.png" alt="">
+              <span>MY STORE</span>
+            </div>
+            <figcaption class="txt1">
+              <ul>
+                <li class="tit">클럭커 워즈</li>
+                <li class="ad">컬쳐캐쉬 10% 적립</li>
+                <li class="type">RPG<span></span>115</li>
+                <li class="pay">무료<span>&middot;</span>인앱결제</li>
+              </ul>
+            </figcaption>
+          </figure>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <figure>
+            <div class="img_box">
+              <img src="../img/@thumb9.png" alt="">
+              <span>MY STORE</span>
+            </div>
+            <figcaption class="txt1 event">
+              <ul>
+                <li class="tit">CSR 레이싱</li>
+                <li class="ad">컬쳐캐쉬 10% 적립</li>
+                <li class="type">RPG<span></span>115</li>
+                <li class="pay">2,000원</li>
+              </ul>
+            </figcaption>
+          </figure>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <figure>
+            <div class="img_box">
+              <img src="../img/@thumb1.png" alt="">
+              <span>MY STORE</span>
+            </div>
+            <figcaption class="txt1">
+              <ul>
+                <li class="tit">대항해시대 : 진격항해</li>
+                <li class="ad">컬쳐캐쉬 10% 적립</li>
+                <li class="type">RPG<span></span>115</li>
+                <li class="pay">무료<span>&middot;</span>인앱결제</li>
+              </ul>
+            </figcaption>
+          </figure>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <figure class="last">
+            <div class="img_box">
+              <img src="../img/@thumb2.png" alt="">
+              <span>MY STORE</span>
+            </div>
+            <figcaption class="txt1">
+              <ul>
+                <li class="tit">섀도우 파이트</li>
+                <li class="ad">컬쳐캐쉬 10% 적립</li>
+                <li class="type">RPG<span></span>115</li>
+                <li class="pay">2,000원</li>
+              </ul>
+            </figcaption>
+          </figure>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <figure class="last">
+            <div class="img_box">
+              <img src="../img/@thumb7.png" alt="">
+              <span>MY STORE</span>
+            </div>
+            <figcaption class="txt1">
+              <ul>
+                <li class="tit">클럭커 워즈</li>
+                <li class="ad">컬쳐캐쉬 10% 적립</li>
+                <li class="type">RPG<span></span>115</li>
+                <li class="pay">무료<span>&middot;</span>인앱결제</li>
+              </ul>
+            </figcaption>
+          </figure>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="tab_content">
+    <ul class="search_list">
+      <li>
+        <a href="#">
+          <figure>
+            <div class="img_box">
+              <img src="../img/@thumb2.png" alt="">
+              <span>MY STORE</span>
+            </div>
+            <figcaption class="txt1 new">
+              <ul>
+                <li class="tit">섀도우 파이트</li>
+                <li class="ad">컬쳐캐쉬 10% 적립</li>
+                <li class="type">RPG<span></span>115</li>
+                <li class="pay">2,000원</li>
+              </ul>
+            </figcaption>
+          </figure>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <figure>
+            <div class="img_box">
+              <img src="../img/@thumb7.png" alt="">
+              <span>MY STORE</span>
+            </div>
+            <figcaption class="txt1">
+              <ul>
+                <li class="tit">클럭커 워즈</li>
+                <li class="ad">컬쳐캐쉬 10% 적립</li>
+                <li class="type">RPG<span></span>115</li>
+                <li class="pay">무료<span>&middot;</span>인앱결제</li>
+              </ul>
+            </figcaption>
+          </figure>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <figure class="last">
+            <div class="img_box">
+              <img src="../img/@thumb2.png" alt="">
+              <span>MY STORE</span>
+            </div>
+            <figcaption class="txt1">
+              <ul>
+                <li class="tit">섀도우 파이트</li>
+                <li class="ad">컬쳐캐쉬 10% 적립</li>
+                <li class="type">RPG<span></span>115</li>
+                <li class="pay">2,000원</li>
+              </ul>
+            </figcaption>
+          </figure>
+        </a>
+      </li>
+    </ul>
+  </div>
+</main>
+<div class="line line2">
+  <span><em class="hide">로딩아이콘</em></span>
+</div>
+<article class="notice">
+  <div class="notice_tit">
+    <h2>통신판매중개자의 책임 한계 안내</h2>
+    <button class="more on"><span class="hide">접힘/열림버튼</span></button>
+  </div>
+  <div class="noti_cont on">
+    ㈜한국문화진흥이 운영하는 마이스토어에 등록된 판매상품은 판매자가 등록한 것으로, ㈜한국문화진흥에서는 일체의 책임을 지지 않습니다. 상품의 등록정보, 판매, 문의답변에 대한 의무와 책임은 각 판매자에게 있습니다.
+  </div>
+</article>
+<div class=" line line3"></div>
+<footer class="footer">
+  <ul class="info">
+    <li>
+      <a href="#">이용약관</a>
+    </li>
+    <li>
+      <a href="#" class="on">개인정보 취급방침</a>
+    </li>
+    <li>
+      <a href="#">고객센터</a>
+    </li>
+    <li>
+      <a href="#">서비스소개</a>
+    </li>
+  </ul>
+  <div>
+    <ul class="info2">
+      <li>㈜한국문화진흥원<span></span>대표 : 홍석규</li>
+      <li>주소 : 서울시 강남구 강남대로 636 두원빌딩 1,2층 </li>
+      <li>대표전화 : 1577-2111<span></span>사업자 등록번호 : 120-81-77097</li>
+      <li>통신판매업신고 강남-1181호</li>
+    </ul>
+    <address>Copyright&copy;주식회사 한국문화진흥원 Corp. ALL RIGHTS RESERVED.</address>
+  </div>
+</footer>
+</body>
+</html>

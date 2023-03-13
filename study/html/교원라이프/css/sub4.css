@@ -1,0 +1,121 @@
+html{font-size: 20px;}
+body{font-size: 1rem;}
+
+.skip{display: block; line-height: 2.5rem; height: 2.5rem; position: absolute; left: 0; right:0; top: -100%; background: #ff7200;
+ text-align: center; transition: all 1s; color:#fff; z-index: 100; outline:#fff;}
+.skip:focus{top: 0;}
+
+/*헤더상단*/
+header{width: 100%; height: 4.7rem; box-sizing: border-box;}
+header h1 a{display: block; position: absolute; left: 2.5rem; top:1.35rem; width: 7.85rem; height: 2.05rem; background: url(../img/h1_logo.png) no-repeat;}
+header .right_menu{position: absolute; top:0; right:3rem; }
+header .right_menu .login_box{display: inline-block; }
+header .right_menu .login_box span{margin: 0 .65rem 0 0; font-size: .65rem; color:#000;}
+header .right_menu .login_box a{display: inline-block; width: 2.65rem; height: 1.15rem; text-align: center; line-height: 1.15rem; font-size: .6rem; color:#4c4f4c; border:1px solid #000;}
+header .right_menu .my{display: inline-block; width: 1.75rem; height: 4.7rem; background: url(../img/ico_nav_my.png) no-repeat center; background-size: 1.5rem auto; vertical-align: middle; margin: 0 .5rem 0 .75rem;}
+header .right_menu .menu{width: 3rem; height: 4.7rem; background: url(../img/ico_nav_menu.png) no-repeat center; background-size: 1.5rem auto;}
+
+/*메뉴*/
+header nav{text-align: center;}
+header nav .menu_top{display: none;}
+header nav > ul {display: inline-block; height: 4.7rem; /*overflow: hidden;*/ position: relative; z-index: 20;}
+.nav_wrap {position: absolute; left: 0; top: 4.7rem; width: 100%; height: 15rem; background:#fff;
+border-top:1px solid #dedede; border-bottom:1px solid #dedede; display: none; z-index: 10;}
+header nav > ul > li{display: inline-block; position: relative;}
+header nav > ul > li > a{display: block; padding: 1.85rem 2.5rem 1.6rem; font-size: .85rem; color:#000;}
+header nav > ul > li > a:hover{color:#ff780b;}
+header nav ul ul{position: absolute; width: 100%; text-align: center; display: none; padding: 1rem 0;}
+header nav ul ul a{display: block; padding: .5rem 0; text-align: center; font-size: .75rem; color:#6f6f6f;}
+header nav ul ul a:hover{color:#ff780b;}
+
+/*main*/
+
+/*sub_bg*/
+.sub_bg {position: relative; width: 100%; height: 15rem; background: url(../img/sub4_bg.png) no-repeat; background-size: 100% 100%;}
+.sub_bg_txt{position: absolute; left: 50%; top: 50%; transform: translate(-50% , -50%);}
+.sub_bg h2{padding: 0 0 1.35rem 0; color:#fff; font-size: 1.8rem; font-weight: normal; text-align: center;}
+.sub_bg p{color:#fff; font-size: .8rem; text-align: center;}
+.sub_login{width: 100%; background: #fff; padding: 1.5rem; box-sizing: border-box;}
+.sub_login .sub_login_txt{text-align: center; font-size: .8rem; color:#222;}
+.sub_login .sub_login_txt span{color:#ff7200;}
+.sub_login .sub_login_txt a{display: inline-block; margin: 0 0 0 1.15rem;width: 5.05rem; height: 2.05rem; line-height: 2.05rem; background: #ff7200; color:#fff;}
+
+
+/*801~ 1230px 미디어 쿼리*/
+@media (min-width:801px) and (max-width:1230px){
+  .life_care .service_wrap{padding: 0 .75rem;}
+  .faq{padding: 0 .75rem;}
+}
+/*801~ 1000px 미디어 쿼리*/
+@media (min-width:801px) and (max-width:1000px){
+  header nav > ul > li > a{padding: 1.85rem 1.5rem 1.6rem;}
+  header .right_menu{right:1.3rem; }
+}
+
+/*라이프케어 서비스*/
+.life_care{background: #f0f0f0;}
+.life_care .service_wrap{max-width: 60rem; margin: 0 auto;}
+.life_care .service {padding: 2.5rem 0 0;}
+.life_care .service:last-child {padding: 2.5rem 0 2.5rem;}
+.life_care .service .service_txt h3{padding: 0 0 1rem 0; font-size: 1.3rem; color:#222; font-weight: 500;}
+.life_care .service .service_txt p{font-size: .8rem; color:#777;}
+.life_care .service ul{margin:2.5rem 0;}
+.life_care .service ul li{display: inline-block; width:calc( 33.3% - .9rem);}
+.life_care .service ul li ~ li{padding: 0 0 0 .9rem;}
+.life_care .service ul li a{display: block;}
+.life_care .service ul li a img{width: 100%;}
+.life_care .service ul li .list_txt{position: relative; width: 100%; padding: 1.65rem 1rem; box-sizing: border-box; background: #fff;}
+.life_care .service ul li .list_txt span{color:#000; font-size: .8rem;}
+.life_care .service ul li .list_txt span::after{content: ""; display: inline-block; width: .5rem; height: .85rem; background: url(../img/ico_arrow_right_orange2.png) no-repeat center; position: absolute; right: 1rem; top:50%; transform: translateY(-50%);}
+
+/*FAQ*/
+.life_faq {padding: 4rem 0 ; max-width: 60rem; margin: 0 auto;}
+.life_faq h2{font-size: 1.3rem; color:#222; font-weight: 500;}
+.life_faq .faq ul.faq_tit{margin: 1.5rem 0;}
+.life_faq .faq ul.faq_tit li{display: inline-block;}
+.life_faq .faq ul.faq_tit li.on a{color:#ff7200;}
+.life_faq .faq ul.faq_tit li a{display: block; padding: 0 .5rem; font-size:.8rem ; color:#666; border-right: 1px solid #f0f0f0;}
+.life_faq .faq ul.faq_tit li a:first-child{padding: 0 .5rem 0 0;}
+.life_faq .faq ul.faq_tit li:last-child a{border-right:0;}
+.life_faq .faq ul.qna{border-top: 2px solid #ff7200;}
+.life_faq .faq ul.qna li ~ li{border-top: 1px solid #d9d9d9;}
+.life_faq .faq ul.qna div.qna_tit{padding: .75rem; font-size: .9rem; color:#000;}
+.life_faq .faq ul.qna div.qna_tit::before{content: ""; display: inline-block; width: 2rem; height: 2rem; background: url(../img/ico_question.png) no-repeat; vertical-align: middle; margin-right: 1.15rem;}
+.life_faq .faq ul.qna div.qna_txt{padding: 1.5rem 1.5rem 1.5rem 3.75rem; background: #f0f0f0; font-size: .8rem; color:#666; border-top: 1px solid #d9d9d9; display: none;}
+
+
+/*sub_header*/
+.sub_header{display: none;}
+
+/*801~ 1200px 미디어 쿼리*/
+@media (min-width:801px) and (max-width:1200px){
+  header .right_menu .login_box span{display: none;}
+}
+
+
+/*footer*/
+footer {padding:2rem .5rem; box-sizing: border-box; background: #333;}
+footer .footer_wrap{max-width: 60rem; margin: 0 auto;}
+footer div.border{border-bottom: 1px solid #444;}
+footer div.right{float:right;}
+footer div.right select{float:right; width: 7.65rem; height: 1.65rem; appearance: none; -webkit-appearance: none; background: none; border:1px solid #535252; font-size: .7rem; color:#fff; letter-spacing: -0.5px; text-indent: .55rem; background: url(../img/select_arrow_up.png) no-repeat right .6rem center;}
+footer div.right select::-ms-expand {display: none;}
+footer .tel_number ul {float:right; padding: 1.25rem 0 0 0;}
+footer .tel_number ul li{padding: 0 .8rem; display: inline-block; position: relative; font-size: .7rem; letter-spacing: -0.5px; color:#fff;}
+footer .tel_number ul li strong{display: block; font-size: 1.2rem; font-weight: bold;}
+footer .tel_number ul li ~ li::before{content: "";  display: inline-block; width: 1px; height:2.5rem; background: #444; position: absolute; left: 0; top:0; bottom: 0; }
+footer div.left{float: left;}
+footer nav ul li{display: inline-block;}
+footer nav ul li a{font-size: .75rem; color:#fff; letter-spacing: -0.5px;}
+footer nav ul li ~ li::before{content: ""; display: inline-block; width: 1px; height: .75rem; background: #444; margin: 0 .5rem;}
+footer button{display: none;}
+footer .address{padding: 1.25rem 0;}
+footer address{float:left; font-size: .7rem; color:#888988;}
+footer address p{padding: 1rem 0 0 0;}
+footer .icon{padding: 1.25rem 0 0 0;}
+footer .icon .logo{float: left; width: 10.65rem; height:2.75rem; background: url(../img/footer_logo.png) no-repeat left center;}
+footer .icon .sns{float: right;}
+footer .icon .sns a{display: inline-block; width: 2.25rem; height: 2.25rem;}
+footer .icon .sns a ~ a{margin: 0 0 0 .6rem;}
+footer .icon .sns a:nth-child(1){background: url(../img/ico_facebook.png) no-repeat;}
+footer .icon .sns a:nth-child(2){background: url(../img/ico_kakao.png) no-repeat;}

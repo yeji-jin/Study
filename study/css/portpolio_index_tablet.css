@@ -1,0 +1,86 @@
+/*header*/
+header .logo{left: 15%;}
+header .gnb{width: 70%;}
+
+/*home*/
+.home .txt{padding: 0 0 30px 0;}
+.home .txt2{padding: 30px 0 0 0;}
+.home .home_btn {bottom: 10%; left: 15%; right: 15%;}
+.home .home_btn button{padding: 10% 13%; letter-spacing: 0;}
+
+/*about*/
+.about .txt_box{text-align: center;}
+.profile_img .about_info{display: block;}
+.profile_img .about_info li{width: 100%; font-size: 16px;}
+.profile_img .about_info li ~ li{padding: 2% 0 0 0;}
+.profile_content .content .intro{line-height: 1.6em;}
+.profile_content .content .promise li{font-size: 16px; letter-spacing: -0.5px;}
+
+
+/*card*/
+.card_container .card{flex:none; width: 42%; margin: 5% 2%; padding: 3% 2%;}
+
+/*skill*/
+.txt_box2{text-align: center;}
+
+/*study*/
+.study .txt_box3{text-align: center;}
+.study .tab_cont .acc_content{left:3%; right: 3%; top: 3%; bottom: 3%;}
+.study .tab_cont .acc_wrap{flex-direction: column;}
+.study .tab_cont .acc_content .btn_close{width: 40px; height: 40px; font-weight: 600;}
+.study .tab_cont .acc_content .acc_img{flex:none; height: 48%; margin-bottom: 2%;}
+.study .tab_cont .acc_content .acc_txt{flex:none; height: 50%;}
+.study .tab_cont .acc_content .paging{bottom: 0;}
+.study .tab_cont .acc_content .paging button{width: 30px; height: 30px; font-weight: 600;}
+.study .tab_cont .acc_content .web_acc table{margin:20px 30px 0 0; font-size: 14px; width: 40%; float: left;}
+.study .acc_content .acc_txt ul{float: left; width: 55%;}
+.study .acc_content .acc_txt ul li{font-size: 16px; font-weight: 600;}
+.study .acc_content .acc_txt ul li ~ li {padding: 0;}
+.study .acc_content .acc_txt ul li p {padding: 0; font-size: 12px; font-weight: normal; line-height: 26px;}
+.study .acc_content .acc_txt h5{font-size: 20px; padding: 0 0 5px 0;}
+.study .tab_cont .content .example_img .hover p{font-size: 20px;}
+
+/*work*/
+.work .txt_box{text-align: center;}
+.work .work_box .work_txt{padding-bottom: 70px;}
+
+
+/*animation*/
+.animation .txt_box {text-align: center;}
+.anibox .ani_hover{left: 3%; top: 3%; right: 3%; bottom: 3%; border:3px solid #fff;}
+.code_point{letter-spacing: 0;}
+.code_point > h5{font-size: 20px; padding: 15px 0;}
+.code_point p{font-size: 14px;}
+.code_point em{padding: 5px 0; font-size: 14px;}
+.packman{animation-delay: 1.5s;}
+.packman::before , .packman::after {content: ""; display: block; position: absolute; margin-top: -25px; width: 0; height: 0; border:25px solid yellow; border-radius: 50%; border-right-color: transparent; border-bottom-color: transparent; animation: packman .7s ease infinite;}
+.packman::after{border-color: yellow; border-right-color: transparent; border-top-color: transparent; animation: packman2 .7s ease infinite;}
+
+
+/*js_game*/
+.js_game .txt_box {text-align: center;}
+.card_game{padding: 10% 15%;}
+.card_game .card{height: 180px;}
+
+/*chat*/
+.chat > ul li div{font-size: 16px;}
+.ico-gift{width: 45px; height: 45px;}
+
+
+@media (max-width:800px) {
+  .packman::before , .packman::after {content: ""; display: block; position: absolute; margin-top: -20px; width: 0; height: 0; border:20px solid yellow; border-radius: 50%; border-right-color: transparent; border-bottom-color: transparent; animation: packman .7s ease infinite;}
+  .packman::after{border-color: yellow; border-right-color: transparent; border-top-color: transparent; animation: packman2 .7s ease infinite;}
+
+  /*js*/
+  .tit_game{font-size: 30px; letter-spacing: 0;}
+  .tit_pending,
+  .tit_finish,
+  .title_range{font-size: 28px; letter-spacing: 0;}
+  .card_game .card{height: 150px;}
+
+}
+
+@media (max-width:700px) {
+  .study .acc_content .acc_txt ul{width: 52%;}
+  .study .tab_cont .acc_content .web_acc table{margin:10px 20px 0 0;}
+}

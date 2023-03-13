@@ -1,0 +1,31 @@
+html{font-size: 20px;}
+body{font-size: 1rem;}
+
+.skip{display: block; line-height: 1.5rem; height: 1.5rem; position: absolute; left: 0; right:0; top: -100%; background: #000;
+ text-align: center; transition: all 1s; color:#fff; z-index: 100; outline:#fff;}
+.skip:focus{top: 0;}
+
+/*header*/
+.header{height: 1.53rem; background: #000;}
+.header h1{display: flex; height: 1.53rem;}
+.header h1 a{display: block; margin:auto; font-size: .33rem; color:#fff; font-weight: bold;}
+.header .btn_arrow_left{position: absolute; top:0; width:1rem; height:1.53rem; content: ""; display: inline-block; left:.28rem; background: url(../img/btn_arrow_left.png) no-repeat left center / .38rem auto; font-size: .33rem; color:#fff; line-height: 1.53rem; font-weight: bold; padding-left: .7rem;}
+
+/*log_tit*/
+main{padding: 2.16rem .91rem 0; }
+.log_tit h2::before{content: ""; display: block; width:2.21rem; height: 2.21rem; background: url(../img/h1_logo2.png) no-repeat left / 100% auto; margin-bottom: 1.45rem;}
+.log_tit h2{padding-bottom: 1.08rem; font-size: .7rem; font-weight: bold; color:#2a2a2a;}
+.log_tit p{padding: 0 0 1rem 0; font-size: .41rem; color:#636363;}
+
+/*form*/
+.form .box input,
+.form .box input{width:100%; padding: .4rem 0; background: transparent; border:none; border-bottom: 2px solid #c7c7c7; outline:none;}
+.box input:placeholder {font-size: .4rem; color:#c7c7c7;}
+
+/*info*/
+.info ul{display: flex; justify-content: center; margin:.7rem 0 1.43rem 0;}
+.info ul li{padding: 0 .68rem; border-right: 1px solid #000;}
+.info ul li:last-child{border-right:none;}
+.info ul li a{display: block; font-size:.43rem; color:#000;}
+
+button{width:100%; height: 1.93rem; color:#fff; background: #4eac6d; cursor: pointer;}

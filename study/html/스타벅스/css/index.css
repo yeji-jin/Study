@@ -1,0 +1,106 @@
+html{font-size: 20px;}
+body{font-size: 1rem; background: #111111;}
+
+.skip{display: block; line-height: 1.5rem; height: 1.5rem; position: absolute; left: 0; right:0; top: -100%; background: #fff;
+ text-align: center; transition: all 1s; color:#000; z-index: 100; outline:#fff;}
+.skip:focus{top: 0;}
+
+/*header*/
+.header{height: 1.53rem;}
+.header h1{display: flex; height: 1.53rem;} /*가운데 정렬 무슨원리,,,,*/
+.header h1 a{display: block;  margin:auto; width:5.36rem; height: .53rem; background: url(../img/h1_logo.png) no-repeat center / 100% auto;}
+.header .btn_menu,
+.header .btn_news{position: absolute; top:0; width:1.75rem; height:1.53rem;}
+.header .btn_menu{left:0; background: url(../img/btn_menu.png)no-repeat center /.81rem auto;}
+.header .btn_news{right:0; background: url(../img/ico_news.png)no-repeat center /.75rem auto;}
+
+header .main_ment {background:#171717; height: 1.5rem;}
+header .main_ment p{text-align: center; line-height: 1.5rem; font-size: .36rem; font-weight:bold; color:#e2ded7;}
+
+/*menu*/
+.menu{position:absolute; top:0; bottom: 0; left:-100%; width: calc(100% - 2.83rem); z-index: 100; transition: all .5s; background: #f4f4f2; overflow: auto;}
+.menu.on{left:0;}
+.menu .content{background: #f4f4f2;}
+.dim{display: none; position: fixed; top: 0; left: 0; right:0; bottom: 0; background: rgba(0,0,0,.7); z-index: 10;}
+/*menu_header*/
+.menu .menu_header{display: flex; justify-content: space-between; height: 2.83rem; position: relative; padding: .5rem .38rem 0 .46rem; box-sizing: border-box; border-bottom: 1px solid #dcdada;}
+.menu .menu_header .login{display: block; width:2.18rem; height: .88rem; line-height: .88rem; text-align: center; border-radius: .5rem; font-size: .46rem; color:#585451; border:2px solid #45403d;}
+.menu .menu_header .setting::before{content: ""; display: block; width:.63rem; height: .61rem; background: url(../img/ico_setting.png) no-repeat right center / 100% auto; margin: 0 auto;}
+.menu .menu_header .setting{text-align: center; font-size: .46rem; color:#585451;}
+
+/*alram*/
+header .alram{position: fixed; top: 0; bottom: 0; right: -100%; width:calc(100% - 2.83rem); background: #fff; z-index: 11; transition: all .5s; overflow: auto;}
+header .alram.on{right: 0;}
+.alram .alram_header{position: relative; height: 1.6rem; border-top:2px solid #d7d7d7; border-bottom:2px solid #d7d7d7;}
+.alram .alram_header p{text-align: center; line-height: 1.6rem; font-size: .5rem;}
+.alram .alram_header a{display: inline-block; width: 1.6rem; height: 1.6rem; background: url(../img/ico_setting.png) no-repeat center / .63rem auto; position: absolute; top: 50%; right:0; transform: translateY(-50%);}
+.alram .alram_sub{display: flex; justify-content: space-between; height: 1.6rem; background: #f7f7f7; }
+.alram .alram_sub select{flex:9; background: none; font-size: .5rem; text-indent: .5rem; border-right: 2px solid #d2d2d2; padding: .25rem; box-sizing: border-box;}
+.alram .alram_sub button{flex:1; height: 1rem; background: none; font-size: .5rem; color:#9e8f66; border:2px solid #9e8f66; border-radius: .5rem; margin: .25rem;}
+.alram_cont li a{display:flex; padding:.4rem 0; border-top:2px solid #ededed; border-bottom:2px solid #ededed;}
+.alram_cont li em{display: inline-block; width: .56rem; height: .73rem; background: url(../img/ico_alram.png) no-repeat center / 100% auto; position: absolute; top: 50%; left:1rem; transform: translateY(-50%);}
+.alram_cont li div:first-child{flex:2; position: relative;}
+.alram_cont li div:last-child{flex:8; font-size: 0;}
+.alram_cont li span{font-size: .4rem; color:#818181;}
+.alram_cont li p{font-size: .4rem;}
+/*menu_visual*/
+.menu_visual {position: relative;}
+.menu_visual img{width:100%;}
+.menu_visual button{display: block; width: .71rem; height:.71rem; position: absolute; top:50%; transform: translateY(-50%);
+z-index: 5;}
+.menu_visual button.left{background: url(../img/ico_slidearrow_left.png) no-repeat left center / .38rem auto; left:.45rem; }
+.menu_visual button.right{background: url(../img/ico_slidearrow_right.png) no-repeat left center / .38rem auto; right: .45rem;}
+.paging{position: absolute; left: 50%; bottom: .25rem; transform: translateX(-50%); z-index: 5;}
+.paging span ~ span{margin: 0 0 0 .2rem;}
+.swiper-pagination-bullet{display: inline-block; width: .25rem; height: .25rem; background: #fff; border-radius: 100%;}
+.swiper-pagination-bullet-active{background: #888;}
+
+/*popup*/
+.popup{display: none; position: absolute; z-index: 10; left: 2rem; right: 2rem; top: 2rem; background: #fff; transition: all .5s;}
+.popup.on{display: block;}
+.btn_popup{position: absolute; top: .5rem; right: .5rem; width:1.16rem; height: 1.16rem; background: url(../img/btn_popup_close.png)no-repeat center / 100% auto;}
+.popup_cont img{width: 100%;}
+
+/*munu_list*/
+.munu_list{padding:.7rem 0 .7rem .76rem; border-bottom: 1px solid #dcdada;}
+.munu_list li a{display: block; padding: .5rem 0; color:#181818; font-size: .33rem; font-weight: bold;}
+.munu_list li a::before{content: ""; display:inline-block; width:.51rem; margin: 0 .76rem 0 0 ;}
+
+.munu_list li:nth-child(1) a::before{width:.51rem; height: .48rem; background:url(../img/ico_home.png) no-repeat left center / 100% auto;}
+.munu_list li:nth-child(2) a::before{width:.51rem; height: .48rem; background:url(../img/ico_list2.png) no-repeat left center / 100% auto;}
+.munu_list li:nth-child(3) a::before{width:.51rem; height: .4rem; background:url(../img/ico_list3.png) no-repeat left center / 100% auto;}
+.munu_list li:nth-child(4) a::before{width:.38rem; height: .53rem; background:url(../img/ico_list4.png) no-repeat left center / 100% auto;}
+.munu_list li:nth-child(5) a::before{width:.51rem; height: .46rem; background:url(../img/ico_list5.png) no-repeat left center / 100% auto;}
+.munu_list li:nth-child(6) a::before{width:.51rem; height: .4rem; background:url(../img/ico_list6.png) no-repeat left center / 100% auto;}
+.munu_list li:nth-child(7) a::before{width:.36rem; height: .46rem; background:url(../img/ico_list7.png) no-repeat left center / 100% auto;}
+.munu_list li:nth-child(8) a::before{width:.51rem; height: .38rem; background:url(../img/ico_list8.png) no-repeat left center / 100% auto;}
+.munu_list li:nth-child(9) a::before{width:.43rem; height: .53rem; background:url(../img/ico_list9.png) no-repeat left center / 100% auto;}
+.munu_list li:nth-child(10) a::before{width:.51rem; height: .4rem; background:url(../img/ico_list10.png) no-repeat left center / 100% auto;}
+.munu_list li:nth-child(11) a::before{width:.38rem; height: .51rem; background:url(../img/ico_list11.png) no-repeat left center / 100% auto;}
+.munu_list li:nth-child(12) a::before{width:.45rem; height: .43rem; background:url(../img/ico_list12.png) no-repeat left center / 100% auto;}
+
+/*sub_menulist*/
+.sub_menulist {padding: .41rem .38rem 0 .46rem;}
+.sub_menulist li{position: relative;}
+.sub_menulist li a{padding: .5rem 0; display: block; color:#181818; font-size: .45rem; font-weight: bold;}
+.sub_menulist li a::after{content: ""; display: inline-block; width:.28rem; height: .46rem; background: url(../img/ico_arrow_right.png) no-repeat right center / 100% auto; position: absolute; right: 0;}
+
+/*visual*/
+.visual {width:100%; position: relative;}
+.visual a{display: block;}
+.visual img{width:100%;}
+.visual .slide{position: absolute; right:2.8rem; bottom: .65rem; z-index: 2; font-size: .7rem; letter-spacing: -1.5px; color:#fff;}
+.visual button{position: absolute; right:.56rem; bottom: .3rem; width:1.55rem; height: 1.55rem; margin-left: .55rem; background: url(../img/ico_plus.png) no-repeat right center / 100% auto; z-index: 5;}
+/*main_menu*/
+.main_menu ul {display: flex; flex-wrap: wrap; margin: 0 .38rem; box-sizing: border-box; border-top:2px solid #303030;}
+.main_menu ul li {width:50%; position: relative; box-sizing: border-box; border-bottom: 2px solid #303030;}
+.main_menu ul li a{display: block; position: relative; text-align: center; color:#fff; font-size: .5rem; font-weight: bold; box-sizing: border-box; }
+.main_menu ul li a{padding: 1.5rem 0; box-sizing: border-box;}
+.main_menu ul li.line1 a{height:6rem;}
+.main_menu ul li.line2 a{height:4.21rem; padding: 1.8rem 0;}
+.main_menu ul li a::after{position: absolute; right:0; top:50%; transform: translateY(-50%);}
+.main_menu ul li:first-child a::after{content: ""; width: 2px; height: 4.33rem; background: #303030;}
+.main_menu ul li:nth-child(3) a::after{content: ""; width: 2px; height: 2.16rem; background: #303030;}
+.main_menu ul li.line1 a::before{content: ""; display: block; margin:0 auto .8rem;}
+.main_menu ul li:nth-child(1) a::before{width:1.05rem; height: 1.61rem; background: url(../img/ico_siren_order.png) no-repeat center / 100% auto;}
+.main_menu ul li:nth-child(2) a::before{width:1.51rem; height: 1.3rem; background: url(../img/ico_giftshop.png) no-repeat center / 100% auto;}

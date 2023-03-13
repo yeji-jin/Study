@@ -1,0 +1,87 @@
+html{font-size: 20px;}
+body{font-size: 1rem;}
+
+.skip{display: block; line-height: 2.5rem; height: 2.5rem; position: absolute; left: 0; right:0; top: -100%; background: #ff7200;
+ text-align: center; transition: all 1s; color:#fff; z-index: 100; outline:#fff;}
+.skip:focus{top: 0;}
+
+/*헤더상단*/
+header{width: 100%; height: 4.7rem; box-sizing: border-box;}
+header h1 a{display: block; position: absolute; left: 2.5rem; top:1.35rem; width: 7.85rem; height: 2.05rem; background: url(../img/h1_logo.png) no-repeat;}
+header .right_menu{position: absolute; top:0; right:3rem; }
+header .right_menu .login_box{display: inline-block; }
+header .right_menu .login_box span{margin: 0 .65rem 0 0; font-size: .65rem; color:#000;}
+header .right_menu .login_box a{display: inline-block; width: 2.65rem; height: 1.15rem; text-align: center; line-height: 1.15rem; font-size: .6rem; color:#4c4f4c; border:1px solid #000;}
+header .right_menu .my{display: inline-block; width: 1.75rem; height: 4.7rem; background: url(../img/ico_nav_my.png) no-repeat center; background-size: 1.5rem auto; vertical-align: middle; margin: 0 .5rem 0 .75rem;}
+header .right_menu .menu{width: 3rem; height: 4.7rem; background: url(../img/ico_nav_menu.png) no-repeat center; background-size: 1.5rem auto;}
+
+/*메뉴*/
+header nav{text-align: center;}
+header nav .menu_top{display: none;}
+header nav > ul {display: inline-block; height: 4.7rem; /*overflow: hidden;*/ position: relative; z-index: 20;}
+.nav_wrap {position: absolute; left: 0; top: 4.7rem; width: 100%; height: 15rem; background:#fff;
+border-top:1px solid #dedede; border-bottom:1px solid #dedede; display: none; z-index: 10;}
+header nav > ul > li{display: inline-block; position: relative;}
+header nav > ul > li > a{display: block; padding: 1.85rem 3rem 1.6rem; font-size: .85rem; color:#000;}
+header nav > ul > li > a:hover{color:#ff780b;}
+header nav ul ul{position: absolute; width: 100%; text-align: center; display: none;  padding: 1rem 0;}
+header nav ul ul a{display: block; padding: .5rem 0; text-align: center; font-size: .75rem; color:#6f6f6f;}
+header nav ul ul a:hover{color:#ff780b;}
+
+/*801~ 1200px 미디어 쿼리*/
+@media (min-width:801px) and (max-width:1200px){
+  header .right_menu .login_box span{display: none;}
+}
+
+/*801~ 1000px 미디어 쿼리*/
+@media (min-width:801px) and (max-width:1000px){
+  header nav > ul > li > a{padding: 1.85rem 1.5rem 1.6rem;}
+  header .right_menu{right:1.3rem; }
+}
+
+/*sub_header*/
+.sub_header{display: none;}
+
+/*login*/
+.login_wrap{padding: 9rem 0; background: #f0f0f0;}
+.login_wrap .login_box{max-width: 37.5rem; height: 32.75rem; margin: 0 auto; padding: 4rem 2.5rem; box-sizing: border-box; background: #fff;}
+.login_box h2{text-align: center; font-size: 1.1rem; color:#222;}
+.login_box .login_txt{text-align: center; margin: .75rem 0; font-size: .8rem; color:#777;}
+.login_box .input_box input{display: block; padding: .8rem .5rem .7rem ; box-sizing: border-box; width: 100%; height: 2.2rem; border:1px solid #e0e0e0;}
+.login_box .input_box input::placeholder {font-size:.65rem ; color:#a9a9a9;}
+.login_box .input_box input:last-child{margin-top:-1px;}
+.login_box button{width: 100%; height: 3.1rem; cursor: pointer;}
+.login_box button.login{margin: 2.5rem 0; background: #ff7200; color:#fff; font-size: .85rem;}
+.login_box .kakao{padding: 1.5rem 0 ; border-top: 1px solid #e0e0e0;}
+.login_box .kakao button{background: #ffe52e; color:#3c3036; font-size: .85rem;}
+.login_box .kakao button span{display: inline-block; margin: 0 .25rem 0 0; width: 1.15rem; height: 1.05rem; background: url(../img/ico_kakao_img.png) no-repeat; vertical-align: middle;}
+.login_box ul{display: flex; justify-content: center;}
+.login_box ul li a{font-size: .7rem; color:inherit;}
+.login_box ul li ~ li::before{content: ""; display: inline-block; margin: 0 2.9rem; width: 1px; height: .75rem; background: #e0e0e0;}
+
+/*footer*/
+footer {padding:2rem .5rem; box-sizing: border-box; background: #333;}
+footer .footer_wrap{max-width: 60rem; margin: 0 auto;}
+footer div.border{border-bottom: 1px solid #444;}
+footer div.right{float:right;}
+footer div.right select{float:right; width: 7.65rem; height: 1.65rem; appearance: none; -webkit-appearance: none; background: none; border:1px solid #535252; font-size: .7rem; color:#fff; letter-spacing: -0.5px; text-indent: .55rem; background: url(../img/select_arrow_up.png) no-repeat right .6rem center;}
+footer div.right select::-ms-expand {display: none;}
+footer .tel_number ul {float:right; padding: 1.25rem 0 0 0;}
+footer .tel_number ul li{padding: 0 .8rem; display: inline-block; position: relative; font-size: .7rem; letter-spacing: -0.5px; color:#fff;}
+footer .tel_number ul li strong{display: block; font-size: 1.2rem; font-weight: bold;}
+footer .tel_number ul li ~ li::before{content: "";  display: inline-block; width: 1px; height:2.5rem; background: #444; position: absolute; left: 0; top:0; bottom: 0; }
+footer div.left{float: left;}
+footer nav ul li{display: inline-block;}
+footer nav ul li a{font-size: .75rem; color:#fff; letter-spacing: -0.5px;}
+footer nav ul li ~ li::before{content: ""; display: inline-block; width: 1px; height: .75rem; background: #444; margin: 0 .5rem;}
+footer button{display: none;}
+footer .address{padding: 1.25rem 0;}
+footer address{float:left; font-size: .7rem; color:#888988;}
+footer address p{padding: 1rem 0 0 0;}
+footer .icon{padding: 1.25rem 0 0 0;}
+footer .icon .logo{float: left; width: 10.65rem; height:2.75rem; background: url(../img/footer_logo.png) no-repeat left center;}
+footer .icon .sns{float: right;}
+footer .icon .sns a{display: inline-block; width: 2.25rem; height: 2.25rem;}
+footer .icon .sns a ~ a{margin: 0 0 0 .6rem;}
+footer .icon .sns a:nth-child(1){background: url(../img/ico_facebook.png) no-repeat;}
+footer .icon .sns a:nth-child(2){background: url(../img/ico_kakao.png) no-repeat;}
