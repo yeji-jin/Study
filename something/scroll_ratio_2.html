@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll ratio</title>
+    <link rel="stylesheet" href="../common/css/reset.css">
+    <link rel="stylesheet" href="../common/css/scroll.css">
+</head>
+
+<body class="play-0">
+  <div class="scroll-info" style="position:fixed; top:20px; left:20px; padding:30px; background: #fff; color:#000; z-index: 9999;"></div>
+
+  <!--section 1 -->
+  <div class="section sc1">
+    <h2 class="section-tit ani-obj">
+      실행의 힘. 창조의 힘.<br>
+      한계를 넘어서는 힘.
+    </h2>
+    <p class="section-desc ani-obj">
+      막강한 성능의 M2 Pro 또는 M2 Max 덕분에 그 어느 때보다 높은 차원의 힘과 효율성을 발휘하는 MacBook Pro. 전원에 연결했을 때나 그렇지 않을 때나 탁월한 성능을 선사하고, 이제 더욱더 긴 배터리 사용 시간을 자랑하죠. 여기에 놀라운 Liquid Retina XDR 디스플레이 그리고 더할 나위 없이 다양한 포트까지. MacBook Pro는 그야말로 타의 추종을 불허하는 프로용 노트북입니다.
+    </p>
+    <img src="../common/images/scrll_bg.png" alt="" class="section-img ani-obj">
+  </div>
+
+
+  <!-- section 2 -->
+  <div class="section sc2" style="background: turquoise;">
+    <p class="section-desc ani-obj">Lorem ipsum dolor sit amet consectetur adipisicing elit. A ullam ab similique facilis dolores sapiente ipsum quidem aut libero labore quo neque unde quam ea numquam ad, est accusantium ducimus!</p>
+    <img src="../common/images/scrll_bg2.png" alt="" class="section-img ani-obj">
+  </div>
+
+
+  <!-- section 3 -->
+  <div class="section sc3" style="height: 130vh; background: rebeccapurple;">
+    <p class="section-desc ani-obj">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio dolorum est beatae libero atque facere. Rem eos accusantium possimus ratione dolor ipsa nesciunt maxime, laboriosam aspernatur, alias facilis officia at.</p>
+    <p class="section-desc ani-obj obj2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio dolorum est beatae libero atque facere. Rem eos accusantium possimus ratione dolor ipsa nesciunt maxime, laboriosam aspernatur, alias facilis officia at.</p> 
+  </div>
+
+  <!-- section 4 -->
+  <div class="section sc4" style="height: 110vh; background: darkcyan;">
+    <p class="section-desc desc1 ani-obj" style="top:5%; left:14%; transform: translateX(-50%);">tmptmptmptmp</p>
+    <p class="section-desc desc2 ani-obj" style="top:7%; left:70%; transform: translateX(-50%);">tmptmptmptmp</p>
+    <p class="section-desc desc3 ani-obj" style="top:20%; left:20%; transform: translateX(-50%);">tmptmptmptmp</p>
+    <p class="section-desc desc4 ani-obj" style="top:48%; left:42%; transform: translateX(-50%);">tmptmptmptmp</p>
+    <p class="section-desc desc5 ani-obj" style="top:33%; left:33%; transform: translateX(-50%);">tmptmptmptmp</p>
+  </div>
+
+
+  <script>
+
+    const parallaxOption = {
+      //in
+      tit_opacity:[0,1,{start:0.3,end:0.7}], //startValue,endValue,startTiming,endTiming
+      desc_opacity:[0,1,{start:0.5,end:0.8}],
+      transformXR:[200,0,{start:0.3,end:0.7}],
+      transformXL:[-200,0,{start:0.3,end:0.7}],
+      // transform_y:[100,0,{start:0.5,end:0.8}]
+
+
+      test:[-20,0,{start:0.1,end:0.3}],
+      test2:[20,0,{start:0.2,end:0.4}],
+
+      //out
+      tit_opacity_out:[1,0,{start:0.71,end:0.9}], //startValue,endValue,startTiming,endTiming
+      desc_opacity_out:[1,0,{start:0.81,end:0.9}],
+    }
+
+    // console.log(parallaxOption.tit_opacity)
+
+    let windowY;
+    window.addEventListener('scroll', ()=>{
+      windowY = window.pageYOffset;
+      scrollLoop();
+
+      //sec-1
+      // document.querySelector('.section-tit').style.opacity = `${curScrollRatio(curSec, parallaxOption.tit_opacity)}`
+      // document.querySelector('.sc1 .section-desc').style.opacity = `${curScrollRatio(curSec, parallaxOption.desc_opacity)}`
+      // document.querySelector('.sc1 .section-img').style.opacity = `${curScrollRatio(curSec, parallaxOption.tit_opacity)}`
+      // document.querySelector('.sc1 .section-img').style.transform = `translateX(${curScrollRatio(curSec, parallaxOption.transform_X)}px)`
+    })
+
+    let curSec = 0;
+    let prevHeight = 0;
+    let sections = document.querySelectorAll('.section');
+
+      function scrollLoop(){
+        prevHeight = 0;
+        for(let i=0; i<curSec; i++){
+          prevHeight += sections[i].offsetHeight;
+        }
+        if(windowY > prevHeight + sections[curSec].offsetHeight){
+          curSec++;
+        }
+        if(windowY < prevHeight){
+          if(curSec === 0) return;
+          curSec--;
+        }
+
+        // curScrollRatio(curSec);
+        // console.log('curSec', curSec ,'//', curScrollRatio(curSec),'%')
+        document.querySelector('.scroll-info').innerHTML = `현재 섹션 : ${curSec}  , 현재 섹션의 비율 ${curSecScrollRatio(curSec)}`;
+        // console.log(windowY,'curSec', curSec, 'prevHeight',prevHeight)
+
+        // calcAnimaion(curSec);
+        playParallx(curSec);
+        document.querySelector('body').className = `play-${curSec}`;
+      }
+
+      function curSecScrollRatio(curSec){
+        // let ratio = (windowY  + window.innerHeight) / sections[curSec].offsetHeight;
+        let ratio = (windowY - sections[curSec].offsetTop)  / sections[curSec].offsetHeight;
+        if(curSec == sections.length - 1) ratio = (windowY + window.innerHeight - sections[curSec].offsetTop)  / sections[curSec].offsetHeight;
+        return ratio;
+      }
+
+      function curScrollRatio(curSec,options){
+
+        // let ratio = (windowY - sections[curSec].offsetTop)  / sections[curSec].offsetHeight;
+        // return ratio;
+        let ratio;
+        let startVal = prevHeight - window.innerHeight + (sections[curSec].offsetHeight * options[2].start); 
+        let endVal = prevHeight  - window.innerHeight + (sections[curSec].offsetHeight * options[2].end); 
+        // let startVal = prevHeight  + (sections[curSec].offsetHeight * options[2].start); 
+        // let endVal = prevHeight + (sections[curSec].offsetHeight * options[2].end); 
+        let AniPart = endVal - startVal; 
+
+
+        // console.log(options)
+
+        if(windowY >= startVal && windowY <= endVal){
+          // ratio = (windowY - startVal) / AniPart ;
+          // ratio = (windowY - startVal) / AniPart * (startVal - endVal) + startVal;
+          ratio = (windowY - startVal) / AniPart * (options[1] - options[0]) + options[0];
+          console.log('ing~')
+        }else if(windowY < startVal){
+          ratio = options[0];
+          console.log('000000000000000');
+        }else if(windowY > startVal){ //windowY > startVal
+          ratio = options[1];
+          console.log('11111111111111');
+        }
+        
+        return ratio;
+      }
+
+      function playParallx(curSec){
+
+
+        switch(curSec){
+          case 0 : 
+            //in
+            sections[curSec].querySelector('.section-tit').style.opacity = `${curScrollRatio(curSec, parallaxOption.tit_opacity)}`;
+            sections[curSec].querySelector('.section-desc').style.opacity = `${curScrollRatio(curSec, parallaxOption.desc_opacity)}`;
+            sections[curSec].querySelector('.section-img').style.opacity = `${curScrollRatio(curSec, parallaxOption.tit_opacity)}`;
+            //out
+            // document.querySelector('.section-tit').style.opacity = `${curScrollRatio(curSec, parallaxOption.tit_opacity_out)}`;
+            // document.querySelector('.sc1 .section-desc').style.opacity = `${curScrollRatio(curSec, parallaxOption.desc_opacity_out)}`;
+            // document.querySelector('.sc1 .section-img').style.opacity = `${curScrollRatio(curSec, parallaxOption.tit_opacity_out)}`;
+          break;
+
+          case 1 : 
+            sections[curSec].querySelector('.section-desc').style.opacity = `${curScrollRatio(curSec, parallaxOption.desc_opacity)}`;
+            sections[curSec].querySelector('.section-img').style.opacity = `${curScrollRatio(curSec, parallaxOption.tit_opacity)}`;
+          break;
+
+          case 2 : 
+            sections[curSec].querySelector('.section-desc').style.opacity = `${curScrollRatio(curSec, parallaxOption.desc_opacity)}`;
+            sections[curSec].querySelector('.section-desc').style.transform = `translateX(${curScrollRatio(curSec, parallaxOption.transformXR)}px)`;
+            sections[curSec].querySelector('.section-desc.obj2').style.opacity = `${curScrollRatio(curSec, parallaxOption.desc_opacity)}`;
+            sections[curSec].querySelector('.section-desc.obj2').style.transform = `translateX(${curScrollRatio(curSec, parallaxOption.transformXL)}px)`;
+          break;
+
+          case 3 : 
+            sections[curSec].querySelector('.desc1').style.opacity = `${curScrollRatio(curSec, parallaxOption.desc_opacity)}`;
+            sections[curSec].querySelector('.desc2').style.opacity = `${curScrollRatio(curSec, parallaxOption.desc_opacity)}`;
+            sections[curSec].querySelector('.desc3').style.opacity = `${curScrollRatio(curSec, parallaxOption.desc_opacity)}`;
+            sections[curSec].querySelector('.desc4').style.opacity = `${curScrollRatio(curSec, parallaxOption.desc_opacity)}`;
+            sections[curSec].querySelector('.desc5').style.opacity = `${curScrollRatio(curSec, parallaxOption.desc_opacity)}`;
+
+            // sections[curSec].querySelector('.desc1').style.transform = `translateX(${curScrollRatio(curSec, parallaxOption.test)}px)`;
+            // sections[curSec].querySelector('.desc2').style.transform = `translateX(${curScrollRatio(curSec, parallaxOption.test2)}px)`;
+            // sections[curSec].querySelector('.desc3').style.transform = `translateX(${curScrollRatio(curSec, parallaxOption.test)}px)`;
+            // sections[curSec].querySelector('.desc4').style.transform = `translateX(${curScrollRatio(curSec, parallaxOption.test2)}px)`;
+            // sections[curSec].querySelector('.desc5').style.transform = `translateX(${curScrollRatio(curSec, parallaxOption.test)}px)`;
+          break;
+
+
+        }
+      }
+     
+  </script>
+</body>
+</html>
