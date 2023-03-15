@@ -11,3 +11,18 @@ body{text-align: center; background: #000; color:#fff; font-weight: 700;}
 .sc2{z-index: 2;}
 .sc3{z-index: 3;}
 .sc4{z-index: 4;}
+
+.block-wrap{ position: fixed; display: flex; flex-wrap:wrap; z-index: 100; }
+.block-wrap .block{ width: 50%; height: 100px; width: 100px; background: #fff; }
+.block-wrap .block:nth-child(2n){ background: #ccc; }
+.desc-bg{  display: block; background: linear-gradient(to top, #4cd265 50%, #fff 50%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent; background-position: center 100%; background-size: auto 100%; animation: battery-fillup 1.5s linear forwards;} 
+
+
+    @keyframes battery-fillup {
+        to {
+            background-size: center 200%
+        }
+    }
