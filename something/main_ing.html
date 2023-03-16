@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>i am yeji</title>
+    <link rel="stylesheet" href="../common/css/reset.css">
+    <link rel="stylesheet" href="../common/css/main_ing.css">
+</head>
+
+<body>
+
+  <!--section 1 -->
+  <section class="intro">
+
+    <div class="intro-section">
+      <!-- inner-cont-->
+      <div class="inner-cont cont1">
+        <div class="intro-emoji">
+          <img src="../common/images/about-character (6).png" alt="">
+        </div>
+        <div class="intro-talk">
+          111안냥하세요안냥하세요안냥하세요안냥하세요안냥하세요<br>
+          111안냥하세요안냥하세요안냥하세요안냥하세요안냥하세요<br>
+          111안냥하세요안냥하세요안냥하세요안냥하세요안냥하세요<br>
+        </div>
+      </div>
+
+      <!-- inner-cont2-->
+      <div class="inner-cont cont2">
+        <div class="intro-emoji">
+          <img src="../common/images/about-character (1).png" alt="">
+        </div>
+        <div class="intro-talk">
+          222안냥하세요안냥하세요안냥하세요안냥하세요안냥하세요<br>
+          222안냥하세요안냥하세요안냥하세요안냥하세요안냥하세요<br>
+          222안냥하세요안냥하세요안냥하세요안냥하세요안냥하세요<br>
+        </div>
+      </div>
+
+      <!-- inner-cont3-->
+      <div class="inner-cont cont3">
+        <div class="intro-emoji">
+          <img src="../common/images/about-character (3).png" alt="">
+        </div>
+        <div class="intro-talk">
+          333안냥하세요안냥하세요안냥하세요안냥하세요안냥하세요<br>
+          333안냥하세요안냥하세요안냥하세요안냥하세요안냥하세요<br>
+          333안냥하세요안냥하세요안냥하세요안냥하세요안냥하세요<br>
+        </div>
+      </div>
+
+      <!-- inner-cont4-->
+      <div class="inner-cont cont4">
+        <div class="intro-emoji">
+          <img src="../common/images/about-character (2).png" alt="">
+        </div>
+        <div class="intro-talk">
+          444안냥하세요안냥하세요안냥하세요안냥하세요안냥하세요<br>
+          444안냥하세요안냥하세요안냥하세요안냥하세요안냥하세요<br>
+          444안냥하세요안냥하세요안냥하세요안냥하세요안냥하세요<br>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- <div class="intro-section">
+      <div class="inner-cont">
+        <div class="intro-emoji">
+          <img src="../common/images/about-character (6).png" alt="">
+        </div>
+  
+        <div class="intro-talk">
+          22<br>
+          안냥하세요안냥하세요안냥하세요안냥하세요안냥하세요<br>
+          안냥하세요안냥하세요안냥하세요안냥하세요안냥하세요<br>
+          안냥하세요안냥하세요안냥하세요안냥하세요안냥하세요<br>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="intro-section">
+      <div class="inner-cont">
+
+        <div class="intro-emoji">
+          <img src="../common/images/about-character (6).png" alt="">
+        </div>
+  
+        <div class="intro-talk">
+          22<br>
+          안냥하세요안냥하세요안냥하세요안냥하세요안냥하세요<br>
+          안냥하세요안냥하세요안냥하세요안냥하세요안냥하세요<br>
+          안냥하세요안냥하세요안냥하세요안냥하세요안냥하세요<br>
+        </div>
+      </div>
+    </div> -->
+
+  </section>
+
+  <script>
+    const parallaxOption = {
+      opacity_in3:[0,1,{start:0.55,end:0.8}], //startValue,endValue,startTiming,endTiming
+      
+      
+      opacity_out:[1,0,{start:0.1,end:0.25}], 
+      opacity_in:[0,1,{start:0.3,end:0.55}], //startValue,endValue,startTiming,endTiming
+      opacity_in2:[0,1,{start:0.6,end:0.8}],
+      opacity_out2:[0,1,{start:0.85,end:0.99}],
+
+
+      desc_opacity:[0,1,{start:0.5,end:0.8}],
+      transformXR:[200,0,{start:0.3,end:0.7}],
+      transformXL:[-200,0,{start:0.3,end:0.7}],
+      transformTop:[30,0,{start:0.3,end:0.7}],
+    }
+    
+    let windowY;
+    let curSec = 0;
+    let prevHeight = 0;
+    let sections = document.querySelectorAll('.intro-section');
+
+    window.addEventListener('scroll', ()=>{
+      windowY = window.pageYOffset;
+      scrollLoop();
+    })
+
+    function scrollLoop(){
+        prevHeight = 0;
+        for(let i=0; i<curSec; i++){
+          prevHeight += sections[i].offsetHeight;
+        }
+        if(windowY > prevHeight + sections[curSec].offsetHeight){
+          curSec++;
+        }
+        if(windowY < prevHeight){
+          if(curSec === 0) return;
+          curSec--;
+        }
+
+        // document.querySelector('.scroll-info').innerHTML = `현재 섹션 : ${curSec}  , 현재 섹션의 비율 ${curSecScrollRatio(curSec)}`;
+        playParallx(curSec);
+        document.querySelector('body').className = `play-${curSec}`;
+        console.log(curSec)
+      }
+
+      function curSecScrollRatio(curSec){
+        let ratio = (windowY - sections[curSec].offsetTop)  / sections[curSec].offsetHeight;
+        return ratio;
+      }
+
+
+      function PartScrollRatio(curSec,options){
+        let ratio;
+        let startVal = prevHeight - window.innerHeight + (sections[curSec].offsetHeight * options[2].start); 
+        let endVal = prevHeight - window.innerHeight  + (sections[curSec].offsetHeight * options[2].end); 
+
+        // let startVal = prevHeight - window.innerHeight + (sections[curSec].offsetHeight * options[2].start); 
+        // let endVal = prevHeight - window.innerHeight  + (sections[curSec].offsetHeight * options[2].end); 
+
+        // let startVal = prevHeight + (sections[curSec].offsetHeight * options[2].start); 
+        // let endVal = prevHeight + (sections[curSec].offsetHeight * options[2].end); 
+        let AniPart = endVal - startVal; 
+
+        if(windowY >= startVal && windowY <= endVal){
+          ratio = (windowY - startVal) / AniPart * (options[1] - options[0]) + options[0];
+        }else if(windowY < startVal){
+          ratio = options[0];
+        }else if(windowY > startVal){ 
+          ratio = options[1];
+        }
+        return ratio;
+      }
+
+      function playParallx(curSec){
+        switch(curSec){
+          case 0 : 
+            //in
+            sections[curSec].querySelector('.cont1').style.opacity = `${PartScrollRatio(curSec, parallaxOption.opacity_out)}`;
+            sections[curSec].querySelector('.cont2').style.opacity = `${PartScrollRatio(curSec, parallaxOption.opacity_in)}`;
+            sections[curSec].querySelector('.cont3').style.opacity = `${PartScrollRatio(curSec, parallaxOption.opacity_in2)}`;
+            sections[curSec].querySelector('.cont4').style.opacity = `${PartScrollRatio(curSec, parallaxOption.opacity_out2)}`;
+          break;
+
+          case 1 : 
+          break;
+
+          case 2 : 
+          break;
+
+          case 3 : 
+          break;
+
+
+        }
+      }
+     
+  </script>
+
+</body>
+</html>
