@@ -153,8 +153,8 @@
 
       function PartScrollRatio(curSec,options){
         let ratio;
-        let startVal = prevHeight - window.innerHeight + (sections[curSec].offsetHeight * options[2].start); 
-        let endVal = prevHeight - window.innerHeight  + (sections[curSec].offsetHeight * options[2].end); 
+        let startVal = (prevHeight - window.innerHeight + sections[curSec].offsetHeight) * options[2].start; 
+        let endVal = (prevHeight - window.innerHeight  + sections[curSec].offsetHeight) * options[2].end; 
 
         // let startVal = prevHeight - window.innerHeight + (sections[curSec].offsetHeight * options[2].start); 
         // let endVal = prevHeight - window.innerHeight  + (sections[curSec].offsetHeight * options[2].end); 
