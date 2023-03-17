@@ -4,16 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>i am yeji</title>
+    <title>I am yeji</title>
     <link rel="stylesheet" href="../common/css/reset.css">
     <link rel="stylesheet" href="../common/css/main_ing.css">
 </head>
 
 <body>
 
-  <!--section 1 -->
+  <!-- section : intro -->
   <section class="intro">
+    <!--typing-animation-->
+    <div class="typing-wrap">
+      <div class="intro-txt">
+        I
+        <div class="txt-ani">
+          <span class="words">am a Yeji</span>
+          <span class="words">am a Publisher</span>
+          <span class="words">will be a Developer</span>
+        </div>
+      </div>
+    </div>
 
+    <!-- intro-section -->
     <div class="intro-section">
       <!-- inner-cont-->
       <div class="inner-cont cont1">
@@ -65,39 +77,53 @@
 
     </div>
 
-    <!-- <div class="intro-section">
-      <div class="inner-cont">
-        <div class="intro-emoji">
-          <img src="../common/images/about-character (6).png" alt="">
-        </div>
-  
-        <div class="intro-talk">
-          22<br>
-          안냥하세요안냥하세요안냥하세요안냥하세요안냥하세요<br>
-          안냥하세요안냥하세요안냥하세요안냥하세요안냥하세요<br>
-          안냥하세요안냥하세요안냥하세요안냥하세요안냥하세요<br>
-        </div>
-
+    <!-- section : work-->
+    <section class="work intro-section">
+      <div style="height:200vh; background: oldlace;">
+        <h3 class="work-txt">
+          이<br>
+          딴<br>
+          거<br>
+          <br> 
+          만<br>
+          들<br>
+          었<br>
+          어<br>
+          요<br>
+          &middot;<br>
+        </h3> 
       </div>
-    </div>
-
-    <div class="intro-section">
-      <div class="inner-cont">
-
-        <div class="intro-emoji">
-          <img src="../common/images/about-character (6).png" alt="">
-        </div>
-  
-        <div class="intro-talk">
-          22<br>
-          안냥하세요안냥하세요안냥하세요안냥하세요안냥하세요<br>
-          안냥하세요안냥하세요안냥하세요안냥하세요안냥하세요<br>
-          안냥하세요안냥하세요안냥하세요안냥하세요안냥하세요<br>
-        </div>
-      </div>
-    </div> -->
+      <!-- work-list -->
+      <ul class="work-wrap work-cont1">
+        <li class="work-list">
+          <img src="../common/images/tmp.png" alt="">
+          <div class="desc">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis corrupti consectetur modi eveniet voluptates ea ducimus debitis consequatur, quis a corporis atque porro pariatur unde incidunt quos animi? Nihil, neque.
+          </div>
+        </li>
+        <li class="work-list">
+          <img src="../common/images/tmp.png" alt="">
+          <div class="desc">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis corrupti consectetur modi eveniet voluptates ea ducimus debitis consequatur, quis a corporis atque porro pariatur unde incidunt quos animi? Nihil, neque.
+          </div>
+        </li>
+        <li class="work-list">
+          <img src="../common/images/tmp.png" alt="">
+          <div class="desc">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis corrupti consectetur modi eveniet voluptates ea ducimus debitis consequatur, quis a corporis atque porro pariatur unde incidunt quos animi? Nihil, neque.
+          </div>
+        </li>
+        <li class="work-list">
+          <img src="../common/images/tmp.png" alt="">
+          <div class="desc">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis corrupti consectetur modi eveniet voluptates ea ducimus debitis consequatur, quis a corporis atque porro pariatur unde incidunt quos animi? Nihil, neque.
+          </div>
+        </li>
+      </ul>
+    </section>
 
   </section>
+
 
   <script>
     const parallaxOption = {
@@ -108,12 +134,18 @@
       opacity_in:[0,1,{start:0.3,end:0.55}], //startValue,endValue,startTiming,endTiming
       opacity_in2:[0,1,{start:0.6,end:0.8}],
       opacity_out2:[0,1,{start:0.85,end:0.99}],
+      transformL:[0,-100,{start:0.85,end:0.99}],
+      transformL_start:[150,-150,{start:0, end:1}],
+      test_start:[0,1,{start:0, end:1}],
+      transformR_start:[100,0,{start:0.2,end:0.4}],
 
 
       desc_opacity:[0,1,{start:0.5,end:0.8}],
       transformXR:[200,0,{start:0.3,end:0.7}],
       transformXL:[-200,0,{start:0.3,end:0.7}],
       transformTop:[30,0,{start:0.3,end:0.7}],
+
+      outOpacity:[1,0,{start:0.1,end:0.8}]
     }
     
     let windowY;
@@ -138,11 +170,9 @@
           if(curSec === 0) return;
           curSec--;
         }
-
-        // document.querySelector('.scroll-info').innerHTML = `현재 섹션 : ${curSec}  , 현재 섹션의 비율 ${curSecScrollRatio(curSec)}`;
         playParallx(curSec);
         document.querySelector('body').className = `play-${curSec}`;
-        console.log(curSec)
+        // console.log(curSec , 'prevHeight', prevHeight )
       }
 
       function curSecScrollRatio(curSec){
@@ -154,26 +184,27 @@
       function PartScrollRatio(curSec,options){
         let ratio;
         let startVal = (prevHeight - window.innerHeight + sections[curSec].offsetHeight) * options[2].start; 
-        let endVal = (prevHeight - window.innerHeight  + sections[curSec].offsetHeight) * options[2].end; 
-
-        // let startVal = prevHeight - window.innerHeight + (sections[curSec].offsetHeight * options[2].start); 
-        // let endVal = prevHeight - window.innerHeight  + (sections[curSec].offsetHeight * options[2].end); 
-
-        // let startVal = prevHeight + (sections[curSec].offsetHeight * options[2].start); 
-        // let endVal = prevHeight + (sections[curSec].offsetHeight * options[2].end); 
+        let endVal = (prevHeight - window.innerHeight + sections[curSec].offsetHeight) * options[2].end; 
+        // let startVal = (prevHeight - window.innerHeight + sections[curSec].offsetHeight) * options[2].start; 
+        // let endVal = (prevHeight - window.innerHeight  + sections[curSec].offsetHeight) * options[2].end; 
         let AniPart = endVal - startVal; 
 
         if(windowY >= startVal && windowY <= endVal){
           ratio = (windowY - startVal) / AniPart * (options[1] - options[0]) + options[0];
         }else if(windowY < startVal){
           ratio = options[0];
+          console.log('first')
         }else if(windowY > startVal){ 
           ratio = options[1];
+          console.log('last')
         }
         return ratio;
       }
 
+      let typingWrap = document.querySelector('.typing-wrap')
+
       function playParallx(curSec){
+        console.log(curSec)
         switch(curSec){
           case 0 : 
             //in
@@ -181,9 +212,14 @@
             sections[curSec].querySelector('.cont2').style.opacity = `${PartScrollRatio(curSec, parallaxOption.opacity_in)}`;
             sections[curSec].querySelector('.cont3').style.opacity = `${PartScrollRatio(curSec, parallaxOption.opacity_in2)}`;
             sections[curSec].querySelector('.cont4').style.opacity = `${PartScrollRatio(curSec, parallaxOption.opacity_out2)}`;
+            typingWrap.style.transform = `translateX(${PartScrollRatio(curSec, parallaxOption.transformL)}%)`;
           break;
 
           case 1 : 
+            // sections[curSec].querySelector('.work-cont1').style.opacity = `${PartScrollRatio(curSec, parallaxOption.opacity_in)}`;
+            sections[curSec].querySelector('.work-cont1').style.opacity = `${PartScrollRatio(curSec, parallaxOption.test_start)}`;
+            // sections[curSec].querySelector('.work-cont1').style.transform = `translateX(${PartScrollRatio(curSec, parallaxOption.transformL_start)}%)`;
+            // console.log(`${PartScrollRatio(curSec, parallaxOption.transformL_start)}`)
           break;
 
           case 2 : 
