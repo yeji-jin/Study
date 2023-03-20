@@ -22,6 +22,7 @@
           <span class="words">am a Publisher</span>
           <span class="words">will be a Developer</span>
         </div>
+        <!-- <img src="../common/images/illu-clean.png" alt="" style="width:140px;" class="illu-clean"> -->
       </div>
     </div>
 
@@ -79,7 +80,8 @@
 
     <!-- section : work-->
     <section class="work intro-section">
-      <div style="height:200vh; background: oldlace;">
+      <div style="height:200vh; color:#000; background: oldlace;">
+        <img src="../common/images/test.png" alt="" style="width:50%; margin: -28px auto 0;" class="run-emoji">
         <h3 class="work-txt">
           이<br>
           딴<br>
@@ -136,7 +138,7 @@
       opacity_out2:[0,1,{start:0.85,end:0.99}],
       transformL:[0,-100,{start:0.85,end:0.99}],
       transformL_start:[150,-150,{start:0, end:1}],
-      test_start:[0,1,{start:0, end:1}],
+      test_start:[100,-100,{start:0.9, end:1}],
       transformR_start:[100,0,{start:0.2,end:0.4}],
 
 
@@ -181,22 +183,23 @@
       }
 
 
-      function PartScrollRatio(curSec,options){
+      function PartScrollRatio(currentYOffset,options){
         let ratio;
-        let startVal = (prevHeight - window.innerHeight + sections[curSec].offsetHeight) * options[2].start; 
-        let endVal = (prevHeight - window.innerHeight + sections[curSec].offsetHeight) * options[2].end; 
-        // let startVal = (prevHeight - window.innerHeight + sections[curSec].offsetHeight) * options[2].start; 
-        // let endVal = (prevHeight - window.innerHeight  + sections[curSec].offsetHeight) * options[2].end; 
+        let startVal = (sections[curSec].offsetHeight - window.innerHeight) * options[2].start; 
+        let endVal = (sections[curSec].offsetHeight - window.innerHeight) * options[2].end; 
         let AniPart = endVal - startVal; 
-
-        if(windowY >= startVal && windowY <= endVal){
-          ratio = (windowY - startVal) / AniPart * (options[1] - options[0]) + options[0];
-        }else if(windowY < startVal){
+        console.log(startVal,currentYOffset,endVal)
+        
+        if(currentYOffset >= startVal && currentYOffset <= endVal){
+          ratio = (currentYOffset - startVal) / AniPart * (options[1] - options[0]) + options[0];
+        }else if(currentYOffset < startVal){
           ratio = options[0];
-          console.log('first')
-        }else if(windowY > startVal){ 
+        }else if(currentYOffset > startVal){ 
           ratio = options[1];
-          console.log('last')
+        }
+        
+        if(currentYOffset > endVal){
+          console.log('more')
         }
         return ratio;
       }
@@ -204,22 +207,29 @@
       let typingWrap = document.querySelector('.typing-wrap')
 
       function playParallx(curSec){
-        console.log(curSec)
+        // console.log(curSec)
+        const currentYOffset = windowY - prevHeight; //현재씬에서 스크롤된 높이
+        const scrollRatio = currentYOffset / sections[curSec].offsetHeight; //현재씬에서 스크롤 비율
+
         switch(curSec){
           case 0 : 
             //in
-            sections[curSec].querySelector('.cont1').style.opacity = `${PartScrollRatio(curSec, parallaxOption.opacity_out)}`;
-            sections[curSec].querySelector('.cont2').style.opacity = `${PartScrollRatio(curSec, parallaxOption.opacity_in)}`;
-            sections[curSec].querySelector('.cont3').style.opacity = `${PartScrollRatio(curSec, parallaxOption.opacity_in2)}`;
-            sections[curSec].querySelector('.cont4').style.opacity = `${PartScrollRatio(curSec, parallaxOption.opacity_out2)}`;
-            typingWrap.style.transform = `translateX(${PartScrollRatio(curSec, parallaxOption.transformL)}%)`;
+            sections[curSec].querySelector('.cont1').style.opacity = `${PartScrollRatio(currentYOffset, parallaxOption.opacity_out)}`;
+            sections[curSec].querySelector('.cont2').style.opacity = `${PartScrollRatio(currentYOffset, parallaxOption.opacity_in)}`;
+            sections[curSec].querySelector('.cont3').style.opacity = `${PartScrollRatio(currentYOffset, parallaxOption.opacity_in2)}`;
+            sections[curSec].querySelector('.cont4').style.opacity = `${PartScrollRatio(currentYOffset, parallaxOption.opacity_out2)}`;
+            typingWrap.style.transform = `translateX(${PartScrollRatio(currentYOffset, parallaxOption.transformL)}%)`;
+            document.querySelector('.run-emoji').style.transform = `translateX(${PartScrollRatio(currentYOffset - window.innerHeight , parallaxOption.test_start)}%)`;
+            if(scrollRatio > 0.8){
+              document.querySelector('body').style.background = 'purple';
+            }else{
+              document.querySelector('body').style.background = 'black';
+            }
           break;
 
           case 1 : 
-            // sections[curSec].querySelector('.work-cont1').style.opacity = `${PartScrollRatio(curSec, parallaxOption.opacity_in)}`;
-            sections[curSec].querySelector('.work-cont1').style.opacity = `${PartScrollRatio(curSec, parallaxOption.test_start)}`;
-            // sections[curSec].querySelector('.work-cont1').style.transform = `translateX(${PartScrollRatio(curSec, parallaxOption.transformL_start)}%)`;
-            // console.log(`${PartScrollRatio(curSec, parallaxOption.transformL_start)}`)
+            // sections[curSec].style.backgrounColor = `rgba()`
+            sections[curSec].querySelector('.work-cont1').style.transform = `translateX(${PartScrollRatio(currentYOffset, parallaxOption.transformL_start)}%)`;
           break;
 
           case 2 : 
