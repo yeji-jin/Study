@@ -10,6 +10,37 @@
 </head>
 
 <body>
+    <!--intro-test-->
+    <!-- section : intro -->
+    <div class="tmp-intro" style="transition: .5s ease-in;">
+      <section class="intro-ani">
+        <div class="intro-bg">
+          <div class="txt-wrap">
+            <div class="intro-txt">
+              <span style="--int:0;">I</span>
+              <span>&nbsp;</span>
+              <span style="--int:1;">A</span>
+              <span style="--int:2;">M</span>
+            </div>
+            <div class="intro-txt">
+              <span style="--int:3;">Y</span>
+              <span style="--int:4;">E</span>
+              <span style="--int:5;">J</span>
+              <span style="--int:6;">I</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  <section class="scan-wrapper">
+    <div class="scan">
+      <div class="face-id"></div>
+      <p class="scan-txt">Scanning ...</p>
+    </div>
+  </section>
+    <!--//intro-test-->
+
 
   <!-- section : intro -->
   <section class="intro">
@@ -34,9 +65,9 @@
           <img src="../common/images/about-character (6).png" alt="">
         </div>
         <div class="intro-talk">
-          111안냥하세요안냥하세요안냥하세요안냥하세요안냥하세요<br>
-          111안냥하세요안냥하세요안냥하세요안냥하세요안냥하세요<br>
-          111안냥하세요안냥하세요안냥하세요안냥하세요안냥하세요<br>
+          안녕하세요!<br>
+          저는 웹퍼블리셔 진예지라고 합니다.<br>
+          제 웹사이트에 방문해주셔서 감사해요 🤩
         </div>
       </div>
 
@@ -46,9 +77,8 @@
           <img src="../common/images/about-character (1).png" alt="">
         </div>
         <div class="intro-talk">
-          222안냥하세요안냥하세요안냥하세요안냥하세요안냥하세요<br>
-          222안냥하세요안냥하세요안냥하세요안냥하세요안냥하세요<br>
-          222안냥하세요안냥하세요안냥하세요안냥하세요안냥하세요<br>
+          저는 HTML / CSS / Vanila JS / Vue.js를 이용하여<br>
+          이 사이트를 만들었어요 😃
         </div>
       </div>
 
@@ -58,9 +88,9 @@
           <img src="../common/images/about-character (3).png" alt="">
         </div>
         <div class="intro-talk">
-          333안냥하세요안냥하세요안냥하세요안냥하세요안냥하세요<br>
-          333안냥하세요안냥하세요안냥하세요안냥하세요안냥하세요<br>
-          333안냥하세요안냥하세요안냥하세요안냥하세요안냥하세요<br>
+          새롭고 다양한 UI를 만드는 것을 좋아하고<br>
+          멋 - 진 화면을 구성하는 일을 하고 있고<br>
+          끝없는 배움 속 에서 계속해서 달려나갈거예요 ! 😁
         </div>
       </div>
 
@@ -70,9 +100,8 @@
           <img src="../common/images/about-character (2).png" alt="">
         </div>
         <div class="intro-talk">
-          444안냥하세요안냥하세요안냥하세요안냥하세요안냥하세요<br>
-          444안냥하세요안냥하세요안냥하세요안냥하세요안냥하세요<br>
-          444안냥하세요안냥하세요안냥하세요안냥하세요안냥하세요<br>
+          제 포트폴리오<br>
+          구경해보실래요 ?
         </div>
       </div>
 
@@ -81,7 +110,7 @@
     <!-- section : work-->
     <section class="work intro-section">
       <div class="work-txt">
-        <img src="../common/images/illu-airplane.png" alt="" style="width:50%; margin: 0 auto;" class="run-emoji">
+        <img src="../common/images/illu-airplane.png" alt="" style="width:200px; margin: -730px auto 0;" class="run-emoji">
         <h3 class="work-txt TEST">
           이<br>
           런<br>
@@ -184,6 +213,30 @@
 
 
   <script>
+    //intro
+    function introAnimation(){
+      
+    }
+    document.querySelector('.face-id').addEventListener('animationend', function () {
+      this.style.display = 'none';
+      document.querySelector('.scan-txt').innerHTML = 'ok'
+      document.querySelector('.scan-txt').style.margin = '0'
+      document.querySelector('.scan-txt').style.fontSize = '50px'
+      document.querySelector('.intro-bg').style.animationPlayState = 'running'
+      setTimeout(() => {
+        document.querySelectorAll('.intro-bg .intro-txt > span').forEach((span,index) => {
+          span.style.animationPlayState = 'running';
+        })
+      }, 1000);
+    })
+    document.querySelector('.intro-bg .intro-txt > span').addEventListener('animationend', function () {
+      setTimeout(() => {
+        document.querySelector('.intro-bg').style.top = '-200%';
+        document.querySelector('.scan').style.top = '-200%';
+      }, 1500);
+    })
+
+    //nav
     let mainNav = document.querySelector('.nav-wrap .nav');
     let btnNavClose = document.querySelector('.nav-wrap .close');
     mainNav.addEventListener('click',()=>{
@@ -207,7 +260,7 @@
       transformL:[0,-100,{start:0.85,end:0.99}],
       transformL_start:[150,-150,{start:0.5, end:1}],
       transformL_index:[100,0,{start:0, end:0.49}],
-      test_start:[100,-100,{start:0.9, end:1}],
+      test_start:[350,-350,{start:0.9, end:1}],
       transformR_start:[100,0,{start:0.2,end:0.4}],
 
 

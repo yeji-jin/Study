@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro test</title>
+    <link rel="stylesheet" href="../common/css/reset.css">
+    <style>
+      body{background: #000; color:#fff; overflow: hidden;}
+      .intro-bg{ position: fixed; width: 100%; z-index: 5; background: #fff; color:lawngreen; height: 100vh; animation: moveRight 0.8s 1s ease-in paused forwards; opacity: 0; }
+      .txt-wrap{display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;}
+      .intro-txt{display: block; letter-spacing: 4px; font-size: 50px; font-weight: 700; }
+      .intro-txt span{ display: inline-block; margin-top: 20px; animation: moveBottom .5s ease-in forwards paused; transform: translateY(1000%); opacity: 0; animation-delay: calc(0.15s * var(--int));}
+      @keyframes moveRight {
+        0%{ transform: translateX(-100%); opacity: 0; }
+        100%{ transform: translateX(0);  opacity: 1;}
+      }
+      @keyframes moveTop {
+        0%{ transform: translateY(-1000%); opacity: 0; }
+        100%{ transform: translateY(0);  opacity: 1;}
+      }
+      @keyframes moveBottom {
+        0%{ transform: translateY(1000%); opacity: 0; }
+        100%{ transform: translateY(0);  opacity: 1;}
+      }
+
+      /*scan*/
+      .scan{display: flex; justify-content: center; align-items: center; height: 100%; flex-direction: column; }
+      .face-id{ position: relative; width: 40%; padding-bottom: 40%; background: url(../common/images/face-id-active.png) no-repeat center / cover; }
+      /* .face-id::before{ content: ""; position: absolute; top:0; left:0; width: 100%; height:100%; background: url(../common/images/face-id-active.png) no-repeat center / cover; animation: scanning 4s ease-in-out infinite;} */
+      .face-id::before{ content: ""; position: absolute; top:0; left:0; width: 100%; height:100%; background: #000; animation: scanning 2s ease-in-out 3;}
+      .face-id::after{ content: ""; position: absolute; top:0; left:50%; transform: translateX(-50%); width: 130%; height:8px; background: #3fefef; border-radius: 8px; filter: drop-shadow(0 0 20px #3fefef) drop-shadow(0 0 20px #3fefef); animation: scanning_line 2s ease-in-out 3;}
+      .scan-txt{ margin-top: 30px; text-transform: uppercase; font-size: 2em; letter-spacing: 2px; color:#119ac4; filter: drop-shadow(0 0 20px #119ac4) drop-shadow(0 0 20px #3fefef); animation: scanning_txt 1s ease-in-out 2; transition: all .5s ease-in; }
+      @keyframes scanning {
+        0%{height: 0;}
+        50%{height: 100%;}
+        100%{height: 0;}
+      }
+      @keyframes scanning_line {
+        0% , 100%{margin-top: 0;}
+        50%{margin-top: 100%;}
+      }
+      @keyframes scanning_txt {
+        0% , 100%{opacity: 0;}
+        50%{opacity: 1;}
+      }
+    </style>
+</head>
+
+<body>
+  <!-- section : intro -->
+  <section class="intro-ani">
+    <div class="intro-bg">
+      <div class="txt-wrap">
+        <div class="intro-txt">
+          <span style="--int:0;">I</span>
+          <span>&nbsp;</span>
+          <span style="--int:1;">A</span>
+          <span style="--int:2;">M</span>
+        </div>
+        <div class="intro-txt">
+          <span style="--int:3;">Y</span>
+          <span style="--int:4;">E</span>
+          <span style="--int:5;">J</span>
+          <span style="--int:6;">I</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="scan-wrapper" style=" height: 100%;">
+    <div class="scan">
+      <div class="face-id"></div>
+      <p class="scan-txt">Scanning ...</p>
+    </div>
+  </section>
+
+  <script>
+    document.querySelector('.face-id').addEventListener('animationend', function () {
+      this.style.display = 'none';
+      document.querySelector('.scan-txt').innerHTML = 'ok'
+      document.querySelector('.scan-txt').style.margin = '0'
+      document.querySelector('.scan-txt').style.fontSize = '50px'
+      document.querySelector('.intro-bg').style.animationPlayState = 'running'
+      setTimeout(() => {
+        document.querySelectorAll('.intro-txt span').forEach((span,index) => {
+          span.style.animationPlayState = 'running';
+        })
+      }, 1000);
+    })
+  </script>
+
+</body>
+</html>
