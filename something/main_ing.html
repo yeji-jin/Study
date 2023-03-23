@@ -214,22 +214,29 @@
 
   <script>
     //intro
+    const faceID = document.querySelector('.face-id');
+    const scan = document.querySelector('.scan');
+    const scanTxt = document.querySelector('.scan-txt');
+    const introBg = document.querySelector('.intro-bg');
+    const introTxt = document.querySelectorAll('.intro-bg .intro-txt > span');
+
     function introAnimation(){
-      
+
     }
-    document.querySelector('.face-id').addEventListener('animationend', function () {
-      this.style.display = 'none';
-      document.querySelector('.scan-txt').innerHTML = 'ok'
-      document.querySelector('.scan-txt').style.margin = '0'
-      document.querySelector('.scan-txt').style.fontSize = '50px'
-      document.querySelector('.intro-bg').style.animationPlayState = 'running'
+    faceID.addEventListener('animationend', function () {
+      faceID.style.display = 'none';
+      scanTxt.innerHTML = 'ok'
+      scanTxt.style.margin = '0'
+      scanTxt.style.fontSize = '50px'
+      introBg.style.animationPlayState = 'running'
       setTimeout(() => {
-        document.querySelectorAll('.intro-bg .intro-txt > span').forEach((span,index) => {
+        introTxt.forEach((span,index) => {
           span.style.animationPlayState = 'running';
         })
       }, 1000);
-    })
-    document.querySelector('.intro-bg .intro-txt > span').addEventListener('animationend', function () {
+    });
+    
+    document.querySelector('.intro-bg .intro-txt > span:last-child').addEventListener('animationend', function () {
       setTimeout(() => {
         document.querySelector('.intro-bg').style.top = '-200%';
         document.querySelector('.scan').style.top = '-200%';

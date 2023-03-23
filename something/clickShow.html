@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro test</title>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <link rel="stylesheet" href="../common/css/reset.css">
+    <style>
+      body{background: #000; color:#fff; overflow: hidden;}
+      .click-wrapper{ position: relative; display: flex; justify-content: center; align-items: center; height: 100%;}
+      .bg-txt{ font-size: 8vw; font-weight: 700; letter-spacing: 2px; z-index: 99; user-select: none; pointer-events: none; text-shadow: 0 20px 30px rgba(0,0,0,.25); }
+      .splash{ position: absolute; width: 300px; height: 300px; transform: translate(-50%,-50%); pointer-events: none; transition: all ease-in 1.5s; /*animation: showSplash 3s linear infinite;*/ }
+      @keyframes showSplash {
+        0%{ transform: translate(-50%,-50%) scale(0); opacity: 0; }
+        5% , 95%{ transform: translate(-50%,-50%) scale(1); opacity: 1; }
+        100%{ transform: translate(-50%,-50%) scale(2); opacity: 0; }
+      }
+    </style>
+</head>
+
+<body>
+  <!-- section : click area -->
+  <section class="click-wrapper">
+    <p class="bg-txt">SOMETHING -</p>
+  </section>
+  <!--
+    참고 : https://www.youtube.com/watch?v=bQzTUsMqagM / 국제강아지의날_네이버
+    https://devjaewoo.tistory.com/6    
+  -->
+  <script>
+    const body = document.querySelector('body');
+    const clickArea = document.querySelector('.click-wrapper');
+    let direction;
+    body.addEventListener('click', (e)=>{
+      let x = e.pageX - e.target.offsetLeft;
+      let y = e.pageY - e.target.offsetTop;
+      let splash = document.createElement('div');
+      splash.innerHTML = '<lottie-player src="https://assets5.lottiefiles.com/packages/lf20_daZky5.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;" loop  autoplay></lottie-player>'
+      splash.className = 'splash';
+      splash.style.left = `${x}px`;
+      splash.style.top = `${y}px`;
+      clickArea.append(splash);
+
+      x < (window.innerWidth / 2) ? direction = 'left' : direction = 'right';
+      console.log(direction)
+      
+      if(x >= window.innerWidth - 150){
+        console.log('넘음');
+        splash.style.left = `${window.innerWidth - 150}px`;
+        return;
+      }else{
+        console.log('안넘음')
+        let cnt = x;
+        let setTmp = setInterval(() => {
+          if(direction == 'left'){
+            cnt = cnt + 30;
+            if(cnt >= window.innerWidth - 150) {
+              clearInterval(setTmp);
+            }
+            splash.style.left = `${x + cnt}px`;
+          }else{
+            cnt = cnt - 30;
+            if(cnt <= 0) {
+              clearInterval(setTmp);
+              splash.style.left = `150px`;
+              return;
+            }
+            splash.style.left = `${cnt}px`;
+          }
+          console.log(cnt);
+        }, 10);
+      }
+      // setTimeout(() => {
+      //   splash.remove();
+      // }, 3000);
+      // console.log(e.pageX, e.target)
+    })
+    
+  </script>
+
+</body>
+</html>
