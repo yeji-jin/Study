@@ -7,39 +7,36 @@
     <title>I am yeji</title>
     <link rel="stylesheet" href="../common/css/reset.css">
     <link rel="stylesheet" href="../common/css/main_ing.css">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 
 <body>
-    <!--intro-test-->
     <!-- section : intro -->
-    <div class="tmp-intro" style="transition: .5s ease-in;">
-      <section class="intro-ani">
-        <div class="intro-bg">
-          <div class="txt-wrap">
-            <div class="intro-txt">
-              <span style="--int:0;">I</span>
-              <span>&nbsp;</span>
-              <span style="--int:1;">A</span>
-              <span style="--int:2;">M</span>
-            </div>
-            <div class="intro-txt">
-              <span style="--int:3;">Y</span>
-              <span style="--int:4;">E</span>
-              <span style="--int:5;">J</span>
-              <span style="--int:6;">I</span>
-            </div>
+    <section class="intro-ani">
+      <!--scan-->
+      <div class="scan">
+        <div class="face-id"></div>
+        <p class="scan-txt">Scanning ...</p>
+      </div>
+      <!--intro-bg-->
+      <div class="intro-bg">
+        <div class="txt-wrap">
+          <div class="intro-txt">
+            <span style="--int:0;">I</span>
+            <span>&nbsp;</span>
+            <span style="--int:1;">A</span>
+            <span style="--int:2;">M</span>
+          </div>
+          <div class="intro-txt">
+            <span style="--int:3;">Y</span>
+            <span style="--int:4;">E</span>
+            <span style="--int:5;">J</span>
+            <span style="--int:6;">I</span>
           </div>
         </div>
-      </section>
-    </div>
-
-  <section class="scan-wrapper">
-    <div class="scan">
-      <div class="face-id"></div>
-      <p class="scan-txt">Scanning ...</p>
-    </div>
-  </section>
-    <!--//intro-test-->
+      </div>
+    </section>
+    <!--//section : intro-->
 
 
   <!-- section : intro -->
@@ -105,11 +102,22 @@
         </div>
       </div>
 
+      <!-- inner-cont5-->
+      <div class="inner-cont cont5" style="z-index: 99; opacity: 1;">
+        <div class="phone">
+          <img src="../common/images/phone.jpg" alt="" width="350px;">
+        </div>
+      </div>
+
     </div>
 
     <!-- section : work-->
     <section class="work intro-section">
       <div class="work-txt">
+        <div class="fly-emiji">
+          <img src="../common/images/illu-seagull.png" alt="" style="width:200px;">
+          <!-- <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_cg3dbunw.json" background="transparent" speed="1" style="width: 100%;" loop  autoplay></lottie-player> -->
+        </div>
         <img src="../common/images/illu-airplane.png" alt="" style="width:200px; margin: -730px auto 0;" class="run-emoji">
         <h3 class="work-txt TEST">
           이<br>
@@ -223,9 +231,10 @@
     function introAnimation(){
 
     }
+
     faceID.addEventListener('animationend', function () {
       faceID.style.display = 'none';
-      scanTxt.innerHTML = 'ok'
+      scanTxt.innerHTML = 'success'
       scanTxt.style.margin = '0'
       scanTxt.style.fontSize = '50px'
       introBg.style.animationPlayState = 'running'
@@ -236,11 +245,11 @@
       }, 1000);
     });
     
-    document.querySelector('.intro-bg .intro-txt > span:last-child').addEventListener('animationend', function () {
+    document.querySelector('.intro-bg .intro-txt:last-child > span:last-child').addEventListener('animationend', function () {
       setTimeout(() => {
         document.querySelector('.intro-bg').style.top = '-200%';
         document.querySelector('.scan').style.top = '-200%';
-      }, 1500);
+      }, 1000);
     })
 
     //nav
@@ -260,14 +269,18 @@
       opacity_in3:[0,1,{start:0.55,end:0.8}], //startValue,endValue,startTiming,endTiming
       
       
-      opacity_out:[1,0,{start:0.1,end:0.25}], 
-      opacity_in:[0,1,{start:0.3,end:0.55}], //startValue,endValue,startTiming,endTiming
-      opacity_in2:[0,1,{start:0.6,end:0.8}],
-      opacity_out2:[0,1,{start:0.85,end:0.99}],
-      transformL:[0,-100,{start:0.85,end:0.99}],
+      opacity_out:[1,0,{start:0.1,end:0.15}], 
+      opacity_in:[0,1,{start:0.2,end:0.35}], //startValue,endValue,startTiming,endTiming
+      opacity_in2:[0,1,{start:0.4,end:0.55}],
+      opacity_out2:[0,1,{start:0.6,end:0.75}],
+      first_transform:[0,-90,{start:0.6,end:0.75}],
+      first_scale:[0,2.5,{start:0.6,end:0.75}],
+
+      transformL:[0,-150,{start:0.85,end:0.99}],
       transformL_start:[150,-150,{start:0.5, end:1}],
       transformL_index:[100,0,{start:0, end:0.49}],
       test_start:[350,-350,{start:0.9, end:1}],
+      test_start2:[-350,350,{start:0.9, end:1}],
       transformR_start:[100,0,{start:0.2,end:0.4}],
 
 
@@ -349,11 +362,13 @@
             sections[curSec].querySelector('.cont4').style.opacity = `${PartScrollRatio(currentYOffset, parallaxOption.opacity_out2)}`;
             typingWrap.style.transform = `translateX(${PartScrollRatio(currentYOffset, parallaxOption.transformL)}%)`;
             document.querySelector('.run-emoji').style.transform = `translateX(${PartScrollRatio(currentYOffset - window.innerHeight , parallaxOption.test_start)}%)`;
+            document.querySelector('.fly-emiji').style.transform = `translateX(${PartScrollRatio(currentYOffset - window.innerHeight , parallaxOption.test_start2)}%)`;
             if(scrollRatio > 0.8){
               document.querySelector('body').style.background = 'skyblue';
             }else{
               document.querySelector('body').style.background = 'black';
             }
+            document.querySelector('.phone').style.transform = `rotate(${PartScrollRatio(currentYOffset, parallaxOption.first_transform)}deg) scale(${PartScrollRatio(currentYOffset, parallaxOption.first_scale)})`
           break;
 
           case 1 : 
