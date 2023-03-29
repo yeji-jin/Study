@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I am yeji</title>
+    <link rel="stylesheet" href="../common/css/reset.css">
+    <link rel="stylesheet" href="../common/css/main_ing.css">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</head>
+
+<body>
+    <!-- section : intro -->
+    <section class="intro-ani">
+      <!--scan-->
+      <div class="scan">
+        <div class="face-id"></div>
+        <p class="scan-txt">Scanning ...</p>
+      </div>
+      <!--intro-bg-->
+      <div class="intro-bg">
+        <div class="txt-wrap">
+          <div class="intro-txt">
+            <span style="--int:0;">I</span>
+            <span>&nbsp;</span>
+            <span style="--int:1;">A</span>
+            <span style="--int:2;">M</span>
+          </div>
+          <div class="intro-txt">
+            <span style="--int:3;">Y</span>
+            <span style="--int:4;">E</span>
+            <span style="--int:5;">J</span>
+            <span style="--int:6;">I</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--//section : intro-->
+
+
+  <!-- section : intro -->
+  <section class="intro">
+    <!--typing-animation-->
+    <div class="typing-wrap">
+      <div class="intro-txt">
+        I
+        <div class="txt-ani">
+          <span class="words">am a Yeji</span>
+          <span class="words">am a Publisher</span>
+          <span class="words">will be a Developer</span>
+        </div>
+        <!-- <img src="../common/images/illu-clean.png" alt="" style="width:140px;" class="illu-clean"> -->
+      </div>
+    </div>
+
+    <!-- intro-section -->
+    <div class="intro-section about">
+      <!-- inner-cont-->
+      <div class="inner-cont cont1">
+        <div class="intro-emoji">
+          <img src="../common/images/about-character (6).png" alt="">
+        </div>
+        <div class="intro-talk">
+          안녕하세요!<br>
+          저는 웹퍼블리셔 진예지라고 합니다.<br>
+          제 웹사이트에 방문해주셔서 감사해요 🤩
+        </div>
+      </div>
+
+      <!-- inner-cont2-->
+      <div class="inner-cont cont2">
+        <div class="intro-emoji">
+          <img src="../common/images/about-character (1).png" alt="">
+        </div>
+        <div class="intro-talk">
+          저는 HTML / CSS / Vanila JS / Vue.js를 이용하여<br>
+          이 사이트를 만들었어요 😃
+        </div>
+      </div>
+
+      <!-- inner-cont3-->
+      <div class="inner-cont cont3">
+        <div class="intro-emoji">
+          <img src="../common/images/about-character (3).png" alt="">
+        </div>
+        <div class="intro-talk">
+          새롭고 다양한 UI를 만드는 것을 좋아하고<br>
+          멋 - 진 화면을 구성하는 일을 하고 있고<br>
+          끝없는 배움 속 에서 계속해서 달려나갈거예요 ! 😁
+        </div>
+      </div>
+
+      <!-- inner-cont4-->
+      <div class="inner-cont cont4">
+        <div class="intro-emoji">
+          <img src="../common/images/about-character (2).png" alt="">
+        </div>
+        <div class="intro-talk">
+          제 포트폴리오<br>
+          구경해보실래요 ?
+        </div>
+      </div>
+
+      <!-- inner-cont5-->
+      <div class="inner-cont cont5">
+        <div class="intro-desc">
+          <strong>Someting - </strong>
+          <p>
+            어쩌구 저쩌구 저쩌꾸 어쩌구<br>
+            어쩌구 저쩌구 저쩌꾸 어쩌구<br>
+            어쩌구 저쩌구 저쩌꾸 어쩌구<br>
+          </p>
+        </div>
+        <div class="phone">
+          <img src="../common/images/iphone.png" alt="" width="350px;">
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <script>
+    //intro
+    const faceID = document.querySelector('.face-id');
+    const scan = document.querySelector('.scan');
+    const scanTxt = document.querySelector('.scan-txt');
+    const introBg = document.querySelector('.intro-bg');
+    const introTxt = document.querySelectorAll('.intro-bg .intro-txt > span');
+
+    function introAnimation(){
+
+    }
+
+    faceID.addEventListener('animationend', function () {
+      faceID.style.display = 'none';
+      scanTxt.innerHTML = 'success'
+      scanTxt.style.margin = '0'
+      scanTxt.style.fontSize = '50px'
+      introBg.style.animationPlayState = 'running'
+      setTimeout(() => {
+        introTxt.forEach((span,index) => {
+          span.style.animationPlayState = 'running';
+        })
+      }, 1000);
+    });
+    
+    document.querySelector('.intro-bg .intro-txt:last-child > span:last-child').addEventListener('animationend', function () {
+      setTimeout(() => {
+        document.querySelector('.intro-bg').style.top = '-200%';
+        document.querySelector('.scan').style.top = '-200%';
+      }, 1000);
+    })
+
+    // //nav
+    // let mainNav = document.querySelector('.nav-wrap .nav');
+    // let btnNavClose = document.querySelector('.nav-wrap .close');
+    // mainNav.addEventListener('click',()=>{
+    //   mainNav.classList.add('active');
+    //   mainNav.style.animation = 'initial';
+    // });
+    // btnNavClose.addEventListener('click',()=>{
+    //   mainNav.classList.remove('active');
+    //   mainNav.style.animation = '';
+    // })
+
+
+    const parallaxOption = {
+      opacity_in3:[0,1,{start:0.55,end:0.8}], //startValue,endValue,startTiming,endTiming
+      
+      
+      opacity_out:[1,0,{start:0.1,end:0.15}], 
+      opacity_in:[0,1,{start:0.2,end:0.35}], 
+      opacity_in2:[0,1,{start:0.4,end:0.55}],
+      opacity_out2:[0,1,{start:0.6,end:0.75}],
+      opacity_out3:[0,1,{start:0.75,end:0.8}],
+      phone_transformY:[0,-100,{start:0.85,end:1}],
+      phone_transformX:[0,-50,{start:0.85,end:0.9}],
+      phone_rotate:[0,-90,{start:0.85,end:0.9}],
+      phone_scale:[0,1,{start:0.8,end:0.9}],
+      phone_opacity:[1,0,{start:0.85,end:0.9}],
+
+      transformL:[0,-150,{start:0.75,end:0.8}],
+      transformL_start:[150,-150,{start:0.5, end:1}],
+      transformS_index:[0,1,{start:0, end:0.4}],
+      test_start:[350,-350,{start:0.9, end:0.95}],
+      test_start2:[-350,350,{start:0.9, end:0.95}],
+      transformR_start:[100,0,{start:0.2,end:0.4}],
+
+
+      desc_opacity:[0,1,{start:0.5,end:0.8}],
+      transformXR:[200,0,{start:0.3,end:0.7}],
+      transformXL:[-200,0,{start:0.3,end:0.7}],
+      transformTop:[30,0,{start:0.3,end:0.7}],
+
+      outOpacity:[1,0,{start:0.1,end:0.8}]
+    }
+    
+    let windowY;
+    let curSec = 0;
+    let prevHeight = 0;
+    let sections = document.querySelectorAll('.intro-section');
+
+    window.addEventListener('scroll', ()=>{
+      windowY = window.pageYOffset;
+      scrollLoop();
+    })
+
+    function scrollLoop(){
+        prevHeight = 0;
+        for(let i=0; i<curSec; i++){
+          prevHeight += sections[i].offsetHeight;
+        }
+        if(windowY > prevHeight + sections[curSec].offsetHeight){
+          curSec++;
+        }
+        if(windowY < prevHeight){
+          if(curSec === 0) return;
+          curSec--;
+        }
+        playParallx(curSec);
+        document.querySelector('body').className = `play-${curSec}`;
+        // console.log(curSec , 'prevHeight', prevHeight )
+      }
+
+      function curSecScrollRatio(curSec){
+        let ratio = (windowY - sections[curSec].offsetTop)  / sections[curSec].offsetHeight;
+        return ratio;
+      }
+
+
+      function PartScrollRatio(currentYOffset,options){
+        let ratio;
+        let startVal = (sections[curSec].offsetHeight) * options[2].start; 
+        let endVal = (sections[curSec].offsetHeight) * options[2].end; 
+        let AniPart = endVal - startVal; 
+        // console.log(startVal,currentYOffset,endVal)
+        
+        if(currentYOffset >= startVal && currentYOffset <= endVal){
+          ratio = (currentYOffset - startVal) / AniPart * (options[1] - options[0]) + options[0];
+        }else if(currentYOffset < startVal){
+          ratio = options[0];
+        }else if(currentYOffset > startVal){ 
+          ratio = options[1];
+        }
+        
+        if(currentYOffset > endVal){
+          // console.log('more')
+        }
+        return ratio;
+      }
+
+      let typingWrap = document.querySelector('.typing-wrap')
+
+      function playParallx(curSec){
+        // console.log(curSec)
+        const currentYOffset = windowY - prevHeight + window.innerHeight; //현재씬에서 스크롤된 높이
+        const scrollRatio = currentYOffset / sections[curSec].offsetHeight; //현재씬에서 스크롤 비율
+
+        console.log(curSec, scrollRatio)
+        switch(curSec){
+          case 0 : 
+            //in
+            sections[curSec].querySelector('.cont1').style.opacity = `${PartScrollRatio(currentYOffset, parallaxOption.opacity_out)}`;
+            sections[curSec].querySelector('.cont2').style.opacity = `${PartScrollRatio(currentYOffset, parallaxOption.opacity_in)}`;
+            sections[curSec].querySelector('.cont3').style.opacity = `${PartScrollRatio(currentYOffset, parallaxOption.opacity_in2)}`;
+            sections[curSec].querySelector('.cont4').style.opacity = `${PartScrollRatio(currentYOffset, parallaxOption.opacity_out2)}`;
+            sections[curSec].querySelector('.cont5').style= `opacity:${PartScrollRatio(currentYOffset, parallaxOption.opacity_out3)}; transform: translateY(${PartScrollRatio(currentYOffset, parallaxOption.phone_transformY)}%)`;
+            // sections[curSec].querySelector('.cont5').style = `opacity:${PartScrollRatio(currentYOffset, parallaxOption.opacity_out3)}; transform: translateY(${PartScrollRatio(currentYOffset - window.innerHeight, parallaxOption.phone_transformY)}%)`;
+            typingWrap.style.transform = `translateX(${PartScrollRatio(currentYOffset, parallaxOption.transformL)}%)`; 
+            document.querySelector('.phone').style.transform = `translateX(${PartScrollRatio(currentYOffset, parallaxOption.phone_transformX)}%) rotate(${PartScrollRatio(currentYOffset, parallaxOption.phone_rotate)}deg)`
+            document.querySelector('.cont5 .intro-desc').style.opacity = `${PartScrollRatio(currentYOffset, parallaxOption.phone_opacity)}`;
+            // document.querySelector('.phone').style.transform = `translateY(${PartScrollRatio(currentYOffset, parallaxOption.phone_transformY)}%) rotate(${PartScrollRatio(currentYOffset, parallaxOption.phone_rotate)}deg) scale(${PartScrollRatio(currentYOffset, parallaxOption.phone_scale)})`
+            // document.querySelector('.phone').style.transform = `translateY(${PartScrollRatio(currentYOffset - window.innerHeight, parallaxOption.phone_transformY)}%) rotate(${PartScrollRatio(currentYOffset, parallaxOption.phone_rotate)}deg) scale(${PartScrollRatio(currentYOffset, parallaxOption.phone_scale)})`
+            // document.querySelector('.run-emoji').style.transform = `translateX(${PartScrollRatio(currentYOffset - window.innerHeight , parallaxOption.test_start)}%)`;
+            // document.querySelector('.fly-emiji').style.transform = `translateX(${PartScrollRatio(currentYOffset - window.innerHeight , parallaxOption.test_start2)}%)`;
+            if(scrollRatio > 0.9){
+              document.querySelector('body').style.background = 'skyblue';
+            }else{
+              document.querySelector('body').style.background = 'black';
+            }
+            break;
+            
+            case 1 : 
+            // sections[curSec].querySelector('.work-cont1').style.transform = `translateX(${PartScrollRatio(currentYOffset, parallaxOption.transformL_start)}%)`;
+            // sections[curSec].querySelector('.index-wrap').style.transform = `scale(${PartScrollRatio(currentYOffset, parallaxOption.transformS_index)})`;
+            // sections[curSec].querySelector('.index-wrap').style.transform = `translate(${PartScrollRatio(currentYOffset, parallaxOption.transformL_index)}%)`;
+            break;
+            
+            case 2 : 
+          break;
+
+          case 3 : 
+          break;
+
+
+        }
+      }
+     
+  </script>
+
+</body>
+</html>
