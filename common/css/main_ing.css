@@ -14,8 +14,8 @@ img{width:100%;}
 /* inner-cont */
 .intro-section .inner-cont{ display: flex; justify-content:space-around; align-items: end; position: fixed; bottom: 0; width: 100%; opacity: 0; background: #000; }
 .intro-section .inner-cont:first-child{ opacity: 1; }
-.intro-section.auto{ z-index: 2; min-height: unset; }
-.intro-section.work{ height: 500vh; z-index: 2; color:#000; }
+.intro-section.auto{ z-index: 2; min-height: unset; background: #FBF6EB;}
+.intro-section.work{ height: 500vh; z-index: 2; background: #FBF6EB; color:#000; }
 .intro-section.work .work-txt{ padding:10% 0; color:#000; }
 .intro-talk{ margin: 5% 5% 30% 5%; padding:2%; border-radius: 20px; background: #fff; color:#000;}
 .intro-section .inner-cont.cont5{ padding-bottom: 10%; display: block; height: 100vh; align-items: center; transition: .3s ease-in; }
@@ -34,12 +34,17 @@ img{width:100%;}
 .gallery-list img{ padding: 8px; width: 100%;}
 
 /*work*/
-.work-wrap{ position:fixed; top:20%; display: flex; padding:80px 60px; transform: translateX(-150%);}
-.work-wrap li{ transition: all ease-in-out .3s; transform: rotate(-10deg); width:400px; background: rgba(255,255,255,0.1); border-radius: 20px; box-shadow: 0 25px 25px rgba(0,0,0,0.1); overflow: hidden; }
-.work-wrap li:hover{ transform: scale(1.2); z-index: 3;}
-.work-wrap li img{ width: 100%; }
-.work-wrap li .desc{ padding: 40px 0; }
-.work-wrap li + li{ margin-left:40px; }
+.horizontal-intro{position:fixed; top:0; left:100%; bottom:0; display:flex; align-items: center; background: lavenderblush;}
+.horizontal-intro-txt{ width:40vw; font-size: 5vw;}
+.work-wrap{ display: flex; align-items: center; height: 100vh; padding:80px 60px; background: #000; }
+/* .work-wrap{ position:fixed; top:10%; display: flex; padding:80px 60px; transform: translateX(-150%); background: #000; } */
+.work-wrap li{ transition: .3s ease-in;  /*transform: rotate(-10deg);*/ padding:40px; width:75vw; height: 60vh; background: #fff; border-radius: 20px; box-shadow: 0 25px 25px rgba(0,0,0,0.1); overflow: hidden; }
+.work-wrap li.active{ box-shadow: 2px 2px 25px 25px rgb(255 226 0 / 70%); }
+/* .work-wrap li:hover{ transform: scale(1.2); z-index: 3;} */
+.work-wrap li img{ width: 20%; }
+.work-wrap li .desc{ padding: 40px 0; font-size: 40px; }
+.work-wrap li span{ display: block; }
+.work-wrap li + li{ margin-left:100px; }
 .work-txt{ padding: 4% 0; font-size: 3vw; color:#000;}
 
 .section-tit{ position: relative; top:-4vw; left:4vw; z-index: 3; text-align: left; font-size: 9vw; color:#333; letter-spacing: 4px;}
@@ -143,7 +148,7 @@ img{width:100%;}
 
 .work-header{ padding: 4%; border-bottom: 2px solid rgba(255,204,0,.3);}
 .work-header ul{ display: flex;}
-.work-header li{ padding: 0 20px; font-size: 26px; font-weight: 400; }
+.work-header li{ padding: 0 20px; font-size: 26px; color:#000; font-weight: 400; }
 
 /*하단 버튼~ > 사이트 바뀜~ 현대차 같은 */ 
 
@@ -159,9 +164,13 @@ img{width:100%;}
 .find-wrap .find-txt{ position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);}
 .find-wrap .find-txt > p{ font-size: 18px; }
 .find-wrap .icon{ margin: 0 auto; width:20%; }
-.find-wrap .random-thumb{ position: absolute; left:36%; top:64%; transform: translate(-50%,-50%); width: 25%; }
+.find-wrap .random-thumb{ position: absolute; left:36%; top:64%; transform: translate(-50%,-50%); width: 25%; opacity: 0; animation: thumbIntro 1s ease-in forwards; }
 
 @keyframes borderChange {
   0%{opacity: 0.5; }
   100%{opacity: 1; }
+}
+@keyframes thumbIntro {
+  0%{opacity: 0; padding-top: 50px; }
+  100%{opacity: 1; padding-top: 0; }
 }
