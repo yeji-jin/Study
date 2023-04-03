@@ -222,7 +222,8 @@
       
       <div class="horizontal-intro">
         <div class="horizontal-intro-txt">
-            이런 일을<br>했어요.
+            이런 일 했어요.
+            <strong>What I do</strong>
         </div>
         <!-- work-list -->
         <ul class="work-wrap work-cont1">
@@ -232,7 +233,7 @@
             <img src="../common/images/tmp/screen-3.png" alt="">
             <img src="../common/images/tmp/screen-4.png" alt="">
             <div class="work-list-txt">
-              <p class="desc">신규서비스에 페이지를 만들었어요.</p>
+              <p class="desc">신규서비스 페이지를 만들었어요.</p>
             </div>
           </li>
           <li class="work-list">
@@ -266,8 +267,8 @@
       </div>
     </section>
 
-    <section class="intro-section auto">
-      <h2 class="section-tit bg2">works.</h2>
+    <section class="intro-section auto other">
+      <h2 class="section-tit bg2">Other works.</h2>
       <div class="work-header">
         <ul>
           <li>Site</li>
@@ -424,7 +425,7 @@
         <div class="random-thumb" style="width: 12%; left:80%; top:24%;">
           <img src="../common/images/icon/ico-frown.png" alt="">
         </div>
-        <div class="find-txt">
+        <div class="find-txt" onclick="findYEJI()">
           <div class="icon">
             <img src="../common/images/icon/ico-coding-.png" alt="" class="ico-coding">
           </div>
@@ -516,7 +517,7 @@
       transformTop:[30,0,{start:0.3,end:0.7}],
 
       outOpacity:[1,0,{start:0.1,end:0.8}],
-      left_start:[100,-400,{start:0.5,end:1}]
+      left_start:[0,-100,{start:0.4,end:0.8}]
     }
     
     let windowY;
@@ -608,11 +609,11 @@
             
             case 1 : 
             // sections[curSec].querySelector('.tmp-wrap').style.transform = `translateX(${PartScrollRatio(currentYOffset, parallaxOption.transformY_index)}%)`;
-            sections[curSec].querySelector('.horizontal-intro').style.left = `${PartScrollRatio(currentYOffset + window.innerHeight, parallaxOption.left_start)}%`;
+            sections[curSec].querySelector('.horizontal-intro').style= `transform: translateX(${PartScrollRatio(currentYOffset, parallaxOption.left_start)}%)`;
             
             const workWrap = new IntersectionObserver(entries => {
               entries.forEach(entry => {
-                if (entry.intersectionRatio > 0.5) {
+                if (entry.intersectionRatio > 0.6) {
                   entry.target.classList.add('active');
                 }
                 else {
@@ -639,37 +640,93 @@
       }
      
       //toss
-      const findWrap = document.querySelector('.circle:last-child').getBoundingClientRect();
-      const randomThumb = document.querySelectorAll('.random-thumb:not(.yeji)');
-      const randomSeconds = Math.floor(Math.random() * randomThumb.length) + 1;
-      const YEJI = document.querySelector('.yeji');
-      const SafeNum = 200;
+      // const findWrap = document.querySelector('.circle:last-child').getBoundingClientRect();
+      // const randomThumb = document.querySelectorAll('.random-thumb:not(.yeji)');
+      // const randomSeconds = Math.floor(Math.random() * randomThumb.length) + 1;
+      // const YEJI = document.querySelector('.yeji');
+      // const SafeNum = 200;
 
-      let x1 = 0;
-      let y1 = 0;
-      let x2 = findWrap.width - SafeNum;
-      let y2 = findWrap.height - SafeNum;
+      // let x1 = 0;
+      // let y1 = 0;
+      // let x2 = findWrap.width - SafeNum;
+      // let y2 = findWrap.height - SafeNum;
 
-      const randomPosition_X = randomNumber(x1,x2);
-      const randomPosition_Y = randomNumber(x1,x2);
-      const randomArr = []
+      // const randomPosition_X = randomNumber(x1,x2);
+      // const randomPosition_Y = randomNumber(x1,x2);
+      // const randomArr = []
 
-      YEJI.style.left = `${randomPosition_X}px`;
-      YEJI.style.top = `${randomPosition_Y}px`;
+      // YEJI.style.left = `${randomPosition_X}px`;
+      // YEJI.style.top = `${randomPosition_Y}px`;
 
-      for(i=0; i<randomThumb.length; i++){
-        randomThumb[i].style.left = `${randomNumber(x1,x2)}px`;
-        randomThumb[i].style.top = `${randomNumber(x1,x2)}px`;
-        randomThumb[i].style.animationDelay = `${i + Math.floor(Math.random() * randomThumb.length) + 1}s`
-        randomArr.push(randomNumber(x1,x2))
-      }
+      // for(i=0; i<randomThumb.length; i++){
+      //   randomThumb[i].style.left = `${(i + 1) * randomNumber(x1,x2)}px`;
+      //   randomThumb[i].style.top = `${randomNumber(x1,x2)}px`;
+      //   randomThumb[i].style.animationDelay = `${i + Math.floor(Math.random() * randomThumb.length) + 1}s`
+      //   randomArr.push(randomNumber(x1,x2))
+      //   console.log('i',i)
+      // }
       
-      console.log(randomArr)
+      // console.log(randomArr)
       
       function randomNumber(min, max){
-        return Math.random() * (max - min) + min;
+        // return Math.random() * (max - min) + min;
+        let tmp = Math.random() * (max - min) + min;
+        if(tmp < 400) {}
+        console.log('randomNumber', tmp);
+        return tmp;
       }
 
+
+      function findYEJI(){
+        const findWrap = document.querySelector('.circle:last-child').getBoundingClientRect();
+        const randomThumb = document.querySelectorAll('.random-thumb:not(.yeji)');
+        const randomSeconds = Math.floor(Math.random() * randomThumb.length) + 1;
+        const YEJI = document.querySelector('.yeji');
+        const SafeNum = 200;
+
+        let x1 = 50;
+        let y1 = 50;
+        let x2 = findWrap.width - SafeNum;
+        let y2 = findWrap.height - SafeNum;
+
+        let x_center = (window.innerWidth / 2) + 50;
+        let y_center = (window.innerHeight / 2) + 50;
+
+        const randomPosition_X = randomNumber(x1,x2);
+        const randomPosition_Y = randomNumber(x1,x2);
+        const randomArr = []
+
+        YEJI.style.left = `${randomPosition_X}px`;
+        YEJI.style.top = `${randomPosition_Y}px`;
+
+        let pic_X;
+        let pic_Y;
+        
+        for(i=0; i<randomThumb.length; i++){
+          
+          pic_X = randomThumb[i].style.left = `${randomNumber(x1,x2)}px`;
+          pic_Y = randomThumb[i].style.top = `${randomNumber(y1,y2)}px`;
+          randomThumb[i].style.animationDelay = `${i + Math.floor(Math.random() * randomThumb.length) + 1}s`
+          randomArr.push(pic_X);
+          // console.log(randomArr);
+        }
+        
+      }
+
+
+      //정 가운데 px로 따진다면? 
+      // window.innerHeight / 2 
+      // window.innerWidth / 2
+
+      /*
+      한가운데 대충 400
+        if(랜덤포지션X < 400) {
+          re-try
+        }
+        if(랜덤포지션Y < 400) {
+          re-try
+        }
+      */
 
   </script>
 
