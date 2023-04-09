@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+.intro-section.about .inner-cont{ height:100%; flex-direction:column-reverse; justify-content: end; align-items: center; }
+.intro-section.about .intro-talk{ margin: 0; padding: 4%; font-size: 18px; }
+.intro-section.next .text-box{ flex-direction: column;}
+.intro-section.next .text-box .sub-desc{ margin-top: 40px; font-size: 18px; }
+
+.horizontal-intro-txt{min-width: 100vw;}
+.work-wrap li{width:250px;}
+
+/*footer*/
+#footer .contact{display: block;}
+#footer .contact li::before{display: inline-block; margin:0 16px 0 0; }
+#footer .contact li{ display: flex; text-align: left;}
+#footer .contact li + li{ margin:20px 0 0;}
+#footer .contact-item{ margin:0 0 0 16px; }
