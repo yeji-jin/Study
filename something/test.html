@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Image Placement</title>
+    <style>
+      .circle-wrap {
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        position: relative;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+      
+      .circle {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background: url(../common/images/about-character\ \(3\).png) no-repeat;
+        background-size: contain;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="circle-wrap">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+
+    <script>
+      // 이미지의 개수와 크기
+      const numImages = 5;
+      const imageSize = 100;
+
+      // 이미지를 랜덤한 위치에 배치하기 위한 함수
+      function getRandomPosition() {
+        const x = Math.floor(Math.random() * (400 - imageSize));
+        const y = Math.floor(Math.random() * (400 - imageSize));
+        return [x, y];
+      }
+
+      // 이미지들을 담을 배열
+      const images = [];
+
+      // 이미지를 생성하고 배치하는 함수
+      function createImage() {
+        const img = document.createElement("div");
+        img.classList.add("circle");
+
+        // 이미지의 위치를 랜덤으로 지정
+        const [x, y] = getRandomPosition();
+        img.style.left = x + "px";
+        img.style.top = y + "px";
+
+        // 이미지들이 서로 겹치지 않도록 처리
+        let overlapping = false;
+        for (let i = 0; i < images.length; i++) {
+          const otherImg = images[i];
+          const dx = x - parseInt(otherImg.style.left);
+          const dy = y - parseInt(otherImg.style.top);
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          if (distance < imageSize) {
+            overlapping = true;
+            break;
+          }
+        }
+        if (overlapping) {
+          // 겹치는 이미지가 있으면 다시 생성
+          createImage();
+        } else {
+          // 배열에 이미지 추가
+          images.push(img);
+          document.querySelector(".circle-wrap").appendChild(img);
+        }
+      }
+
+      // 이미지 생성
+      for (let i = 0; i < numImages; i++) {
+        createImage();
+      }
+    </script>
+  </body>
+</html>
