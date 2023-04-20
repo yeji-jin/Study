@@ -7,9 +7,10 @@
     <title>I am yeji</title>
     <link rel="stylesheet" href="../common/css/reset.css">
     <link rel="stylesheet" href="../common/css/main_ing.css">
-    <!-- <link rel="stylesheet" media="(min-width:641px) and (max-width:1200px)" href="../common/css/main_ing_table.css"> -->
+    <link rel="stylesheet" media="(min-width:641px) and (max-width:1000px)" href="../common/css/main_ing_tablet.css">
     <link rel="stylesheet" media="(min-width:0px) and (max-width:640px)" href="../common/css/main_ing_mobile.css">
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 </head>
 
 <body>
@@ -43,17 +44,6 @@
 
   <!-- section : intro -->
   <section class="intro">
-    <!--typing-animation-->
-    <!-- <div class="typing-wrap">
-      <div class="intro-txt">
-        I
-        <div class="txt-ani">
-          <span class="words">am a Yeji</span>
-          <span class="words">am a Publisher</span>
-          <span class="words">will be a Developer</span>
-        </div>
-      </div>
-    </div> -->
 
     <div class="logo">
       <div class="txt-wrap">
@@ -72,22 +62,20 @@
       </div>
     </div>
 
-    <div style="position:fixed; top:0; right:-6%;">
-      <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_qiTn8GaX49.json" background="transparent" speed="1" style="width: 300px;" loop autoplay></lottie-player>
+    <div class="scroll-info-nav">
+      <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_qiTn8GaX49.json" class="lottie-scroll-down" background="transparent" speed="1" loop autoplay></lottie-player>
     </div>
     
     <!-- intro-section -->
-    <div class="intro-section about" style="position: relative;">
-      <!--background: -webkit-linear-gradient(white, #38495a);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;-->
-      <!-- inner-cont-->
+    <div class="intro-section about">
 
+      <!-- bg-txt-->
       <div class="bg-txt">#WORK</div>
-      <div class="bg-txt">#WORK</div>
-      <div class="bg-txt">#WORK</div>
-      <div class="bg-txt">#WORK</div>
+      <div class="bg-txt">#RESPONSIBLE</div>
+      <div class="bg-txt">#PASSION</div>
+      <div class="bg-txt">#CHALLENGE</div>
 
+       <!-- inner-cont1-->
       <div class="inner-cont cont1">
         <div class="intro-emoji">
           <img src="../common/images/about-character (6).png" alt="">
@@ -136,11 +124,11 @@
       <!-- inner-cont5-->
       <div class="inner-cont cont5">
         <div class="intro-desc">
-          <strong>Someting - </strong>
-          <p>
-            어쩌구 저쩌구 저쩌꾸 어쩌구<br>
-            어쩌구 저쩌구 저쩌꾸 어쩌구<br>
-            어쩌구 저쩌구 저쩌꾸 어쩌구<br>
+          <strong class="sub-tit">" Career Goals "</strong>
+          <p class="sub-desc">
+            새로운 기술 습득의 즐거움!<br>
+            빠르게 변화하는 트렌드에 맞춰 발전하는<br>
+            프론트엔드 개발자가 되겠습니다 :&#41;
           </p>
         </div>
         <div class="gallery-wrapper">
@@ -159,11 +147,12 @@
             </li>
           </ul>
         </div>
+
+        <!--iphone-wrapper-->
         <div class="iphone-wrapper">
           <div class="phone">
             <img src="../common/images/iphone.svg" alt="" width="550px;" class="iphone-frame">
             <div class="iphone-viewport">
-              <!-- <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_evit8kzr.json" class="iphone-bg lottie" background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player> -->
               <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_WZ1sT4.json" class="iphone-bg lottie" background="#fff"  speed="1" style="width: 300px;" loop autoplay></lottie-player>
             </div>
             <div class="iphone-viewport">
@@ -189,14 +178,15 @@
             </div>
           </div>
         </div>
-        <div class="ending-txt">
-          Nice to meet you !
-        </div>
+        <!--//iphone-wrapper-->
+
+        <div class="ending-txt">Nice to meet you !</div>
+
       </div>
 
     </div>
 
-    <!-- section : work-->
+    <!-- section2 : Profile -->
     <section class="work intro-section auto">
       <h2 class="section-tit">Profile.</h2>
       <div class="tmp-wrap">
@@ -214,7 +204,8 @@
             </div>
             <p class="name">
               진예지<br>
-              Web Publisher / UI Developer
+              Web Publisher<br>
+              UI Developer
             </p>
           </div>
           <div class="profile-info">
@@ -243,55 +234,42 @@
             </li>
             <li class="index-list">
               <h4 class="index-tit">이런일 했어요 😊</h4>
-              <p class="index-desc">신규 페이지 / UI 퍼블리싱</p>
+              <p class="index-desc">신규 페이지 퍼블리싱</p>
+              <p class="index-desc">UI/UX 개선</p>
               <p class="index-desc">이벤트 퍼블리싱</p>
               <p class="index-desc">UI 컴포넌트화</p>
-              <p class="index-desc">something~</p>
             </li>
             <li class="index-list">
               <h4 class="index-tit">공부하고 있어요 😆</h4>
               <p class="index-desc">Parallax</p>
               <p class="index-desc">Vue.js</p>
               <p class="index-desc">Git</p>
-              <p class="index-desc">React</p>
+              <p class="index-desc">React(예정)</p>
             </li>
             <li class="index-list">
               <h4 class="index-tit">그래서 저는요 😎</h4>
               <p class="index-desc">끊임없이 공부할거예요.</p>
               <p class="index-desc">계속해서 물음표를 던질거예요.</p>
-              <p class="index-desc">UI 개발자가 될거예요.</p>
               <p class="index-desc">프론트앤드 개발자가 될거예요.</p>
             </li>
           </ul>
       </div>
 
-        <!-- <div class="nav-wrap">
-          <div class="nav">
-            <div class="nav-list" style="--i:0; --x:-1; --y:0;"></div>
-            <div class="nav-list" style="--i:1; --x:1; --y:0;"></div>
-            <div class="nav-list" style="--i:2; --x:0; --y:-1;"></div>
-            <div class="nav-list" style="--i:3; --x:0; --y:1;"></div>
-            <div class="nav-list" style="--i:4; --x:-1; --y:1;"></div>
-            <div class="nav-list" style="--i:5; --x:-1; --y:-1;"></div>
-            <div class="nav-list" style="--i:6; --x:1; --y:-1;"></div>
-            <div class="nav-list" style="--i:7; --x:1; --y:1;"></div>
-          </div>
-          <div class="close"></div>
-        </div> -->
-      
-
     </section>
+    <!-- //section2 : Profile -->
 
+    <!--section3 (work) -->
     <section class="intro-section what-do">
+      <!--horizontal-intro-->
       <div class="horizontal-intro">
         <div class="horizontal-intro-txt">
           <div class="inner-txt">
-              <span class="main-tit">What I do</span>
+              <span class="main-tit">WORK</span>
               <strong class="sub-tit">이런 일 했어요.</strong>
               <p class="desc">
                 하나의 페이지에도 다양한 케이스들이 존재합니다.<br>
                 컴포넌트의 재사용성을 생각하고, 어느 위치에 어떤 컴포넌트가 들어와도<br>
-                UI가 흐뜨러지지 않는 모습을 유지하는 것까지 계산하며,<br>
+                UI가 흐뜨러지지 않는 모습을 유지하는 것까지<br>
                 그 이후에 변화되는 모습까지 예측하고 작업을 진행했습니다.<br>
                 컴포넌트 단위의 유지보수에 최적화된 마크업에 관심이 많습니다.<br>
                 단순하면서도 깔끔한 UI환경을 구성하며 업무에 임하였습니다.
@@ -299,163 +277,100 @@
               <span class="desc2">사용기술 : HTML5 , CSS3 , Vanila JS , Vue.js</span>
               <span class="desc2">작업기여도 : 100%</span>
           </div>
-          <div>
-            <!-- <img src="../common/images/tmp.png" alt=""> -->
-          </div>
+          <a href="https://m.glyde.co.kr" class="btn-line type2">더보기</a>
         </div>
-
         <!-- work-list -->
         <div class="work-wrap work-cont1">
           <div class="work-cont-txt">
-            신규서비스 페이지를 만들었어요.
+            <span class="inner-border">신규서비스 페이지를 만들었어요</span>
           </div>
           <ul class="work-list-wrap">
             <li class="work-list">
               <img src="../common/images/work_thumb_new.png" alt="">
-              <div class="work-list-txt">
-                <p class="desc">신규서비스 페이지를 만들었어요.</p>
-              </div>
             </li>
             <li class="work-list">
               <img src="../common/images/work_thumb_new2.png" alt="">
-              <div class="work-list-txt">
-                <p class="desc">UI를 컴포넌트화하여 재사용했어요.</p>
-              </div>
             </li>
             <li class="work-list">
               <img src="../common/images/work_thumb_new3.png" alt="">
-              <div class="work-list-txt">
-                <p class="desc">재미있는 이벤트를 만들었어요.</p>
-              </div>
             </li>
             <li class="work-list">
               <img src="../common/images/work_thumb_new4.png" alt="">
-              <div class="work-list-txt">
-                <p class="desc">브랜드 소개를 만들었어요.</p>
-              </div>
             </li>
             <li class="work-list">
               <img src="../common/images/work_thumb_new5.png" alt="">
-              <div class="work-list-txt">
-                <p class="desc">브랜드 소개를 만들었어요.</p>
-              </div>
             </li>
             <li class="work-list">
               <img src="../common/images/work_thumb_new6.png" alt="">
-              <div class="work-list-txt">
-                <p class="desc">브랜드 소개를 만들었어요.</p>
-              </div>
             </li>
             <li class="work-list">
               <img src="../common/images/work_thumb_new7.png" alt="">
-              <div class="work-list-txt">
-                <p class="desc">브랜드 소개를 만들었어요.</p>
-              </div>
             </li>
             <li class="work-list">
               <img src="../common/images/work_thumb_new8.png" alt="">
-              <div class="work-list-txt">
-                <p class="desc">브랜드 소개를 만들었어요.</p>
-              </div>
             </li>
           </ul>
         </div>
         <!--// work-list -->
 
         <!-- work-list -->
-        <div class="work-wrap work-cont1">
+        <div class="work-wrap work-cont2">
           <div class="work-cont-txt">
-            UI를 개선했어요.
+            <span class="inner-border">UI를 개선했어요</span>
           </div>
           <ul class="work-list-wrap">
             <li class="work-list">
               <img src="../common/images/work_thumb_improv1.png" alt="">
-              <div class="work-list-txt">
-                <p class="desc">신규서비스 페이지를 만들었어요.</p>
-              </div>
             </li>
             <li class="work-list">
               <img src="../common/images/work_thumb_improv2.png" alt="">
-              <div class="work-list-txt">
-                <p class="desc">UI를 컴포넌트화하여 재사용했어요.</p>
-              </div>
             </li>
             <li class="work-list">
               <img src="../common/images/work_thumb_improv3.png" alt="">
-              <div class="work-list-txt">
-                <p class="desc">재미있는 이벤트를 만들었어요.</p>
-              </div>
             </li>
             <li class="work-list">
               <img src="../common/images/work_thumb_improv4.png" alt="">
-              <div class="work-list-txt">
-                <p class="desc">브랜드 소개를 만들었어요.</p>
-              </div>
             </li>
             <li class="work-list">
               <img src="../common/images/work_thumb_improv5.png" alt="">
-              <div class="work-list-txt">
-                <p class="desc">브랜드 소개를 만들었어요.</p>
-              </div>
             </li>
           </ul>
         </div>
         <!--// work-list -->
 
         <!-- work-list -->
-        <div class="work-wrap work-cont1">
+        <div class="work-wrap work-cont3">
           <div class="work-cont-txt">
-            재미있는 이벤트를 만들었어요.
+            <span class="inner-border">재미있는 이벤트를 만들었어요</span>
           </div>
           <ul class="work-list-wrap">
             <li class="work-list">
               <img src="../common/images/work_thumb_event1.png" alt="">
-              <div class="work-list-txt">
-                <p class="desc">신규서비스 페이지를 만들었어요.</p>
-              </div>
             </li>
             <li class="work-list">
               <img src="../common/images/work_thumb_event2.png" alt="">
-              <div class="work-list-txt">
-                <p class="desc">UI를 컴포넌트화하여 재사용했어요.</p>
-              </div>
             </li>
             <li class="work-list">
               <img src="../common/images/work_thumb_event3.png" alt="">
-              <div class="work-list-txt">
-                <p class="desc">재미있는 이벤트를 만들었어요.</p>
-              </div>
             </li>
             <li class="work-list">
               <img src="../common/images/work_thumb_event4.png" alt="">
-              <div class="work-list-txt">
-                <p class="desc">브랜드 소개를 만들었어요.</p>
-              </div>
             </li>
             <li class="work-list">
               <img src="../common/images/work_thumb_event5.png" alt="">
-              <div class="work-list-txt">
-                <p class="desc">브랜드 소개를 만들었어요.</p>
-              </div>
             </li>
           </ul>
         </div>
         <!--// work-list -->
 
       </div>
+      <!--//horizontal-intro-->
     </section>
+    <!--//section3 (work) -->
 
-
+    <!--//section4 (project) -->
     <section class="intro-section auto other">
       <h2 class="section-tit bg2">Other works.</h2>
-      <!-- <div class="work-header">
-        <ul>
-          <li>Site</li>
-          <li>UI</li>
-          <li>Animation</li>
-          <li>what</li>
-        </ul>
-      </div> -->
       <strong class="top-tit">
         <span class="highlight">열심히</span><br>
         만들어봤어요.<br>
@@ -463,81 +378,86 @@
       <div class="project-wrapper">
         <ul class="project-container">
           <li class="project-list">
-            <div class="cool">
-              <img src="../common/images/tmp.png" alt="">
+            <div class="project-thumb icon-thumb">
+              <img src="../common/images/project_thumb_3.png" alt="">
             </div>
-            <p class="project-txt">somethingsomethingsomething</p>
+            <p class="project-txt">국제 강아지의날</p>
             <div class="tag">
-              <span>#css</span>
-              <span>#css</span>
-              <span>#css</span>
+              <span>#HTML5</span>
+              <span>#CSS</span>
+              <span>#Vanila JS</span>
             </div>
           </li>
           <li class="project-list">
-            <div class="cool">
-              <img src="../common/images/tmp.png" alt="">
+            <div class="project-thumb icon-thumb">
+              <img src="../common/images/project_thumb_4.png" alt="">
             </div>
-            <p class="project-txt">somethingsomethingsomething</p>
+            <p class="project-txt">UI sample</p>
             <div class="tag">
-              <span>#css</span>
-              <span>#css</span>
-              <span>#css</span>
+              <span>#HTML5</span>
+              <span>#CSS</span>
+              <span>#Vanila JS</span>
+              <span>#Vue.js</span>
             </div>
           </li>
           <li class="project-list">
-            <div class="cool">
-              <img src="../common/images/tmp.png" alt="">
+            <div class="project-thumb icon-thumb">
+              <img src="../common/images/project_thumb_5.png" alt="">
             </div>
-            <p class="project-txt">somethingsomethingsomething</p>
+            <p class="project-txt">스토리북</p>
             <div class="tag">
-              <span>#css</span>
-              <span>#css</span>
-              <span>#css</span>
+              <span>#HTML5</span>
+              <span>#CSS</span>
+              <span>#Vanila JS</span>
             </div>
           </li>
           <li class="project-list">
-            <div class="cool">
-              <img src="../common/images/tmp.png" alt="">
+            <div class="project-thumb icon-thumb">
+              <img src="../common/images/project_thumb_6.png" alt="">
             </div>
+            <p class="project-txt">패럴럭스</p>
             <div class="tag">
-              <span>#css</span>
-              <span>#css</span>
-              <span>#css</span>
+              <span>#HTML5</span>
+              <span>#CSS</span>
+              <span>#Vanila JS</span>
             </div>
           </li>
           <li class="project-list">
-            <div class="cool">
-              <img src="../common/images/tmp.png" alt="">
+            <div class="project-thumb">
+              <img src="../common/images/project_thumb_1.png" alt="">
             </div>
-            <p class="project-txt">somethingsomethingsomething</p>
+            <p class="project-txt">교원라이프 반응형 사이트</p>
             <div class="tag">
-              <span>#css</span>
-              <span>#css</span>
-              <span>#css</span>
+              <span>#HTML5</span>
+              <span>#CSS</span>
+              <span>#J-QUERY</span>
             </div>
           </li>
           <li class="project-list">
-            <div class="cool">
-              <img src="../common/images/tmp.png" alt="">
+            <div class="project-thumb">
+              <img src="../common/images/project_thumb_2.png" alt="">
             </div>
-            <p class="project-txt">somethingsomethingsomething</p>
+            <p class="project-txt">서울관광센터 반응형 사이트</p>
             <div class="tag">
-              <span>#css</span>
-              <span>#css</span>
-              <span>#css</span>
+              <span>#HTML5</span>
+              <span>#CSS</span>
+              <span>#J-QUERY</span>
             </div>
           </li>
         </ul>
-        <a href="#" class="btn-line">자세히 보기</a>
+        <a href="#" class="btn-line">더보기</a>
       </div>
     </section>
+    <!--//section4 (project) -->
 
+    <!--section5 (next) -->
     <section class="intro-section auto next">
       <h2 class="section-tit bg3">Next.</h2>
       <strong class="top-tit">
         <span class="highlight">함께 일할 동료</span>를<br>
         찾고계신다구요 ?<br>
       </strong>
+
       <div class="text-box">
         <div class="main-tit">
           <span>끝없는</span>
@@ -550,7 +470,8 @@
           새로운 정답을 찾아가는 과정이라 믿습니다.
         </p>
       </div>
-
+      
+      <!--find-wrap-->
       <div class="find-wrap">
         <div class="circle-wrap">
           <div class="circle"></div>
@@ -571,7 +492,7 @@
         <div class="random-thumb">
           <img src="../common/images/icon/ico-frown.png" alt="">
         </div>
-        <div class="find-txt" onclick="findYEJI()">
+        <div class="find-txt">
           <div class="icon">
             <img src="../common/images/icon/ico-coding-.png" alt="" class="ico-coding">
           </div>
@@ -580,10 +501,14 @@
             클릭해보세요!
           </p>
         </div>
-        <div class="find-msg">흠.. 다시 생각해보세요..</div>
+        <div class="find-msg"></div>
       </div>
-    </section>
+    <!--//find-wrap-->
 
+    </section>
+    <!--section5 (next) -->
+
+    <!-- footer -->
     <footer id="footer">
       <div class="footer-top">
         <strong>CONTACT</strong>
@@ -591,24 +516,29 @@
       </div>
       <ul class="contact">
         <li>
+          <i class="fi fi-rr-phone-call"></i>
           <strong class="contact-tit">Call</strong> 
           <span class="contact-item">010 - 6239 - 2174</span>
         </li>
         <li>
+          <i class="fi fi-rr-envelope"></i>
           <strong  class="contact-tit">E-mail</strong>
           <span class="contact-item">dpwl322@naver.com</span>
         </li>
         <li>
-          <strong  class="contact-tit">GitHub</strong>
+          <i class="fi fi-rr-globe"></i>
+          <strong class="contact-tit">GitHub</strong>
           <span class="contact-item">010 - 6239 - 2174</span>
         </li>
         <li>
+          <i class="fi fi-rr-globe"></i>
           <strong  class="contact-tit">Web Site</strong>
           <span class="contact-item">010 - 6239 - 2174</span>
         </li>
       </ul>
       <p class="footer-copyright">Copyright @ YEJI corp. All rights reserved.</p>
     </footer>
+    <!--//footer -->
 
   </section>
   
@@ -646,20 +576,7 @@
         document.querySelector('.scan').style.top = '-200%';
       }, 300);
     })
-
-    //nav
-    // let mainNav = document.querySelector('.nav-wrap .nav');
-    // let btnNavClose = document.querySelector('.nav-wrap .close');
-    // mainNav.addEventListener('click',()=>{
-    //   mainNav.classList.add('active');
-    //   mainNav.style.animation = 'initial';
-    // });
-    // btnNavClose.addEventListener('click',()=>{
-    //   mainNav.classList.remove('active');
-    //   mainNav.style.animation = '';
-    // })
-
-
+    
     const parallaxOption = {
       opacity_in3:[0,1,{start:0.55,end:0.8}], //startValue,endValue,startTiming,endTiming
       
@@ -669,7 +586,7 @@
       opacity_in2:[0,1,{start:0.3,end:0.4}],
       opacity_out2:[0,1,{start:0.45,end:0.5}],
       opacity_out3:[0,1,{start:0.6,end:0.65}],
-      phone_transformX:[0,-50,{start:0.7,end:0.8}],
+      phone_left_tablet:[70,50,{start:0.7,end:0.8}],
       phone_transformY:[50,-50,{start:0.87,end:0.92}],
       phone_R:[30,35,{start:0.7,end:0.8}],
       phone_bg_X:[0,100,{start:0.81,end:0.84}],
@@ -678,10 +595,11 @@
       phone_bg_rotate:[0,90,{start:0.7,end:0.8}],
       gallery_scale:[1,0,{start:0.7,end:0.8}],
       phone_opacity:[1,0,{start:0.7,end:0.8}],
-      logo_move_left:[50,10,{start:0.6,end:0.65}],
-      logo_move_top:[8,-50,{start:0.85,end:0.9}],
+      logo_move_left_pc:[50,10,{start:0.6,end:0.65}],
+      logo_move_left_tablet:[50,14,{start:0.6,end:0.65}],
+      logo_move_top:[6,-50,{start:0.85,end:0.9}],
       intro_end_scale:[0,3,{start:0.85,end:0.9}],
-      intro_end_top:[0,-100,{start:0.87,end:1}],
+      intro_end_top:[0,-100,{start:0.87,end:0.95}],
       intro_end_opacity:[1,0,{start:0.95,end:0.97}],
 
       transformL:[0,-150,{start:0.6,end:0.65}],
@@ -710,7 +628,10 @@
     let curSec = 0;
     let prevHeight = 0;
     let enterNewScene = false;
+    let responStatus = '';
     let sections = document.querySelectorAll('.intro-section');
+    const NEXT_SEC = document.querySelector('.intro-section.next');
+    const FOOTER = document.querySelector('#footer');
 
     window.addEventListener('load',()=>{
       windowY = window.pageYOffset;
@@ -724,11 +645,8 @@
           }
       }
       console.log('curSec, load' , curSec)
-
-      const NEXT_SEC = document.querySelector('.intro-section.next');
-      const FOOTER = document.querySelector('#footer');
-      NEXT_SEC.style.marginBottom = `${FOOTER.offsetHeight}px`;
-    })
+      updateObj();
+    });
 
     window.addEventListener('scroll', ()=>{
       windowY = window.pageYOffset;
@@ -739,6 +657,27 @@
       }
     })
 
+    window.addEventListener('resize',()=>{
+      const NEXT_SEC = document.querySelector('.intro-section.next');
+      const FOOTER = document.querySelector('#footer');
+      updateObj();
+      console.log('resize', parallaxOption.left_start[1])
+    });
+
+
+    function updateObj(){
+      if(window.innerWidth > 0 && window.innerWidth < 640 ){
+        responStatus = 'mobile';
+      }else if(window.innerWidth > 641 && window.innerWidth < 1000){
+        responStatus = 'tablet';
+      }else{
+        responStatus = 'pc';
+      }
+
+      NEXT_SEC.style.marginBottom = `${FOOTER.offsetHeight}px`;
+      parallaxOption.left_start[1] = (-1 * document.querySelector('.horizontal-intro').offsetWidth) + window.innerWidth;
+      console.log('updateObj', responStatus);
+    }
 
 
     function scrollLoop(){
@@ -788,7 +727,7 @@
         return ratio;
       }
 
-      // let typingWrap = document.querySelector('.typing-wrap');
+
 
       function playParallx(curSec){
         // console.log(curSec)
@@ -798,14 +737,25 @@
         switch(curSec){
           case 0 : 
             //in
+
+            if(responStatus == 'mobile'){
+              document.querySelector('.logo').style = `top:${PartScrollRatio(currentYOffset, parallaxOption.logo_move_top)}%;`
+              
+            document.querySelector('.phone').style = `top:${PartScrollRatio(currentYOffset, parallaxOption.phone_transformY)}%; transform: rotate(${PartScrollRatio(currentYOffset, parallaxOption.phone_rotate)}deg) translate(-50%,-50%);`
+            }else if(responStatus == 'tablet'){
+              document.querySelector('.logo').style = `left:${PartScrollRatio(currentYOffset, parallaxOption.logo_move_left_tablet)}%; top:${PartScrollRatio(currentYOffset, parallaxOption.logo_move_top)}%;`
+              document.querySelector('.phone').style = `left:${PartScrollRatio(currentYOffset, parallaxOption.phone_left_tablet)}%; top:${PartScrollRatio(currentYOffset, parallaxOption.phone_transformY)}%; transform: rotate(${PartScrollRatio(currentYOffset, parallaxOption.phone_rotate)}deg) translate(-50%,-50%);`
+            }else{
+              document.querySelector('.logo').style = `left:${PartScrollRatio(currentYOffset, parallaxOption.logo_move_left_pc)}%; top:${PartScrollRatio(currentYOffset, parallaxOption.logo_move_top)}%;`             
+              document.querySelector('.phone').style = `top:${PartScrollRatio(currentYOffset, parallaxOption.phone_transformY)}%; transform: rotate(${PartScrollRatio(currentYOffset, parallaxOption.phone_rotate)}deg) translate(-50%,-50%);`
+            }
+
             sections[curSec].querySelector('.cont1').style = `opacity:${PartScrollRatio(currentYOffset, parallaxOption.opacity_out)}`;
             sections[curSec].querySelector('.cont2').style = `opacity:${PartScrollRatio(currentYOffset, parallaxOption.opacity_in)}`;
             sections[curSec].querySelector('.cont3').style = `opacity:${PartScrollRatio(currentYOffset, parallaxOption.opacity_in2)}`;
             sections[curSec].querySelector('.cont4').style = `opacity:${PartScrollRatio(currentYOffset, parallaxOption.opacity_out2)}`;
             sections[curSec].querySelector('.cont5').style= `opacity:${PartScrollRatio(currentYOffset, parallaxOption.opacity_out3)}`;
-            // typingWrap.style= `transform : translate3d(${PartScrollRatio(currentYOffset, parallaxOption.transformL)}%,0,0);`; 
-            document.querySelector('.logo').style = `left:${PartScrollRatio(currentYOffset, parallaxOption.logo_move_left)}%; top:${PartScrollRatio(currentYOffset, parallaxOption.logo_move_top)}%;`
-            document.querySelector('.phone').style = `top:${PartScrollRatio(currentYOffset, parallaxOption.phone_transformY)}%; transform: rotate(${PartScrollRatio(currentYOffset, parallaxOption.phone_rotate)}deg) translate(-50%,-50%);`
+            // document.querySelector('.phone').style = `top:${PartScrollRatio(currentYOffset, parallaxOption.phone_transformY)}%; transform: rotate(${PartScrollRatio(currentYOffset, parallaxOption.phone_rotate)}deg) translate(-50%,-50%);`
             document.querySelector('.phone .word-wrap').style = `margin-top:${PartScrollRatio(currentYOffset, parallaxOption.phone_inner_MT)}px;`
             document.querySelector('.lottie').style = `transform: rotate(${PartScrollRatio(currentYOffset, parallaxOption.phone_bg_rotate)}deg);`
             document.querySelector('.cont5 .intro-desc').style.opacity = `${PartScrollRatio(currentYOffset, parallaxOption.phone_opacity)}`;
@@ -815,10 +765,8 @@
 
             if(scrollRatio > 0.9){
               document.querySelector('.cont5').style.background = '#FBF6EB';
-              // document.querySelector('.ending-txt').classList.add('hidden');
             }else{
               document.querySelector('.cont5').style.background = '#000';
-              // document.querySelector('.ending-txt').classList.remove('hidden');
             }
             if(scrollRatio > 1){
               document.querySelector('.cont5').style.opacity = 0;
@@ -826,41 +774,6 @@
             break;
             
             case 1 : 
-            // sections[curSec].querySelector('.tmp-wrap').style.transform = `translateX(${PartScrollRatio(currentYOffset, parallaxOption.transformY_index)}%)`;
-           
-            
-            // const workWrap = new IntersectionObserver(entries => {
-            //   entries.forEach(entry => {
-            //     if (entry.isIntersecting) {
-            //       entry.target.classList.add('active');
-            //     }
-            //     else {
-            //       entry.target.classList.remove('active');
-            //     }
-            //   })
-            // })
-            // const workList = document.querySelectorAll('.work-wrap');
-            // workList.forEach((list) => {
-            //   workWrap.observe(list);
-            // })
-            // const workWrap = new IntersectionObserver(entries => {
-            //   entries.forEach(entry => {
-            //     if (entry.intersectionRatio > 0.6) {
-            //       entry.target.classList.add('active');
-            //     }
-            //     else {
-            //       entry.target.classList.remove('active');
-            //     }
-            //   })
-            // })
-            // const workList = document.querySelectorAll('.work-list');
-            // workList.forEach((list) => {
-            //   workWrap.observe(list);
-            // })
-
-            
-            // sections[curSec].querySelector('.work-cont1').style.transform = `translateX(${PartScrollRatio(currentYOffset + window.innerHeight, parallaxOption.transformL_start)}%)`;
-            // sections[curSec].querySelector('.index-wrap').style.transform = `scale(${PartScrollRatio(currentYOffset, parallaxOption.transformS_index)})`;
             break;
             
             case 2 : 
@@ -899,35 +812,6 @@
         let y1 = 100;
         let x2 = findWrap.offsetWidth - SafeNum;
         let y2 = findWrap.offsetHeight - SafeNum;
-        console.log('y2',y2,'x2',x2)
-
-        let verMiddle = document.querySelector('.find-wrap').offsetHeight / 2;
-        let horizenMiddle = document.querySelector('.find-wrap').offsetWidth / 2;
-
-        let pic_X;
-        let pic_Y;
-        let overlapping = false;
-
-
-        // fnRandomThumb();
-        
-        // function fnRandomThumb(){
-        //   for(i=0; i<randomThumb.length; i++){
-        //     pic_X = randomNumber(x1,x2);
-        //     pic_Y = randomNumber(y1,y2);
-        //     let beforeX = pic_X;
-
-        //     if(pic_X > (horizenMiddle - SafeNum) && pic_X < (horizenMiddle + SafeNum)){
-        //       fnRandomThumb();
-        //       break;
-        //     }
-        //     else{
-        //       randomThumb[i].style.left = `${pic_X}px`;
-        //       randomThumb[i].style.top = `${randomNumber(y1,y2)}px`;
-        //     }
-        //     console.log('fnRandomThumb', Math.ceil(horizenMiddle - randomThumbSize), pic_X, Math.ceil(horizenMiddle + randomThumbSize))
-
-        //   }
 
         let randomArr = [1,2,3,4];
         for(let i=randomArr.length-1; i>0; i--){
@@ -939,35 +823,35 @@
 
         document.querySelectorAll('.random-thumb').forEach((thumb , index) =>{
             if(thumb.children[0].src.indexOf('about-character') > -1){
-              thumb.className = 'random-thumb yeji';
+              thumb.className = 'random-thumb yeji'; 
             }else{
               thumb.className = 'random-thumb';
             }
             void thumb.offsetWidth; 
             thumb.classList.add(`position-${randomArr[index]}`);
-            thumb.style.animationDelay = `${(Math.floor(Math.random() * randomThumb.length) + 1) / 2}s`
+            thumb.style.animationDelay = `${(Math.floor(Math.random() * randomThumb.length) + 1) / 2}s`;
+
+            thumb.addEventListener('click',(e)=>{
+              if(thumb.children[0].src.indexOf('about-character') > -1){
+                document.querySelector('.find-msg').innerHTML = '찾아주셔서 감사합니다 :)<br>아래로 스크롤 하시면 연락 정보가 있어요.';     
+              }else{
+                document.querySelector('.find-msg').innerHTML = '찾는 사람이 제가 아닌 것 같아요 :(';
+                setTimeout(() => {
+                  e.target.parentElement.style.display = 'none';
+                }, 2500);
+              }
+              document.querySelector('.find-msg').classList.add('active');
+              setTimeout(() => {
+                  document.querySelector('.find-msg').classList.remove('active'); 
+              }, 2500);
+
+            })
+
         })
-        
+
       }
 
-      document.querySelectorAll('.random-thumb:not(.yeji)').forEach(randomThumb =>{
-        randomThumb.addEventListener('click',()=>{
-          document.querySelector('.find-msg').classList.add('active');
-          document.querySelector('.find-msg').innerHTML = '다음 기회에~';
-          setTimeout(() => {
-            document.querySelector('.find-msg').classList.remove('active'); 
-          }, 1000);
-
-        })
-      })
-      document.querySelector('.yeji').addEventListener('click' , ()=>{
-        document.querySelector('.find-msg').classList.add('active');
-        document.querySelector('.find-msg').innerHTML = '아래로 스크롤 하시면 연락정보가 있어요 :)';          
-        setTimeout(() => {
-            document.querySelector('.find-msg').classList.remove('active'); 
-        }, 2000);
-      })
-
+      //IntersectionObserver
       const indexWrap = new IntersectionObserver(entries => {
         entries.forEach(entry => {
           if (entry.intersectionRatio > 0) {
@@ -1002,9 +886,8 @@
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('active');
-            console.log(entry)
           }else{
-            entry.target.classList.remove('active');
+            // entry.target.classList.remove('active');
           }
         })
       },{ threshold: 0.35 });
