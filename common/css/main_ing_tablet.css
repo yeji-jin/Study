@@ -1,31 +1,32 @@
 @charset "UTF-8";
 
+/*---section_1*/
 .logo{font-size: 32px;}
 .scroll-info-nav{ right:-8%;}
 .scroll-info-nav .lottie-scroll-down{ width: 280px;}
 .phone{ left: 70%; }
 .bg-txt{ display: none; }
-
 .intro-section.about .inner-cont{ height:100%; flex-direction:column-reverse; justify-content: end; align-items: center; }
 .intro-section.about .intro-talk{ margin: 0; padding: 4%; font-size: 16px; }
-.intro-section.next .text-box{ flex-direction: column; text-align: center; }
-.intro-section.next .text-box .sub-desc{ margin-top: 40px; font-size: 18px; }
+.gallery-container{ visibility: hidden; }
 
-
-.index-wrap .index-cont{ margin: 5% 10%;}
+/*---section_2*/
+.index-wrap .profile{margin: 0 40px;}
+.index-wrap .index-cont{ margin: 5% 20%;}
 .index-wrap .index-list{ width:100%; margin: 4% auto; transform: translateY(50%); opacity: 0; }
 .index-wrap .index-list:nth-child(even){margin: 4% auto;}
 .index-wrap .index-list::before,
 .index-wrap .index-list::after{ content: none; }
-.index-wrap .index-list.active{ transform: translateY(0);}
-
+/*---section_3*/
 .horizontal-intro-txt{min-width: 100vw;}
 .horizontal-intro-txt .sub-tit{font-size: 38px;}
 
-
-.project-container{ grid-template-columns: repeat(auto-fill,minmax(240px,1fr)); }
-.project-wrapper{padding: 4% 8%;}
+/*---section_4*/
 .project-list .project-txt{font-size: 18px;}
+
+/*---section_5*/
+.intro-section.next .text-box{ flex-direction: column; text-align: center; }
+.intro-section.next .text-box .sub-desc{ margin-top: 40px; font-size: 18px; }
 
 /*footer*/
 #footer .contact{display: block;}
@@ -33,3 +34,4 @@
 #footer .contact li{ display: flex; text-align: left;}
 #footer .contact li + li{ margin:20px 0 0;}
 #footer .contact-item{ margin:0 0 0 16px; }
+.footer-copyright{text-align: left;}

@@ -17,10 +17,10 @@
     <!-- section : intro -->
     <section class="intro-ani">
       <!--scan-->
-      <div class="scan">
+      <!-- <div class="scan">
         <div class="face-id"></div>
         <p class="scan-txt">Scanning ...</p>
-      </div>
+      </div> -->
       <!--intro-bg-->
       <div class="intro-bg">
         <div class="txt-wrap">
@@ -74,6 +74,7 @@
       <div class="bg-txt">#RESPONSIBLE</div>
       <div class="bg-txt">#PASSION</div>
       <div class="bg-txt">#CHALLENGE</div>
+      <!--F9D949-->
 
        <!-- inner-cont1-->
       <div class="inner-cont cont1">
@@ -134,16 +135,62 @@
         <div class="gallery-wrapper">
           <ul class="gallery-container">
             <li class="gallery-list">
-              <img src="../common/images/tmp.png" alt="">
+              <img src="../common/images/work_thumb_event1.png" alt="">
             </li>
             <li class="gallery-list">
-              <img src="../common/images/tmp.png" alt="">
+              <img src="../common/images/work_thumb_event1.png" alt="">
             </li>
             <li class="gallery-list">
-              <img src="../common/images/tmp.png" alt="">
+              <img src="../common/images/work_thumb_event1.png" alt="">
             </li>
             <li class="gallery-list">
-              <img src="../common/images/tmp.png" alt="">
+              <img src="../common/images/work_thumb_event1.png" alt="">
+            </li>
+            <li class="gallery-list">
+              <img src="../common/images/work_thumb_event1.png" alt="">
+            </li>
+            <li class="gallery-list">
+              <img src="../common/images/work_thumb_event1.png" alt="">
+            </li>
+          </ul>
+          <ul class="gallery-container">
+            <li class="gallery-list">
+              <img src="../common/images/work_thumb_event1.png" alt="">
+            </li>
+            <li class="gallery-list">
+              <img src="../common/images/work_thumb_event1.png" alt="">
+            </li>
+            <li class="gallery-list">
+              <img src="../common/images/work_thumb_event1.png" alt="">
+            </li>
+            <li class="gallery-list">
+              <img src="../common/images/work_thumb_event1.png" alt="">
+            </li>
+            <li class="gallery-list">
+              <img src="../common/images/work_thumb_event1.png" alt="">
+            </li>
+            <li class="gallery-list">
+              <img src="../common/images/work_thumb_event1.png" alt="">
+            </li>
+          </ul>
+          <ul class="gallery-container">
+            <li class="gallery-list">
+              <img src="../common/images/work_thumb_event1.png" alt="">
+            </li>
+            <li class="gallery-list">
+              <img src="../common/images/work_thumb_event1.png" alt="">
+            </li>
+            <li class="gallery-list">
+              <img src="../common/images/work_thumb_event1.png" alt="">
+            </li>
+            <li class="gallery-list">
+              <img src="../common/images/work_thumb_event1.png" alt="">
+            </li>
+            <li class="gallery-list">
+              <img src="../common/images/work_thumb_event1.png" alt="">
+            </li>
+            <li class="gallery-list">
+              <img src="../common/images/work_thumb_event1.png" alt="">
             </li>
           </ul>
         </div>
@@ -189,12 +236,10 @@
     <!-- section2 : Profile -->
     <section class="work intro-section auto">
       <h2 class="section-tit">Profile.</h2>
-      <div class="tmp-wrap">
-        <strong class="top-tit">
-          안녕하세요!<br>
-          저는 <span class="highlight">진예지</span>입니다.<br>
-        </strong>
-      </div>
+      <strong class="top-tit">
+        안녕하세요!<br>
+        저는 <span class="highlight">진예지</span>입니다.<br>
+      </strong>
 
       <div class="index-wrap">
         <div class="profile">
@@ -445,7 +490,7 @@
             </div>
           </li>
         </ul>
-        <a href="#" class="btn-line">더보기</a>
+        <!-- <a href="#" class="btn-line">더보기</a> -->
       </div>
     </section>
     <!--//section4 (project) -->
@@ -518,22 +563,22 @@
         <li>
           <i class="fi fi-rr-phone-call"></i>
           <strong class="contact-tit">Call</strong> 
-          <span class="contact-item">010 - 6239 - 2174</span>
+          <a href="tel:010-6239-2174" class="contact-item">010 - 6239 - 2174</a>
         </li>
         <li>
           <i class="fi fi-rr-envelope"></i>
           <strong  class="contact-tit">E-mail</strong>
-          <span class="contact-item">dpwl322@naver.com</span>
+          <a href="mailto:dpwl322@naver.com" class="contact-item">dpwl322@naver.com</a>
         </li>
         <li>
           <i class="fi fi-rr-globe"></i>
           <strong class="contact-tit">GitHub</strong>
-          <span class="contact-item">010 - 6239 - 2174</span>
+          <a href="https://github.com/yeji-jin" class="contact-item">https://github.com/yeji-jin</a>
         </li>
         <li>
           <i class="fi fi-rr-globe"></i>
           <strong  class="contact-tit">Web Site</strong>
-          <span class="contact-item">010 - 6239 - 2174</span>
+          <a href="https://yeji-jin.github.io/" class="contact-item">https://yeji-jin.github.io/</a>
         </li>
       </ul>
       <p class="footer-copyright">Copyright @ YEJI corp. All rights reserved.</p>
@@ -542,44 +587,18 @@
 
   </section>
   
-
-
-
+  
   <script>
     //intro
-    const faceID = document.querySelector('.face-id');
-    const scan = document.querySelector('.scan');
-    const scanTxt = document.querySelector('.scan-txt');
     const introBg = document.querySelector('.intro-bg');
     const introTxt = document.querySelectorAll('.intro-bg .intro-txt > span');
-
-    function introAnimation(){
-
-    }
-
-    faceID.addEventListener('animationend', function () {
-      faceID.style.display = 'none';
-      scanTxt.innerHTML = 'success'
-      scanTxt.style.margin = '0'
-      scanTxt.style.fontSize = '50px'
-      introBg.style.animationPlayState = 'running'
-      setTimeout(() => {
-        introTxt.forEach((span,index) => {
-          span.style.animationPlayState = 'running';
-        })
-      }, 1000);
-    });
-    
     document.querySelector('.intro-bg .intro-txt:last-child > span:last-child').addEventListener('animationend', function () {
       setTimeout(() => {
         document.querySelector('.intro-bg').style.top = '-200%';
-        document.querySelector('.scan').style.top = '-200%';
-      }, 300);
+      }, 500);
     })
     
-    const parallaxOption = {
-      opacity_in3:[0,1,{start:0.55,end:0.8}], //startValue,endValue,startTiming,endTiming
-      
+    const parallaxOption = {//startValue,endValue,startTiming,endTiming
       //SEC1
       opacity_out:[1,0,{start:0,end:0.1}], 
       opacity_in:[0,1,{start:0.15,end:0.25}], 
@@ -602,26 +621,8 @@
       intro_end_top:[0,-100,{start:0.87,end:0.95}],
       intro_end_opacity:[1,0,{start:0.95,end:0.97}],
 
-      transformL:[0,-150,{start:0.6,end:0.65}],
-      transformL_opacity:[1,0,{start:0.65,end:0.7}],
-      transformL_start:[150,-150,{start:0.5, end:1}],
-      transformS_index:[0,1,{start:0, end:0.25}],
-      flying_L:[350,-350,{start:0.95, end:1}],
-      flying_R:[-350,350,{start:0.95, end:1}],
-      transformR_start:[100,0,{start:0.2,end:0.4}],
-
-      //SEC2
-      transformY_index:[100,-50,{start:0,end:0.1}],
-
-      desc_opacity:[0,1,{start:0.5,end:0.8}],
-      transformXR:[200,0,{start:0.3,end:0.7}],
-      transformXL:[-200,0,{start:0.3,end:0.7}],
-      transformTop:[30,0,{start:0.3,end:0.7}],
-
-      outOpacity:[1,0,{start:0.1,end:0.8}],
-      tmp : document.querySelector('.horizontal-intro').offsetWidth,
+      //SEC3
       left_start:[0, (-1 * document.querySelector('.horizontal-intro').offsetWidth) + window.innerWidth,{start:0.1,end:0.7}],
-      top_start:[0,-100,{start:0.8,end:1}]
     }
     
     let windowY;
@@ -634,18 +635,18 @@
     const FOOTER = document.querySelector('#footer');
 
     window.addEventListener('load',()=>{
-      windowY = window.pageYOffset;
+      updateObj();
+      let windowY = window.pageYOffset;
       
       let totalSrollHeight = 0;
       for(let i=0; i<sections.length; i++){
           totalSrollHeight += sections[i].offsetHeight;
           if(totalSrollHeight >= windowY){
             curSec = i;
-              break;
+            break;
           }
-      }
-      console.log('curSec, load' , curSec)
-      updateObj();
+        }
+        document.querySelector('body').className = `play-${curSec}`;
     });
 
     window.addEventListener('scroll', ()=>{
@@ -661,7 +662,6 @@
       const NEXT_SEC = document.querySelector('.intro-section.next');
       const FOOTER = document.querySelector('#footer');
       updateObj();
-      console.log('resize', parallaxOption.left_start[1])
     });
 
 
@@ -676,7 +676,6 @@
 
       NEXT_SEC.style.marginBottom = `${FOOTER.offsetHeight}px`;
       parallaxOption.left_start[1] = (-1 * document.querySelector('.horizontal-intro').offsetWidth) + window.innerWidth;
-      console.log('updateObj', responStatus);
     }
 
 
@@ -697,11 +696,9 @@
           curSec--;
         }
 
-        if(enterNewScene) return; //섹션이 바뀌는 순간의 값의 오차를 방지하기 위함
+        if(enterNewScene) return; 
         playParallx(curSec);
         document.querySelector('body').className = `play-${curSec}`;
-        // console.log(curSec , 'prevHeight', prevHeight )
-        // curSec > 3 ? document.querySelector('#footer').style.display = `block` : document.querySelector('#footer').style.display = `none`
       }
 
       function curSecScrollRatio(curSec){
@@ -715,7 +712,6 @@
         let startVal = (sections[curSec].offsetHeight) * options[2].start; 
         let endVal = (sections[curSec].offsetHeight) * options[2].end; 
         let AniPart = endVal - startVal; 
-        // console.log(startVal,currentYOffset,endVal)
         
         if(currentYOffset >= startVal && currentYOffset <= endVal){
           ratio = (currentYOffset - startVal) / AniPart * (options[1] - options[0]) + options[0];
@@ -730,7 +726,6 @@
 
 
       function playParallx(curSec){
-        // console.log(curSec)
         const currentYOffset = windowY - prevHeight; //현재씬에서 스크롤된 높이
         const scrollRatio = currentYOffset / sections[curSec].offsetHeight; //현재씬에서 스크롤 비율
         console.log(curSec)
@@ -759,7 +754,8 @@
             document.querySelector('.phone .word-wrap').style = `margin-top:${PartScrollRatio(currentYOffset, parallaxOption.phone_inner_MT)}px;`
             document.querySelector('.lottie').style = `transform: rotate(${PartScrollRatio(currentYOffset, parallaxOption.phone_bg_rotate)}deg);`
             document.querySelector('.cont5 .intro-desc').style.opacity = `${PartScrollRatio(currentYOffset, parallaxOption.phone_opacity)}`;
-            document.querySelector('.gallery-wrapper').style = `opacity:${PartScrollRatio(currentYOffset, parallaxOption.phone_opacity)}; transform: scale(${PartScrollRatio(currentYOffset, parallaxOption.gallery_scale)}) translateY(-50%);`;
+            document.querySelector('.gallery-wrapper').style = `opacity:${PartScrollRatio(currentYOffset, parallaxOption.phone_opacity)}; transform: translateY(-50%) rotate(10deg);`;
+            // document.querySelector('.gallery-wrapper').style = `opacity:${PartScrollRatio(currentYOffset, parallaxOption.phone_opacity)}; transform: scale(${PartScrollRatio(currentYOffset, parallaxOption.gallery_scale)}) translateY(-50%) rotate(10deg);`;
             document.querySelector('.iphone-viewport:nth-of-type(1)').style.transform = `translateX(${PartScrollRatio(currentYOffset, parallaxOption.phone_bg_X)}%)`;
             document.querySelector('.ending-txt').style = `opacity:${PartScrollRatio(currentYOffset, parallaxOption.intro_end_opacity)}; transform: translate3d(0,${PartScrollRatio(currentYOffset, parallaxOption.intro_end_top)}%,0) scale(${PartScrollRatio(currentYOffset, parallaxOption.intro_end_scale)})`;
 
@@ -768,9 +764,6 @@
             }else{
               document.querySelector('.cont5').style.background = '#000';
             }
-            if(scrollRatio > 1){
-              document.querySelector('.cont5').style.opacity = 0;
-            }
             break;
             
             case 1 : 
@@ -778,9 +771,6 @@
             
             case 2 : 
             sections[curSec].querySelector('.horizontal-intro').style = `transform: translate3d(${PartScrollRatio(currentYOffset, parallaxOption.left_start)}px , 0, 0)`;
-            if(scrollRatio > 0.5){
-              // sections[curSec].querySelector('.horizontal-intro').style.background = `#FBF6EB`
-            }
             break;
 
             case 3 : 
@@ -792,26 +782,11 @@
 
         }
       }
-      
-      function randomNumber(min, max){
-        return Math.random() * (max - min) + min;
-      }
 
       function findYEJI(){
         const findWrap = document.querySelector('.find-wrap');
-        // const findWrap = document.querySelector('.find-wrap').getBoundingClientRect();
-        // const randomThumb = document.querySelectorAll('.random-thumb:not(.yeji)');
         const randomThumb = document.querySelectorAll('.random-thumb');
-        const randomSeconds = Math.floor(Math.random() * randomThumb.length) + 1;
         const YEJI = document.querySelector('.yeji');
-        let randomThumbSize = randomThumb[0].offsetWidth;
-        let thumbSize = YEJI.offsetWidth;
-        const SafeNum = thumbSize;
-
-        let x1 = 100;
-        let y1 = 100;
-        let x2 = findWrap.offsetWidth - SafeNum;
-        let y2 = findWrap.offsetHeight - SafeNum;
 
         let randomArr = [1,2,3,4];
         for(let i=randomArr.length-1; i>0; i--){
@@ -886,11 +861,9 @@
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('active');
-          }else{
-            // entry.target.classList.remove('active');
           }
         })
-      },{ threshold: 0.35 });
+      },{ threshold: 0.4 });
       const SEC_TIT = document.querySelectorAll('.top-tit');
       SEC_TIT.forEach((title) => {
         SECTION.observe(title);
