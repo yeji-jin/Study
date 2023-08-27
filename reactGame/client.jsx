@@ -17,8 +17,14 @@
 // ReactDom.render(<RSP/>, document.querySelector('#root'));
 // ReactDom.createRoot(document.querySelector('#root')).render(<RSP/>) //18.ver
 
+// lottoGame
 import React from "react";
 import ReactDom from "react-dom/client"; //18.ver
+
 // import LottoGame from "./game/LottoGame_class"; 
-import LottoGame from "./game/LottoGame_hooks"; 
-ReactDom.createRoot(document.querySelector('#root')).render(<LottoGame/>) //18.ver
+// import LottoGame from "./game/LottoGame_hooks"; 
+// ReactDom.createRoot(document.querySelector('#root')).render(<LottoGame/>) 
+
+//틱택토
+import TicTacToe from "./game/TicTacToe"; 
+ReactDom.createRoot(document.querySelector('#root')).render(<TicTacToe/>) 

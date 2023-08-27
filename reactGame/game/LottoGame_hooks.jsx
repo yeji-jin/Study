@@ -85,6 +85,17 @@ const LottoGame = ()=>{
       }
   },[mounted.current]);//[바뀌는값]
 
+  const mounted2 = useRef(false);
+
+  useEffect(() => {
+    if (!mounted2.current) {
+      mounted2.current = true;
+      console.log('컴포넌트가 처음 마운트되었습니다.');
+    } else {
+      console.log('컴포넌트가 업데이트되었습니다.');
+    }
+  }, []);
+
   return(
     <>
         <div>당첨숫자</div>
