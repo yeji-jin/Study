@@ -27,11 +27,17 @@ function TodoBoard() {
   },[]);
 
   const addItem = ()=> {
+    // 미입력 case
     if(inputValue.length <= 0) {
       alert('할 일을 입력해주세요.');
       return;
     }
-    
+    // 중복 case
+    const savedTodoList = getFromLocalStorage('todoList');
+    if(savedTodoList.includes(inputValue)){
+      alert('동일한 내용이 존재합니다.');
+      return;
+    }
     // 업데이트된 todoList를 사용하여 저장
     const updatedList = [...todoList, inputValue];
     setTodoList(updatedList);
@@ -101,10 +107,11 @@ export default TodoBoard;
 - Doing, Done목록 작업
 - 완료목록에서 되돌리기, 삭제작업 
 - list localStorage 저장작업
+- 다크모드
 
 have to
-- 다크모드
 - 유효성 검증
+- 팝업컴포넌트 소통을 통한 삭제..
 
 */
 

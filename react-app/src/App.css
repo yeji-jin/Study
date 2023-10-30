@@ -6,7 +6,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     font: inherit;
     vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
     display: block;
 }
@@ -31,15 +30,29 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+button{ border: none; cursor: pointer; }
 
-/* todo */
+/* todo App*/
+:root[color-theme='light'] {
+    --background: #fff;
+    --color: #000;
+}
+:root[color-theme='dark'] {
+  --background: #000;
+  --color: #fff;
+}
+html{
+    background: var(--background);
+    color: var(--color);
+}
+
 .todo-board{padding: 5%; text-align: center;}
 .todo-board__title{font-size: 4vw;}
 .todo-board-box{ margin: 20px 0 60px; display: flex; gap: 10px;}
 .todo-board__input{ width: 100%; height: 40px; border-radius: 4px; border: 1px solid #666; text-indent: 16px; }
 .todo-board__btn{ width: 20%; }
 .todo-container{display: flex; gap: 4%; font-weight: bold; }
-.todo-container > section { flex:1; padding: 4%; border: 1px solid #ccc; border-radius: 16px; }
+.todo-container > section { flex:1; padding: 4%; border: 1px solid #ccc; border-radius: 16px; background: #fff; color:#000; }
 .todo-container > section h2 { font-size: 26px; text-decoration: underline; }
 .todo-container button { padding: 10px; border-radius: 18px; background: #f9f9f9; border: 1px solid #ccc; }
 .todo-container button + button { margin-left: 8px; }
@@ -48,3 +61,26 @@ table {
 .todo-item > p {line-height: 2;}
 .todo-item.done{ color:#666; text-decoration: line-through; }
 .empty-txt{ margin-top:20px; padding:24px; background: #eee; border-radius: 4px; }
+.modal-container{position: fixed; top:0; left:0; width:100%; height: 100%; background: rgba(0, 0, 0, 0.5);}
+.modal-inner{ position: relative; left: 50%; top:50%; display: flex; flex-direction: column; justify-content: space-between; transform: translate(-50%,-50%); width: 320px; min-height: 280px; overflow-y: hidden; background: #fff; border-radius: 16px; }
+.modal-txt{ padding: 40px 24px 24px; text-align: left; font-size: 16px; }
+.modal-btns{display: flex;}
+.modal-btns button{ flex:1; height: 46px; font-weight: bold; }
+.modal-btns button:first-child{ background: #E9ECEF; color:#666;}
+.modal-btns button:last-child{ background: #12B886; color:#000;}
+
+/*theme-container*/
+.theme-container{ display: flex; flex-direction: row-reverse; margin: 20px; }
+#mode-toggle{width: 0; height: 0; visibility: hidden;}
+.mode-toggle{ position: relative; display: block; width: 100px; height: 46px; border-radius: 46px; background: #fff; border: 1px solid #ccc; }
+.mode-toggle svg{ position: absolute; top:50%; transform: translateY(-50%); z-index: 1; width: 26px; height: 26px; }
+.mode-toggle svg:first-child{ left: 10px; }
+.mode-toggle svg:last-child{ right: 6px; }
+.mode-toggle::after{ content: ""; position: absolute; width: 34px; height: 34px; top:6px; left: 6px; background: linear-gradient(#ffcc89, #d8860b); border-radius: 100%; box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2); transition: all .35s; }
+.mode-toggle:active::after{ width: 52px; }
+#mode-toggle:checked + .mode-toggle { background: #242424; }
+#mode-toggle:checked + .mode-toggle::after{ transform: translateX(56px); background: linear-gradient(#3a3a3a, #777); }
+.sun path{ stroke: #fff;}
+.moon path{ stroke: #7e7e7e; }
+#mode-toggle:checked + .mode-toggle .sun path{ stroke: #7e7e7e;}
+#mode-toggle:checked + .mode-toggle .moon path{ stroke: #fff; }
