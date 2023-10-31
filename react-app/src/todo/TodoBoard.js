@@ -1,12 +1,14 @@
-import React,{useState, useRef, useEffect} from 'react';
+import React,{useState, useRef, useEffect, useContext} from 'react';
 import TodoItem from './TodoItem';
+import { CommonContext } from './context/CommonContext';
 
 function TodoBoard() {
 
   const [inputValue, setInputValue] = useState('');
   const [todoList, setTodoList] = useState([]);
   const todoInput = useRef(null);
-
+  const { setModalState } = useContext(CommonContext);
+  
   // 데이터 저장
   const saveToLocalStorage = (key, data) => {
     localStorage.setItem(key, JSON.stringify(data));
@@ -20,7 +22,6 @@ function TodoBoard() {
 
   useEffect(()=>{
     const savedTodoList = getFromLocalStorage('todoList');
-    // console.log('가져온 데이터가 있다.', savedTodoList);
     if(savedTodoList){
       setTodoList(savedTodoList);
     }
@@ -29,13 +30,21 @@ function TodoBoard() {
   const addItem = ()=> {
     // 미입력 case
     if(inputValue.length <= 0) {
-      alert('할 일을 입력해주세요.');
+      setModalState({
+        showModal: true,
+        modalCont: '할일을 입력해주세요.',
+        type:'alert'
+      });
       return;
     }
     // 중복 case
     const savedTodoList = getFromLocalStorage('todoList');
-    if(savedTodoList.includes(inputValue)){
-      alert('동일한 내용이 존재합니다.');
+    if(savedTodoList && savedTodoList.includes(inputValue)){
+      setModalState({
+        showModal: true,
+        modalCont: `진행중인 목록에 동일한 내용이 존재합니다. \n <b>* 동일한 내용 : ${inputValue}</b>`,
+        type:'alert'
+      });
       return;
     }
     // 업데이트된 todoList를 사용하여 저장
@@ -108,11 +117,10 @@ export default TodoBoard;
 - 완료목록에서 되돌리기, 삭제작업 
 - list localStorage 저장작업
 - 다크모드
-
-have to
-- 유효성 검증
 - 팝업컴포넌트 소통을 통한 삭제..
 
+have to
+- 유효성 검증 
 */
 
 

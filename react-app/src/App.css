@@ -1,4 +1,4 @@
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
     margin: 0;
     padding: 0;
     border: 0;
@@ -44,6 +44,7 @@ button{ border: none; cursor: pointer; }
 html{
     background: var(--background);
     color: var(--color);
+    transition: background .3s;
 }
 
 .todo-board{padding: 5%; text-align: center;}
@@ -61,13 +62,13 @@ html{
 .todo-item > p {line-height: 2;}
 .todo-item.done{ color:#666; text-decoration: line-through; }
 .empty-txt{ margin-top:20px; padding:24px; background: #eee; border-radius: 4px; }
-.modal-container{position: fixed; top:0; left:0; width:100%; height: 100%; background: rgba(0, 0, 0, 0.5);}
-.modal-inner{ position: relative; left: 50%; top:50%; display: flex; flex-direction: column; justify-content: space-between; transform: translate(-50%,-50%); width: 320px; min-height: 280px; overflow-y: hidden; background: #fff; border-radius: 16px; }
-.modal-txt{ padding: 40px 24px 24px; text-align: left; font-size: 16px; }
+.modal-container{position: fixed; top:0; left:0; width:100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 999 ;}
+.modal-inner{ position: relative; left: 50%; top:50%; display: flex; flex-direction: column; justify-content: space-between; transform: translate(-50%,-50%); width: 320px; min-height: 240px; overflow-y: hidden; background: #fff; border-radius: 16px; }
+.modal-txt{ padding: 40px 24px 24px; text-align: left; font-size: 16px; line-height: 1.7; }
 .modal-btns{display: flex;}
-.modal-btns button{ flex:1; height: 46px; font-weight: bold; }
+.modal-btns button{ flex:1; height: 46px; font-size: 14px; font-weight: bold; }
 .modal-btns button:first-child{ background: #E9ECEF; color:#666;}
-.modal-btns button:last-child{ background: #12B886; color:#000;}
+.modal-btns button:last-child{ background: #12B886; color:#fff;}
 
 /*theme-container*/
 .theme-container{ display: flex; flex-direction: row-reverse; margin: 20px; }

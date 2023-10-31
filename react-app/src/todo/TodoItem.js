@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+import { CommonContext } from './context/CommonContext';
 
 function TodoItem(props) {
 
   const [deletedList, setDeletedList] = useState([]);
+  const { setModalState } = useContext(CommonContext);
 
   useEffect(()=>{
     const savedDoneList = props.getFromLocalStorage('deletedList');
@@ -10,11 +12,11 @@ function TodoItem(props) {
       console.log('savedDoneList',savedDoneList);
       setDeletedList(prevDeletedList => [...prevDeletedList, ...savedDoneList]);
     }
-  },[]);
+  },[]); 
 
   useEffect(() => {
     props.saveToLocalStorage('deletedList', deletedList);
-  }, [deletedList]);  
+  }, [deletedList]); 
 
   const handleAction = (index, action) => {
     let updatedList = [...props.todoList];
@@ -30,12 +32,18 @@ function TodoItem(props) {
       props.onUpdate(updatedList);
     }
     else if(action === 'remove'){
-      setDeletedList((prevDeletedList) => prevDeletedList.filter((item, i) => i !== index));
+      setModalState({
+        showModal: true,
+        modalCont: '해당 목록을 삭제하시겠습니까?',
+        callback: () => {
+          setDeletedList((prevDeletedList) => prevDeletedList.filter((item, i) => i !== index));
+        },
+      });
     }
     
-    console.log('todo',props.todoList);
-    console.log('남은 항목', updatedList);
-    console.log('deletedList', deletedList);
+    // console.log('todo',props.todoList);
+    // console.log('남은 항목', updatedList);
+    // console.log('deletedList', deletedList);
   }
 
   return (
@@ -89,6 +97,7 @@ function TodoItem(props) {
 
         </section>
       </div>
+
     </>
   );
 }
