@@ -6,6 +6,8 @@ function TodoBoard() {
 
   const [inputValue, setInputValue] = useState('');
   const [todoList, setTodoList] = useState([]);
+  const [deletedList, setDeletedList] = useState([]);
+  const [saveFlag, setSaveFlag] = useState(false);
   const todoInput = useRef(null);
   const { setModalState } = useContext(CommonContext);
   
@@ -22,10 +24,27 @@ function TodoBoard() {
 
   useEffect(()=>{
     const savedTodoList = getFromLocalStorage('todoList');
+    const savedDoneList = getFromLocalStorage('deletedList');
     if(savedTodoList){
       setTodoList(savedTodoList);
     }
+    if(savedDoneList) {
+      setDeletedList([...savedDoneList]);
+    }
   },[]);
+
+  useEffect(() => {
+    if(saveFlag){
+      saveToLocalStorage('deletedList', deletedList);
+    }
+  }, [deletedList]); 
+
+  useEffect(() => {
+    if(saveFlag){
+      saveToLocalStorage('todoList', todoList); 
+    }
+  }, [todoList]); 
+
 
   const addItem = ()=> {
     // 미입력 case
@@ -39,11 +58,28 @@ function TodoBoard() {
     }
     // 중복 case
     const savedTodoList = getFromLocalStorage('todoList');
+    const savedDoneList = getFromLocalStorage('deletedList');
     if(savedTodoList && savedTodoList.includes(inputValue)){
       setModalState({
         showModal: true,
-        modalCont: `진행중인 목록에 동일한 내용이 존재합니다. \n <b>* 동일한 내용 : ${inputValue}</b>`,
+        modalCont: `진행중인 목록에 동일한 내용이 존재합니다.<br/> <b>* 동일한 내용 : ${inputValue}</b>`,
         type:'alert'
+      });
+      return;
+    }
+    if(savedDoneList && savedDoneList.includes(inputValue)){
+      setModalState({
+        showModal: true,
+        modalCont: `완료된 목록에 동일한 내용이 존재합니다.<br/>
+          해당 목록을 진행목록으로 옮기시겠습니까?<br/>
+          <b>* 동일한 내용 : ${inputValue}</b>`,
+        callback: () => {
+          const updatedDoneList = savedDoneList.filter(item => item !== inputValue); 
+          const updatedTodoList = savedTodoList ? [...savedTodoList, inputValue] : [inputValue];
+          setDeletedList(updatedDoneList);
+          setTodoList(updatedTodoList);
+          console.log('목록을 옮겼습니다.',inputValue);
+        },
       });
       return;
     }
@@ -56,17 +92,11 @@ function TodoBoard() {
     todoInput.current.focus();
   }
 
-  const handleRemoveItem = (updatedList) => {
-    setTodoList(updatedList);
-    saveToLocalStorage('todoList', updatedList); //local save
-  };
-
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
       addItem();
     }
   };
-
 
   return (
     <>  
@@ -91,9 +121,10 @@ function TodoBoard() {
           {/* item list */}
           <TodoItem 
             todoList={todoList} 
-            onUpdate={handleRemoveItem}
-            saveToLocalStorage={saveToLocalStorage}
-            getFromLocalStorage={getFromLocalStorage}/>
+            deletedList={deletedList}
+            setTodoList={setTodoList}
+            setDeletedList={setDeletedList}
+            setSaveFlag={setSaveFlag}/>
 
         </main>
     </>
@@ -118,9 +149,8 @@ export default TodoBoard;
 - list localStorage 저장작업
 - 다크모드
 - 팝업컴포넌트 소통을 통한 삭제..
-
-have to
 - 유효성 검증 
+
 */
 
 
