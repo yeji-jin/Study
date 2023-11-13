@@ -44,7 +44,7 @@ body{
 .pet-menu-list li a{ display: flex; align-items: center; flex-direction: column; gap: 1vw;}
 .pet-menu-list li img{ width: 50%; }
 
-.heart-moving img{ position: absolute; left: 50%; top:50%; transform: translate(-50%,-50%) scale(0); transition: transform .4s cubic-bezier(0.34, 1.56, 0.64, 1); width: 100%; }
+.heart-moving img{ position: absolute; left: 50%; top:50%; transform: translate(-50%,-50%) scale(0); transition: transform .25s cubic-bezier(0, 0.84, 0.44, 1.04); /*cubic-bezier(0.34, 1.56, 0.64, 1)*/   }
 .heart-moving.active img{ transform: translate(-50%,-50%) scale(1); }
 .heart-moving img:nth-child(1){ transition-delay: .05s; }
 .heart-moving img:nth-child(2){ transition-delay: .1s; }

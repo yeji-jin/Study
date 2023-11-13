@@ -1,9 +1,5 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes, Link, NavLink } from 'react-router-dom';
-import AttendanceCheck from "../category/AttendanceCheck";
-import Mission from "../category/Mission";
-import Locker from "../category/Locker";
-import Notice from "../category/Notice";
 import Lottie from 'react-lottie-player';
 import lottieJson from '../lottie/cat.json';
 
@@ -60,8 +56,8 @@ function Main() {
           {
             menuList.map((item, i) =>{
               return (
-                <li key={item.category}>
-                  <Link to={`/main/${item.category}`}>
+                <li key={'/'+item.category}>
+                  <Link to={`/${item.category}`}>
                     <img src={item.icon} alt=""/>
                     <span>{item.description}</span>
                   </Link>
@@ -106,13 +102,6 @@ function Main() {
             <button type="button" onClick={() => setPlayState(false)}>멈춰</button> */}
           </div>
       </div>
-      
-      <Routes>
-        <Route path="/attendance" element={<AttendanceCheck />}></Route>
-        <Route path="/mission" element={<Mission />}></Route>
-        <Route path="/locker" element={<Locker />}></Route>
-        <Route path="/notice" element={<Notice />}></Route>
-      </Routes>
     </>
   );
 }

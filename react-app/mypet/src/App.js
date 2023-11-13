@@ -3,8 +3,11 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Main from './home/Main';
 import Sub1 from "./home/Sub1";
 import Sub2 from "./home/Sub2";
-import AttendanceCheck from "./category/AttendanceCheck";
 import Sub3 from "./home/Sub3";
+import AttendanceCheck from "./category/AttendanceCheck";
+import Mission from "./category/Mission";
+import Locker from "./category/Locker";
+import Notice from "./category/Notice";
 import FooterNav from './footer/FooterNav';
 import 'reset-css'; 
 import './App.css';
@@ -52,7 +55,10 @@ function App() {
           <Route path="/sub1" element={<Sub1 />}></Route>
           <Route path="/sub2" element={<Sub2 />}></Route>
           <Route path="/sub3" element={<Sub3 />}></Route>
-          {/* <Route path="/attendance" element={<AttendanceCheck />}></Route> */}
+          <Route path="/attendance" element={<AttendanceCheck />}></Route>
+          <Route path="/mission" element={<Mission />}></Route>
+          <Route path="/locker" element={<Locker />}></Route>
+          <Route path="/notice" element={<Notice />}></Route>
 
           {/* not found */}
           <Route path="*" element={
