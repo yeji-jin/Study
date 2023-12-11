@@ -23,6 +23,7 @@ export default function SearchResult() {
     // console.log('query : ' + query);
 
     fetch(`${BASE_URL}/search/multi?api_key=${TMDB_KEY}&language=${BASE_LANG}&query=`+searchQuery+`&include_adult=false&page=`+page)
+    // fetch(`${BASE_URL}/search/movie?api_key=${TMDB_KEY}&language=${BASE_LANG}&query=`+searchQuery+`&include_adult=false&page=`+page)
       .then(response => response.json())
       .then(response => setSearchResult(response))
       .catch(err => console.error(err));
@@ -38,10 +39,15 @@ export default function SearchResult() {
           {searchResult.results.map(item => {
             return (
               <Movie 
-                key={item.title}
+                key={item.title || item.name}
                 title={item.title || item.name}
                 poster_path={item.poster_path}
-                vote_average={item.vote_average}/>
+                vote_average={item.vote_average}
+                releaseDate={item.releaseDate}
+                overview={item.overview}
+                genre_ids={item.genre_ids}
+                original_title={item.original_title}
+                id={item.id}/>
             )
           })}
         </div>

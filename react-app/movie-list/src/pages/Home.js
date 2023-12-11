@@ -13,17 +13,17 @@ const BASE_REGION = 'KR';
 const getPopularMovies = () => { 
     return `${BASE_URL}/movie/popular?api_key=${TMDB_KEY}&language=${BASE_LANG}&region=${BASE_REGION}`;
 };
-const getPopularTv = () => {
-    return `${BASE_URL}/tv/popular?api_key=${TMDB_KEY}&language=${BASE_LANG}&region=${BASE_REGION}`;
-};
 const getNowPlayingMovies = () => {
     return `${BASE_URL}/movie/now_playing?api_key=${TMDB_KEY}&language=${BASE_LANG}&region=${BASE_REGION}`;
+}
+const getUpCommingMovies = () => {
+  return `${BASE_URL}/movie/upcoming?api_key=${TMDB_KEY}&language=${BASE_LANG}&region=${BASE_REGION}`;
 }
 
 function Home() {
     
     const [popularMovies, setPopularMovies] = useState([]);
-    const [popularTv, setPopularTv] = useState([]);
+    const [upCommingMovies, setUpCommingMovies] = useState([]);
     const [nowPlayingMovies, setNowPlayingMovies ] = useState([]);
     const [randomNum, setRandomNum] = useState(0);
 
@@ -72,36 +72,40 @@ function Home() {
             console.error('Error fetching movies:', error);
           }
         };
-        const fetchTv = async ()=> {
+        const fetchUpCommingMovies = async ()=> {
           try {
-            const response = await fetch(getPopularTv()); 
+            const response = await fetch(getUpCommingMovies()); 
             if (!response.ok) {
-              throw new Error('Failed to fetch tv');
+              throw new Error('Failed to upcooming movies');
             }
             const data = await response.json();
-            setPopularTv(data.results.map(item => ({
-              title: item.name,
-              releaseDate: item.first_air_date,
+            setUpCommingMovies(data.results.map(item => ({
+              title: item.title,
+              releaseDate: item.release_date,
               poster_path: item.poster_path,
               vote_count: item.vote_count,
               vote_average: item.vote_average,
+              overview: item.overview,
+              genre_ids: item.genre_ids,
+              original_title: item.original_title,
+              id: item.id 
             })));
           } catch (error) {
-            console.error('Error fetching movies:', error);
+            console.error('Error fetching upcooming movies:', error);
           }      
         }
         fetchMovies();
         fetchNowMovies();
-        fetchTv();
+        fetchUpCommingMovies();
         setRandomNum(Math.floor(Math.random() * 10));
       },[]);
 
     const allMovies = [
         [...popularMovies.slice(0, 10)],
-        [...popularTv.slice(0, 10)],
-        [...nowPlayingMovies.slice(0, 10)]
+        [...nowPlayingMovies.slice(0, 10)],
+        [...upCommingMovies.slice(0, 10)],
     ];
-    const moviesTitle = ['인기 영화', '인기 티비프로그램','상영중인 영화'];
+    const moviesTitle = ['인기 영화', '상영중인 영화', '상영예정 영화'];
     const mainMovie = popularMovies[randomNum];
     const navigater = useNavigate();
     const onClickMoiveItem = ()=>{
@@ -109,7 +113,7 @@ function Home() {
             state: mainMovie
         });
     }
-
+    
     return (
         <>
             {/* recommend movies */}

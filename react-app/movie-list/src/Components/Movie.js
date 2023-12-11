@@ -17,7 +17,7 @@ function Movie(props) {
             </div>
             <div className="movie-info">
                 <h4>{props.title}</h4>
-                <span>{props.vote_average ? `⭐️ ${Math.round(props.vote_average)}` : '-'}</span>
+                <span>{props.vote_average ? `⭐️ ${props.vote_average.toFixed(1)}` : '-'}</span>
             </div>
         </div>
     );

@@ -1,0 +1,72 @@
+@charset "UTF-8"; 
+
+body { background-color: #22254b;}
+
+/* header*/
+.header-container {position: sticky; top:0; width: 100%; z-index: 10; background: rgba(3,37,65,1);}
+.header-wrap { display: flex; align-items: center; justify-content: space-between; margin: 0 auto; padding: 0 24px; max-width: 1448px; height: 64px;}
+.header-left-wrap { display: flex;}
+.header-left-wrap ul { display: flex; margin-left: 16px;}
+.header-left-wrap li { padding: 8px; margin-right: 14px;}
+.header-right-wrap input{ min-width: 180px; height: 24px; border-radius: 4px; text-indent: 10px;}
+.header-nav-item { text-decoration: none; color: #fff; font-weight: 600; }
+
+/* footer*/
+footer{ padding: 4%; text-align: center; font-size: 14px; line-height: 1.7; background: #000; color:#fff;}
+
+/*movie-container*/
+.movies-container{ display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 20%)); padding: 60px 0; gap: 20px; justify-content: center;}
+.movies-container.main{ display: flex; flex-wrap: wrap; margin: 60px auto; padding: 0; gap: 20px;}
+.movie-container{ background: #373b69; color: #fff; border-radius: 16px; box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);}
+.movie-info { display: flex; padding: 20px 10px; gap: 6%; justify-content: space-between;}
+.movie-info h4{ display: -webkit-box; min-height:40px; max-height: 40px; overflow: hidden; -webkit-line-clamp: 2; -webkit-box-orient: vertical;}
+.movie-info span{ min-width: 42px; text-align: right;}
+.movie-thumb{ padding-bottom: 150%; position: relative; }
+.movie-thumb img{ position: absolute; top:0; left:0; width: 100%; height: 100%; object-fit: cover; }
+.movies-container section{ margin: 60px 0; width: 100%; overflow: hidden; color:#fff; }
+.movies-header{ display: flex; justify-content: space-between; padding: 24px 40px; }
+.movies-header .subject{ font-size: 24px; }
+.slide-movie-container{ display: flex; gap: 2%;  }
+.slide-movie-container .swiper-slide{ width: 25%; min-width: 150px; max-width: 300px; }
+.recommend-movie{ padding: 10%; color: #fff; text-shadow: rgba(0, 0, 0, 0.6) 1px 1px 10px; }
+.contents-title{ padding: 0 40px 40px; font-size: 26px; }
+
+/*swiper*/
+.swiper-button-prev.swiper-button-disabled, .swiper-button-next.swiper-button-disabled{ }
+[class^="swiper-button"] {
+  transform: translateY(-50%);
+  opacity: 0 !important;
+  transition: all .2s;
+  text-shadow: rgba(0, 0, 0, 0.6) 1px 1px 10px;
+  color:#fff !important;
+}
+.swiper:hover [class^="swiper-button"]{ opacity: 1 !important;}
+
+/*empty-container*/
+.empty-container{ height: 80vh; line-height: 80vh; text-align: center; color:#fff; }
+
+/*similarContents*/
+.recommend-similar-contents{ margin: 8% 4%; padding: 60px 0; background: #fff; border:1px solid #d8d9db; border-radius: 40px; }
+.recommend-similar-contents .swiper{ padding: 1% 0; }
+.recommend-similar-contents .slide-movie-item{ box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.2); }
+
+/*movie-detail*/
+.movie-detail{ display: flex; padding: 4%; gap: 5%; }
+.movie-detail__thumb{ min-width: 300px; max-width: 30%; }
+.movie-detail__thumb img{ overflow: hidden; border-radius: 20px; box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.2);}
+.movie-detail__info{ padding: 4% 0; flex:2; overflow: hidden; color:#fff; }
+.movie-detail__info .movie-title{ padding: 2% 0; }
+.movie-detail__info .movie-tagline{ display: block; font-size: 20px; }
+.movie-detail__info .genre span + span::before{ content: " / ";}
+.movie-detail__info .movie-sub__info{ padding-top: 4%; line-height: 2; }
+.movie-title{ font-size: 5vw;}
+.movie-ranking{ margin: 20px 0; font-size: 2.5vw;}
+.movie-overview{ margin: 20px 0; line-height: 1.7; }
+.btn-movie__detail{ padding: 16px 24px; border-radius: 4px; background: #fff; }
+.actors-container h4{ margin: 4% 0 2%; font-size: 20px;}
+.actors{ display:flex; gap:16px; width: 100%; overflow-x: auto;}
+.actors .actor{ min-width: 100px; max-width: 200px; }
+.actors .actor-name{ display: block; margin-top: 12px; }
+.btn-content__detail {display: flex; gap: 12px; margin-top: 20px;  }
+.btn-content__detail button{ display: flex; justify-content: center; align-items: center; gap:8px; font-size: 20px; padding: 20px; width: 100%; max-width: 50%; background: #fff; border-radius: 4px; border: 1px solid #ccc; }
+.btn-content__detail path{fill:red;}
