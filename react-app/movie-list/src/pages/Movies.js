@@ -40,7 +40,7 @@ function Movies() {
         fetchMovies();
       },[]);
 
-      console.log('##popularMovies',popularMovies)
+      // console.log('##popularMovies',popularMovies)
 
     return (
         <div className="movies-container">

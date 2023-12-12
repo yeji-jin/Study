@@ -9,7 +9,7 @@ import Header from './Components/Header';
 import MovieDetail from './pages/MovieDetail';
 import Footer from './Components/Footer';
 import MyList from "./pages/MyList";
-import Search from "./pages/search";
+import SearchDetail from "./pages/searchDetail";
 import SearchResult from "./pages/searchResult";
 
 
@@ -69,7 +69,7 @@ function App() {
           <Route path='/tv' element={<Tv/>} /> 
           <Route path='/genres' element={<Genres/>} />
           <Route path='/mylist' element={<MyList/>} />
-          <Route path='/search/ui' element={<Search/>} />
+          <Route path='/search/detail' element={<SearchDetail/>} />
           <Route path='/search' element={<SearchResult/>} />
           <Route path='/*' element={<NotFound/>} /> 
         </Routes>

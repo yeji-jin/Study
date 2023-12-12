@@ -8,6 +8,7 @@ function Movie(props) {
         navigater(`/movie/${props.title}`,{
             state: props
         });
+        window.scrollTo(0,0);
     }
 
     return (

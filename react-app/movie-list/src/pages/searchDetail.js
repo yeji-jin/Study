@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 const TMDB_KEY = process.env.REACT_APP_TMDB_API_KEY;
 const BASE_URL = 'https://api.themoviedb.org/3';
@@ -27,6 +27,7 @@ export default function Search() {
       navigater(`/movie/${item.title}`,{
           state: item
       });
+      window.scrollTo(0,0);
   }
 
   useEffect(()=>{
@@ -57,6 +58,31 @@ export default function Search() {
 
   return (
     <div className='search-container'>
+      <h3 className='search-inner__title search-nav__title'>Quick Menu</h3>
+      <nav className='search-nav'>
+        <ul>
+          <li>
+            <Link className="search-nav-item" to="/movie">
+              영화
+            </Link>
+          </li>
+          <li>
+            <Link className="search-nav-item" to="/tv">
+              TV 프로그램
+            </Link>
+          </li>
+          <li>
+            <Link className="search-nav-item" to="/genres">
+              장르
+            </Link>
+          </li>
+          <li>
+            <Link className="search-nav-item" to="/mylist">
+              내가 찜한 컨텐츠
+            </Link>
+          </li>
+        </ul>
+      </nav>
       <div className='search-box'>
         <div className='search-inner'>
           <form onSubmit={onSearchKeyword}>
@@ -75,7 +101,7 @@ export default function Search() {
         </div>
       </div>
       <div className='search-recommend-movies'>
-        <h3>평점높은 영화</h3>
+        <h3 className='search-inner__title'>평점높은 영화</h3>
         <ul>
           {
             topRatedMovies.map(item => {

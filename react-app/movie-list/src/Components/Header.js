@@ -6,7 +6,7 @@ export default function Header() {
 
   const navigater = useNavigate();
   const onSearchKeyword = ()=>{
-    navigater(`/search/ui`);
+    navigater(`/search/detail`);
   }
 
   return (
