@@ -35,22 +35,25 @@ export default function SearchResult() {
       {
         searchResult.results?.length ?
         // 검색결과 있음
-        <div className="movies-container">
-          {searchResult.results.map(item => {
-            return (
-              <Movie 
-                key={item.title || item.name}
-                title={item.title || item.name}
-                poster_path={item.poster_path}
-                vote_average={item.vote_average}
-                releaseDate={item.releaseDate}
-                overview={item.overview}
-                genre_ids={item.genre_ids}
-                original_title={item.original_title}
-                id={item.id}/>
-            )
-          })}
-        </div>
+        <>
+          <h5 className='search-txt'>"{searchQuery}" 검색결과</h5>
+          <div className="movies-container">
+            {searchResult.results.map(item => {
+              return (
+                <Movie 
+                  key={item.title || item.name}
+                  title={item.title || item.name}
+                  poster_path={item.poster_path}
+                  vote_average={item.vote_average}
+                  releaseDate={item.releaseDate}
+                  overview={item.overview}
+                  genre_ids={item.genre_ids}
+                  original_title={item.original_title}
+                  id={item.id}/>
+              )
+            })}
+          </div>
+        </>
         : 
         // 검색결과 없음
         <div className='empty-container'>

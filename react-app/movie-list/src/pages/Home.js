@@ -121,7 +121,7 @@ function Home() {
                 style={{ 
                 position:'relative',
                 height:'70vh',
-                background:`linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0)), url(${IMG_BASE_URL}${mainMovie?.poster_path}) no-repeat center / cover`
+                background:`linear-gradient(rgba(0, 0, 0, 0), rgba(34,37,75)), url(${IMG_BASE_URL}${mainMovie?.poster_path}) no-repeat center / cover`
                 }}>
                 <h2 className="movie-title">{mainMovie?.title}</h2>
                 <p className="movie-ranking">오늘의 인기 영화 {randomNum + 1}위</p>

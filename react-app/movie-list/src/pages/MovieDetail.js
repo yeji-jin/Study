@@ -12,7 +12,7 @@ function MovieDetail() {
 
     const { title } = useParams();
     const { state } = useLocation();
-    console.log(title, state);
+    // console.log(title, state);
 
     const movieGenre = state.genre_ids;
     const [similarContents, setSimilarContents] = useState([]);
